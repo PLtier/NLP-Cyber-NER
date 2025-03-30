@@ -1,6 +1,27 @@
 from pathlib import Path
+
 import jsonlines
 import torch
+
+
+def clean_aptner(path: Path) -> None:
+    """
+    If there is only one token in the sentence, it is assigned the label O. The function saves cleaned data.
+    """
+    with (
+        open(path, "r", encoding="utf-8") as f,
+        open(path.with_suffix(".cleaned"), "w", encoding="utf-8") as f_out,
+    ):
+        for line in f:
+            line = line.strip()
+            if line:
+                tok = line.split(" ")
+                if len(tok) == 1:
+                        f_out.write(f"{tok[0]} O\n")
+                else:
+                    f_out.write(line + "\n")
+            else:
+                f_out.write("\n")
 
 
 def read_iob2_file(path, sep="\t", word_index=1, tag_index=2):
@@ -81,12 +102,11 @@ def read_aptner(path, sep=" ", word_index=0, tag_index=1):
     current_words = []
     current_tags = []
 
-    for line in open(path, encoding="utf-8"):
+    for i, line in enumerate(open(path, encoding="utf-8")):
+        print(i)
         line = line.strip()
 
         if line:
-            if line[0] == "#":
-                continue  # skip comments
             tok = line.split(sep)
 
             current_words.append(tok[word_index])
