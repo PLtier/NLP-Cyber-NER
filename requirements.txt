@@ -4,4 +4,7 @@ python-dotenv
 ruff
 tqdm
 typer
+jsonlines
+torch
+numpy
 -e .
