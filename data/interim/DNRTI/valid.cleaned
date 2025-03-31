@@ -4009,7 +4009,7 @@ target O
 specific B-Org
 individuals I-Org
 and O
-institutions O
+institutions    B-Org
 — O
 often O
 including O
@@ -12730,7 +12730,7 @@ PowerShell O
 loader O
 called O
 Ivoke B-SamFile
-. O
+.  O
 
 The O
 Silence.Main B-SamFile

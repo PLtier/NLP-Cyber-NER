@@ -405,7 +405,7 @@ en O
 masse O
 . O
 
-Mandianta O
+Mandianta   B-SecTeam
 's O
 APT1 B-HackOrg
 report O
@@ -3960,7 +3960,7 @@ including O
 : O
 APT3 B-HackOrg
 , O
-APT27 O
+APT27   B-HackOrg
 and O
 DragonOK B-HackOrg
 . O
@@ -8207,7 +8207,7 @@ connect O
 to O
 or O
 listen O
-on O
+on  O
 . O
 
 Therefore O
@@ -15537,7 +15537,7 @@ Vista O
 , O
 Windows O
 Server O
-2008 O
+2008    O
 , O
 Windows O
 7 O
@@ -15614,7 +15614,7 @@ techniques I-Way
 to O
 steal B-Purp
 millions I-Purp
-of O
+of  I-Purp
 dollars I-Purp
 while O
 infecting O

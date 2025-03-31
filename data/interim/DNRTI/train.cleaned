@@ -325,7 +325,7 @@ Kong I-Area
 
 An O
 APT B-HackOrg
-gang O
+gang    B-HackOrg
 linked O
 to O
 China B-Area
@@ -2987,7 +2987,7 @@ Russia B-Area
 Cyber B-OffAct
 Espionage I-OffAct
 Operations I-OffAct
-. O
+.   O
 
 The O
 espionage B-HackOrg
@@ -9237,8 +9237,8 @@ organizations O
 as O
 early O
 as O
-2008 O
-— O
+2008    B-Time
+—   O
 at O
 least O
 based O
@@ -9796,7 +9796,7 @@ Vista O
 , O
 Windows O
 Server O
-2008 O
+2008    O
 , O
 Windows O
 7 O
@@ -11107,7 +11107,7 @@ late B-Time
 by O
 launching O
 the O
-Anunak O
+Anunak  B-OffAct
 malware I-OffAct
 campaign I-OffAct
 that O
@@ -12108,7 +12108,7 @@ techniques I-Way
 to O
 steal B-Purp
 millions I-Purp
-of O
+of  I-Purp
 dollars I-Purp
 while O
 infecting O
@@ -12770,7 +12770,7 @@ payloads O
 . O
 
 The O
-GCMAN O
+GCMAN   B-HackOrg
 group I-HackOrg
 has O
 moved O
@@ -13625,7 +13625,7 @@ target O
 humanitarian O
 aid O
 and O
-inter-Korean O
+inter-Korean    B-Area
 affairs O
 . O
 
@@ -14123,8 +14123,8 @@ while O
 older O
 activity B-OffAct
 from O
-2010 O
-- O
+2010    B-Time
+-   O
 2011 B-Time
 leveraged O
 BMW B-Tool
@@ -22990,7 +22990,7 @@ tracked O
 by O
 FireEye B-SecTeam
 as O
-APT34 O
+APT34   B-HackOrg
 has O
 conducted O
 reconnaissance O
@@ -29840,7 +29840,7 @@ addition O
 to O
 stealing B-Purp
 keystrokes I-Purp
-, O
+,   O
 Naikon B-HackOrg
 also O
 intercepted O
@@ -68085,7 +68085,7 @@ strings O
 in O
 the O
 body O
-. O
+.  O
 For O
 example O
 , O
@@ -73638,8 +73638,8 @@ stop O
 or O
 slow B-Way
 down I-Way
-their O
-activities O
+their  I-Way
+activities  I-Way
 once O
 their O
 campaigns O
@@ -90334,7 +90334,7 @@ PowerShell O
 loader O
 called O
 Ivoke B-SamFile
-. O
+.  O
 
 The O
 Silence.Main B-SamFile
@@ -100819,7 +100819,7 @@ connect O
 to O
 or O
 listen O
-on O
+on  O
 . O
 
 DarkPulsar B-Tool
@@ -101253,8 +101253,8 @@ organizations O
 as O
 early O
 as O
-2008 O
-— O
+2008    B-Time
+—   O
 at O
 least O
 based O
@@ -111621,7 +111621,7 @@ Vista O
 , O
 Windows O
 Server O
-2008 O
+2008    O
 , O
 Windows O
 7 O
@@ -112137,7 +112137,7 @@ techniques I-Way
 to O
 steal B-Purp
 millions I-Purp
-of O
+of  I-Purp
 dollars I-Purp
 while O
 infecting O
@@ -119401,7 +119401,7 @@ Vista O
 , O
 Windows O
 Server O
-2008 O
+2008    O
 , O
 Windows O
 7 O
@@ -119586,7 +119586,7 @@ techniques I-Way
 to O
 steal B-Purp
 millions I-Purp
-of O
+of  I-Purp
 dollars I-Purp
 while O
 infecting O
@@ -120769,7 +120769,7 @@ addition O
 to O
 stealing B-Purp
 keystrokes I-Purp
-, O
+,   O
 Naikon B-HackOrg
 also O
 intercepted O
@@ -126914,7 +126914,7 @@ Vista O
 , O
 Windows O
 Server O
-2008 O
+2008    O
 , O
 Windows O
 7 O
@@ -127430,7 +127430,7 @@ techniques I-Way
 to O
 steal B-Purp
 millions I-Purp
-of O
+of  I-Purp
 dollars I-Purp
 while O
 infecting O
@@ -139546,7 +139546,7 @@ target O
 specific B-Org
 individuals I-Org
 and O
-institutions O
+institutions    B-Org
 — O
 often O
 including O
@@ -140138,7 +140138,7 @@ Kong I-Area
 
 An O
 APT B-HackOrg
-gang O
+gang    B-HackOrg
 linked O
 to O
 China B-Area
