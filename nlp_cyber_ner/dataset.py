@@ -2,81 +2,80 @@ from os import truncate
 from pathlib import Path
 
 import jsonlines
+from numpy.random import f
 import torch
 
 aptner_labels = set(
     [
-        "B-TIME",
-        "I-TIME",
-        "E-TIME",
-        "S-LOC",
-        "B-SECTEAM",
-        "E-SECTEAM",
-        "I-SECTEAM",
-        "S-SECTEAM",
-        "S-TOOL",
-        "B-IDTY",
-        "E-IDTY",
-        "S-MAL",
+        "B-ACT",
         "B-APT",
-        "E-APT",
-        "B-TOOL",
-        "E-TOOL",
-        "S-VULNAME",
-        "S-VULID",
-        "S-IDTY",
+        "B-EMAIL",
+        "B-ENCR",
+        "B-FILE",
+        "B-IDTY",
+        "B-IP",
         "B-LOC",
+        "B-MAL",
+        "B-OS",
+        "B-PROT",
+        "B-SECTEAM",
+        "B-SHA2",
+        "B-TIME",
+        "B-TOOL",
+        "B-URL",
+        "B-VULID",
+        "B-VULNAME",
+        "E-ACT",
+        "E-APT",
+        "E-EMAIL",
+        "E-ENCR",
+        "E-FILE",
+        "E-IDTY",
+        "E-IP",
         "E-LOC",
-        "I-TOOL",
+        "E-MAL",
+        "E-OS",
+        "E-PROT",
+        "E-SECTEAM",
+        "E-SHA2",
+        "E-TIME",
+        "E-TOOL",
+        "E-URL",
+        "E-VULNAME",
+        "I-ACT",
+        "I-APT",
+        "I-FILE",
         "I-IDTY",
+        "I-LOC",
+        "I-MAL",
+        "I-OS",
+        "I-PROT",
+        "I-SECTEAM",
+        "I-TIME",
+        "I-TOOL",
+        "I-URL",
+        "I-VULNAME",
+        "S-ACT",
+        "S-APT",
+        "S-DOM",
+        "S-EMAIL",
         "S-ENCR",
         "S-FILE",
-        "S-SHA2",
-        "S-URL",
+        "S-IDTY",
         "S-IP",
-        "S-APT",
-        "PROT",
-        "B-ACT",
-        "E-ACT",
+        "S-LOC",
+        "S-MAL",
         "S-MD5",
-        "I-ACT",
-        "B-FILE",
-        "E-FILE",
-        "S-DOM",
-        "B-MAL",
-        "E-MAL",
         "S-OS",
-        "S-TIME",
         "S-PROT",
-        "S-ACT",
-        "B-OS",
-        "E-OS",
-        "I-FILE",
+        "S-SECTEAM",
         "S-SHA1",
-        "B-URL",
-        "E-URL",
-        "B-IP",
-        "E-IP",
-        "S-M",
-        "I-MAL",
-        "B-SHA2",
-        "E-SHA2",
-        "B-VULNAME",
-        "I-VULNAME",
-        "E-VULNAME",
-        "I-URL",
-        "I-LOC",
-        "I-APT",
-        "I-OS",
-        "B-PROT",
-        "I-PROT",
-        "E-PROT",
-        "S-EMAIL",
-        "B-VULID",
-        "B-EMAIL",
-        "E-EMAIL",
-        "B-ENCR",
-        "E-ENCR",
+        "S-SHA2",
+        "S-TIME",
+        "S-TOOL",
+        "S-URL",
+        "S-VULID",
+        "S-VULNAME",
     ]
 )
 
@@ -92,13 +91,13 @@ def clean_aptner(path: Path) -> None:
         for line in f:
             line = line.strip()
             if line:
-                tok = line.split(" ")
+                tok = line.split()
                 if len(tok) == 1:
                     if tok[0] == "O":
                         continue
                     else:
                         f_out.write(f"{tok[0]} O\n")
-                elif len(tok) == 2 and tok[1] not in aptner_labels:
+                elif len(tok) == 2 and (tok[1] not in aptner_labels or "-" not in tok[1]):
                     f_out.write(f"{tok[0]} O\n")
                 elif len(tok) >= 3:
                     # fuzzy cleaning: just pick the first token, and label it as O
@@ -108,6 +107,141 @@ def clean_aptner(path: Path) -> None:
                     f_out.write(line + "\n")
             else:
                 f_out.write("\n")
+
+
+def unify_labels_aptner(path: Path) -> None:
+    """
+    All E- labels are converted to I- labels.
+    All S- labels are converted to B- labels.
+    APT, SECTEAM -> Organization (respectively, B- and I-)
+    OS -> System (respectively, B- and I-)
+    VULNAME -> Vulnerability (respectively, B- and I-)
+    MAL -> Malware (respectively, B- and I-)
+    """
+
+    with (
+        open(path, "r", encoding="utf-8") as f,
+        open(path.with_suffix(".unified"), "w", encoding="utf-8") as f_out,
+    ):
+        for line in f:
+            line = line.strip()
+            if line:
+                print(line)
+                tok = line.split()
+                assert len(tok) == 2
+                new_tag = tok[1]
+                if tok[1] != "O":
+                    prefix, label = tok[1].split("-")
+
+                    if label == "APT" or label == "SECTEAM":
+                        label = "Organization"
+                    elif label == "OS":
+                        label = "System"
+                    elif label == "VULNAME":
+                        label = "Vulnerability"
+                    elif label == "MAL":
+                        label = "Malware"
+                    else:
+                        label = "O"
+                        f_out.write(f"{tok[0]} O\n")
+                        continue
+
+                    if prefix == "E":
+                        prefix = "I"
+                    elif prefix == "S":
+                        prefix = "B"
+
+                    new_tag = f"{prefix}-{label}"
+                f_out.write(f"{tok[0]} {new_tag}\n")
+            else:
+                f_out.write("\n")
+
+
+def unify_labels_dnrti(path: Path) -> None:
+    """
+    HackOrg, SecTeam -> Organization (respectively, B- and I-)
+    Tool -> System (respectively, B- and I-)
+    Way -> Vulnerability (respectively, B- and I-)
+    SamFile -> Malware (respectively, B- and I-)
+    conll to conll
+    """
+
+    with (
+        open(path, "r", encoding="utf-8") as f,
+        open(path.with_suffix(".unified"), "w", encoding="utf-8") as f_out,
+    ):
+        for line in f:
+            line = line.strip()
+            if line:
+                tok = line.split()
+                assert len(tok) == 2
+                new_tag = tok[1]
+                if tok[1] != "O":
+                    prefix, label = tok[1].split("-")
+
+                    if label == "HackOrg" or label == "SecTeam":
+                        label = "Organization"
+                    elif label == "Tool":
+                        label = "System"
+                    elif label == "Way":
+                        label = "Vulnerability"
+                    elif label == "SamFile":
+                        label = "Malware"
+                    else:
+                        label = "O"
+                        f_out.write(f"{tok[0]} O\n")
+                        continue
+
+                    new_tag = f"{prefix}-{label}"
+                f_out.write(f"{tok[0]} {new_tag}\n")
+            else:
+                f_out.write("\n")
+
+
+def unify_labels_attackner(path: Path) -> None:
+    """
+    THREAT_ACTOR, GENERAL_IDENTITY -> Organization (respectively, B- and I-)
+    INFRASTRUCTURE, GENERAL_TOOL, ATTACK_TOOL -> Infrastructure (respectively, B- and I-)
+    VULNERABILITY -> Vulnerability (respectively, B- and I-)
+    MALWARE -> Malware (respectively, B- and I-)
+    Outputs a conll format!
+    """
+    with (
+        jsonlines.open(path) as reader,
+        open(path.with_suffix(".unified"), "w", encoding="utf-8") as f_out,
+    ):
+        for obj in reader:
+            tags = obj["tags"]
+            tokens = obj["tokens"]
+            n = len(tokens)
+            for i in range(n):
+                current_tag = tags[i]
+                token = tokens[i]
+                if token == " ":
+                    # TODO: this is kind of cleaning part, if there is time, I would put it in a separate function
+                    continue
+                if current_tag != "O":
+                    prefix, label = current_tag.split("-")
+
+                    if label == "THREAT_ACTOR" or label == "GENERAL_IDENTITY":
+                        label = "Organization"
+                    elif (
+                        label == "INFRASTRUCTURE"
+                        or label == "GENERAL_TOOL"
+                        or label == "ATTACK_TOOL"
+                    ):
+                        label = "System"
+                    elif label == "VULNERABILITY":
+                        label = "Vulnerability"
+                    elif label == "MALWARE":
+                        label = "Malware"
+                    else:
+                        label = "O"
+                        f_out.write(f"{token} O\n")
+                        continue
+                    current_tag = f"{prefix}-{label}"
+                f_out.write(f"{token} {current_tag}\n")
+            f_out.write("\n")
 
 
 def clean_dnrti(path: Path) -> None:
@@ -121,7 +255,7 @@ def clean_dnrti(path: Path) -> None:
         for line in f:
             line = line.strip()
             if line:
-                tok = line.split(" ")
+                tok = line.split()
                 if len(tok) == 1:
                     if tok[0] == "O":
                         continue
@@ -137,7 +271,7 @@ def clean_dnrti(path: Path) -> None:
                 f_out.write("\n")
 
 
-def read_iob2_file(path, sep="\t", word_index=1, tag_index=2):
+def read_iob2_file(path, word_index=1, tag_index=2):
     """
     read in conll file
 
@@ -154,7 +288,7 @@ def read_iob2_file(path, sep="\t", word_index=1, tag_index=2):
         if line:
             if line[0] == "#":
                 continue  # skip comments
-            tok = line.split(sep)
+            tok = line.split()
 
             current_words.append(tok[word_index])
             current_tags.append(tok[tag_index])
@@ -170,7 +304,7 @@ def read_iob2_file(path, sep="\t", word_index=1, tag_index=2):
     return data
 
 
-def read_cyner(path, sep="\t", word_index=0, tag_index=1):
+def read_cyner(path, word_index=0, tag_index=1):
     """
     read in conll file
 
@@ -187,7 +321,7 @@ def read_cyner(path, sep="\t", word_index=0, tag_index=1):
         if line:
             if line[0] == "#":
                 continue  # skip comments
-            tok = line.split(sep)
+            tok = line.split()
 
             current_words.append(tok[word_index])
             tag = tok[tag_index]
@@ -216,11 +350,11 @@ def read_aptner(path, sep=" ", word_index=0, tag_index=1):
     current_tags = []
 
     for i, line in enumerate(open(path, encoding="utf-8")):
-        print(i)
+        # print(i)
         line = line.strip()
 
         if line:
-            tok = line.split(sep)
+            tok = line.split()
 
             current_words.append(tok[word_index])
             tag = tok[tag_index]
@@ -254,7 +388,7 @@ def read_attackner(path):
     return data
 
 
-def read_dnrti(path: Path, sep=" ", word_index=0, tag_index=1):
+def read_dnrti(path: Path, word_index=0, tag_index=1):
     """Read dnrti NER dataset."""
     data = []
     current_words = []
@@ -266,7 +400,7 @@ def read_dnrti(path: Path, sep=" ", word_index=0, tag_index=1):
         line = line.strip()
 
         if line:
-            tok = line.split(sep)
+            tok = line.split()
 
             current_words.append(tok[word_index])
             tag = tok[tag_index]
@@ -321,8 +455,8 @@ class Preprocess:
         self.vocab_tags = Vocab()
 
     def build_vocab(self, data, instances, features):
-        data_X = torch.zeros(instances, features, dtype=int)
-        data_y = torch.zeros(instances, features, dtype=int)
+        data_X = torch.zeros(instances, features, dtype=torch.int)
+        data_y = torch.zeros(instances, features, dtype=torch.int)
         for i, sentence_tags in enumerate(data):
             for j, word in enumerate(sentence_tags[0]):
                 data_X[i, j] = self.vocab_words.getIdx(word=word, add=True)
@@ -337,8 +471,8 @@ class Preprocess:
 
     def transform_prep_data(self, data, instances, n_max_feats: int):
         # to be used only on dev data
-        data_X = torch.zeros(instances, n_max_feats, dtype=int)
-        data_y = torch.zeros(instances, n_max_feats, dtype=int)
+        data_X = torch.zeros(instances, n_max_feats, dtype=torch.int)
+        data_y = torch.zeros(instances, n_max_feats, dtype=torch.int)
         for i, sentence_tags in enumerate(data):
             truncated_sentence = sentence_tags[0][:n_max_feats]
             for j, word in enumerate(truncated_sentence):
@@ -372,7 +506,7 @@ def prepare_output_file(
                 if line[0] == "#":
                     f_out.write(line)
                 else:
-                    words = line.split("\t")
+                    words = line.split()
                     words[2] = global_labels[i]
                     i += 1
 
