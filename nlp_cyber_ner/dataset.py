@@ -1,7 +1,84 @@
+from os import truncate
 from pathlib import Path
 
 import jsonlines
 import torch
+
+aptner_labels = set(
+    [
+        "B-TIME",
+        "I-TIME",
+        "E-TIME",
+        "S-LOC",
+        "B-SECTEAM",
+        "E-SECTEAM",
+        "I-SECTEAM",
+        "S-SECTEAM",
+        "S-TOOL",
+        "B-IDTY",
+        "E-IDTY",
+        "S-MAL",
+        "B-APT",
+        "E-APT",
+        "B-TOOL",
+        "E-TOOL",
+        "S-VULNAME",
+        "S-VULID",
+        "S-IDTY",
+        "B-LOC",
+        "E-LOC",
+        "I-TOOL",
+        "I-IDTY",
+        "S-ENCR",
+        "S-FILE",
+        "S-SHA2",
+        "S-URL",
+        "S-IP",
+        "S-APT",
+        "PROT",
+        "B-ACT",
+        "E-ACT",
+        "S-MD5",
+        "I-ACT",
+        "B-FILE",
+        "E-FILE",
+        "S-DOM",
+        "B-MAL",
+        "E-MAL",
+        "S-OS",
+        "S-TIME",
+        "S-PROT",
+        "S-ACT",
+        "B-OS",
+        "E-OS",
+        "I-FILE",
+        "S-SHA1",
+        "B-URL",
+        "E-URL",
+        "B-IP",
+        "E-IP",
+        "S-M",
+        "I-MAL",
+        "B-SHA2",
+        "E-SHA2",
+        "B-VULNAME",
+        "I-VULNAME",
+        "E-VULNAME",
+        "I-URL",
+        "I-LOC",
+        "I-APT",
+        "I-OS",
+        "B-PROT",
+        "I-PROT",
+        "E-PROT",
+        "S-EMAIL",
+        "B-VULID",
+        "B-EMAIL",
+        "E-EMAIL",
+        "B-ENCR",
+        "E-ENCR",
+    ]
+)
 
 
 def clean_aptner(path: Path) -> None:
@@ -17,7 +94,43 @@ def clean_aptner(path: Path) -> None:
             if line:
                 tok = line.split(" ")
                 if len(tok) == 1:
+                    if tok[0] == "O":
+                        continue
+                    else:
                         f_out.write(f"{tok[0]} O\n")
+                elif len(tok) == 2 and tok[1] not in aptner_labels:
+                    f_out.write(f"{tok[0]} O\n")
+                elif len(tok) >= 3:
+                    # fuzzy cleaning: just pick the first token, and label it as O
+                    # it's very rare.
+                    f_out.write(f"{tok[0]} O\n")
+                else:
+                    f_out.write(line + "\n")
+            else:
+                f_out.write("\n")
+
+
+def clean_dnrti(path: Path) -> None:
+    """
+    If there is only one token in the sentence, it is assigned the label O. The function saves cleaned data.
+    """
+    with (
+        open(path, "r", encoding="utf-8") as f,
+        open(path.with_suffix(".cleaned"), "w", encoding="utf-8") as f_out,
+    ):
+        for line in f:
+            line = line.strip()
+            if line:
+                tok = line.split(" ")
+                if len(tok) == 1:
+                    if tok[0] == "O":
+                        continue
+                    else:
+                        f_out.write(f"{tok[0]} O\n")
+                elif len(tok) >= 3:
+                    # fuzzy cleaning: just pick the first token, and label it as O
+                    # it's very rare.
+                    f_out.write(f"{tok[0]} O\n")
                 else:
                     f_out.write(line + "\n")
             else:
@@ -148,8 +261,8 @@ def read_dnrti(path: Path, sep=" ", word_index=0, tag_index=1):
     current_tags = []
 
     for i, line in enumerate(open(path, encoding="utf-8")):
-        print(i)
-        print(line)
+        # print(i)
+        # print(line)
         line = line.strip()
 
         if line:
@@ -222,12 +335,13 @@ class Preprocess:
         # only returned in the builder function, because they are reused for dev data in transform_prep_data()
         return data_X, data_y, idx2word_train, idx2label_train
 
-    def transform_prep_data(self, data, instances, features):
+    def transform_prep_data(self, data, instances, n_max_feats: int):
         # to be used only on dev data
-        data_X = torch.zeros(instances, features, dtype=int)
-        data_y = torch.zeros(instances, features, dtype=int)
+        data_X = torch.zeros(instances, n_max_feats, dtype=int)
+        data_y = torch.zeros(instances, n_max_feats, dtype=int)
         for i, sentence_tags in enumerate(data):
-            for j, word in enumerate(sentence_tags[0]):
+            truncated_sentence = sentence_tags[0][:n_max_feats]
+            for j, word in enumerate(truncated_sentence):
                 data_X[i, j] = self.vocab_words.getIdx(word=word, add=False)
                 data_y[i, j] = self.vocab_tags.getIdx(word=sentence_tags[1][j], add=False)
         return data_X, data_y
@@ -267,3 +381,30 @@ def prepare_output_file(
             else:
                 f_out.write("\n")
     assert i == len(global_labels)
+
+
+def transform_dataset(train_data, dev_data, test_data):
+    """
+    Uses bag of words to create a matrix of words and their tags.
+    """
+    transformer = Preprocess()
+    max_len = max([len(x[0]) for x in train_data])
+
+    train_X, train_y, idx2word, idx2label = transformer.build_vocab(
+        train_data, len(train_data), max_len
+    )
+
+    dev_X, dev_y = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
+
+    test_X, test_y = transformer.transform_prep_data(test_data, len(test_data), max_len)
+    # here, the second variable doesn't hold true labels, as this is a test set. We need only to know the length of the sentences.
+    return (
+        train_X,
+        train_y,
+        dev_X,
+        dev_y,
+        test_X,
+        test_y,
+        idx2word,
+        idx2label,
+    )
