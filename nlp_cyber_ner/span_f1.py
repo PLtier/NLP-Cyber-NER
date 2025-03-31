@@ -1,13 +1,13 @@
 import sys
 
 
-def readNlu(path):
+def readNlu(path: str) -> list[list[str]]:
     # reads labels from last column, assumes conll-like file
     # with 1 word per line, tab separation, and empty lines
     # for sentence splits. The BIO annotation is expected in the
     # third column (index 2), following universalNER.
     annotations = []
-    cur_annotation = []
+    cur_annotation: list[str] = []
     for line in open(path, encoding="utf-8"):
         line = line.strip()
         if line == "":
@@ -63,19 +63,11 @@ def getLooseOverlap(spans1, spans2):
 def getUnlabeled(spans1, spans2):
     # Counts the overlap in spans after removing the labels
     return len(
-        set([x.split(":")[0] for x in spans1]).intersection(
-            [x.split(":")[0] for x in spans2]
-        )
+        set([x.split(":")[0] for x in spans1]).intersection([x.split(":")[0] for x in spans2])
     )
 
 
-if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("please provide path to gold data and predicted output")
-        exit(1)
-    gold_ners = readNlu(sys.argv[1])
-    pred_ners = readNlu(sys.argv[2])
-
+def span_f1(gold_ners, pred_ners):
     tp = 0
     fp = 0
     fn = 0
@@ -110,12 +102,20 @@ if __name__ == "__main__":
         precision_loose_tp += overlap_loose
         precision_loose_fp += len(pred_spans) - overlap_loose
 
+    metrics = {}
     prec = 0.0 if tp + fp == 0 else tp / (tp + fp)
     rec = 0.0 if tp + fn == 0 else tp / (tp + fn)
     print("recall:   ", rec)
     print("precision:", prec)
     f1 = 0.0 if prec + rec == 0.0 else 2 * (prec * rec) / (prec + rec)
     print("slot-f1:  ", f1)
+    metrics.update(
+        {
+            "recall": rec,
+            "precision": prec,
+            "slot-f1": f1,
+        }
+    )
 
     tp = tp_ul
     fp = fp_ul
@@ -128,6 +128,13 @@ if __name__ == "__main__":
     print("ul_precision:", prec)
     f1 = 0.0 if prec + rec == 0.0 else 2 * (prec * rec) / (prec + rec)
     print("ul_slot-f1:  ", f1)
+    metrics.update(
+        {
+            "ul_recall": rec,
+            "ul_precision": prec,
+            "ul_slot-f1": f1,
+        }
+    )
 
     print()
     print("loose (partial overlap with same label)")
@@ -145,3 +152,21 @@ if __name__ == "__main__":
     print("l_precision:", prec)
     f1 = 0.0 if prec + rec == 0.0 else 2 * (prec * rec) / (prec + rec)
     print("l_slot-f1:  ", f1)
+    metrics.update(
+        {
+            "l_recall": rec,
+            "l_precision": prec,
+            "l_slot-f1": f1,
+        }
+    )
+
+    return metrics
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("please provide path to gold data and predicted output")
+        exit(1)
+    gold_ners = readNlu(sys.argv[1])
+    pred_ners = readNlu(sys.argv[2])
+    span_f1(gold_ners, pred_ners)

@@ -481,20 +481,37 @@ class Preprocess:
         return data_X, data_y
 
 
+def get_labels(
+    gt_data: list[list[tuple[str]]],
+):
+    """
+    Justr retursn labels, instead of tags
+    """
+    return [labels for _, labels in gt_data]
+
+
+def preds_to_tags(idx2word, pred_labels: torch.Tensor, gt_data: list[list[tuple[str]]]):
+    """
+    Converts the predicted labels to tags.
+    """
+    global_labels = []
+    for (_, placeholder), labels_idxs in zip(gt_data, pred_labels):
+        labels = []
+
+        for i in range(len(placeholder)):
+            labels.append(idx2word[labels_idxs[i]])
+        global_labels += labels
+    return global_labels
+
+
 def prepare_output_file(
     transformer: Preprocess,
-    data: list,
+    gt_data: list[list[tuple[str]]],
     pred_labels: torch.Tensor,
     input_file: str,
     output_file: str,
 ):
-    global_labels = []
-    for (_, placeholder), labels_idxs in zip(data, pred_labels):
-        labels = []
-
-        for i in range(len(placeholder)):
-            labels.append(transformer.vocab_tags.idx2word[labels_idxs[i]])
-        global_labels += labels
+    global_labels = preds_to_tags(transformer, pred_labels, gt_data)
 
     with (
         open(output_file, mode="w", encoding="utf-8") as f_out,
@@ -541,4 +558,5 @@ def transform_dataset(train_data, dev_data, test_data):
         test_y,
         idx2word,
         idx2label,
+        max_len,
     )

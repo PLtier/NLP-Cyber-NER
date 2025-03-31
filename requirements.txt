@@ -7,4 +7,6 @@ typer
 jsonlines
 torch
 numpy
+mlflow
+dagshub
 -e .
