@@ -533,9 +533,10 @@ def prepare_output_file(
     assert i == len(global_labels)
 
 
-def transform_dataset(train_data, dev_data, test_data):
+def transform_dataset(train_data, dev_data, test_data, return_dev_test_labels=False):
     """
     Uses bag of words to create a matrix of words and their tags.
+    Instead of returning a matrix of numbers for dev/test, it just returns the (human-readable) tags.
     """
     transformer = Preprocess()
     max_len = max([len(x[0]) for x in train_data])
@@ -548,6 +549,9 @@ def transform_dataset(train_data, dev_data, test_data):
 
     test_X, test_y = transformer.transform_prep_data(test_data, len(test_data), max_len)
     # here, the second variable doesn't hold true labels, as this is a test set. We need only to know the length of the sentences.
+    if return_dev_test_labels:
+        dev_y = get_labels(dev_data)
+        test_y = get_labels(test_data)
     return (
         train_X,
         train_y,
