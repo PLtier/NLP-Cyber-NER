@@ -271,9 +271,9 @@ def clean_dnrti(path: Path) -> None:
                 f_out.write("\n")
 
 
-def read_iob2_file(path, word_index=1, tag_index=2):
+def read_iob2_file(path, word_index=0, tag_index=1):
     """
-    read in conll file
+    read in conll file with no comments
 
     :param path: path to read from
     :returns: list with sequences of words and labels for each sentence
@@ -286,8 +286,9 @@ def read_iob2_file(path, word_index=1, tag_index=2):
         line = line.strip()
 
         if line:
-            if line[0] == "#":
-                continue  # skip comments
+            # if line[0] == "#" and len(line.split()) == 1:
+            # continue  # skip comments
+            # TODO: introduce comments, such that hashtags don't break
             tok = line.split()
 
             current_words.append(tok[word_index])
@@ -319,8 +320,6 @@ def read_cyner(path, word_index=0, tag_index=1):
         line = line.strip()
 
         if line:
-            if line[0] == "#":
-                continue  # skip comments
             tok = line.split()
 
             current_words.append(tok[word_index])
