@@ -499,7 +499,7 @@ def preds_to_tags(idx2word, pred_labels: torch.Tensor, gt_data: list[list[tuple[
 
         for i in range(len(placeholder)):
             labels.append(idx2word[labels_idxs[i]])
-        global_labels += labels
+        global_labels.append(labels)
     return global_labels
 
 
