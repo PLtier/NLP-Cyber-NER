@@ -1,9 +1,9 @@
-from os import truncate
 from pathlib import Path
 
 import jsonlines
-from numpy.random import f
 import torch
+
+from nlp_cyber_ner.config import PROCESSED_DATA_DIR
 
 aptner_labels = set(
     [
@@ -478,6 +478,32 @@ class Preprocess:
                 data_X[i, j] = self.vocab_words.getIdx(word=word, add=False)
                 data_y[i, j] = self.vocab_tags.getIdx(word=sentence_tags[1][j], add=False)
         return data_X, data_y
+
+
+def unify_labels_cyner(path: Path) -> None:
+    """
+    Indicator -> O
+    """
+    with (
+        open(path, "r", encoding="utf-8") as f,
+        open(
+            PROCESSED_DATA_DIR / "cyner" / path.with_suffix(".unified").name, "w", encoding="utf-8"
+        ) as f_out,
+    ):
+        for line in f:
+            line = line.strip()
+            if line:
+                tok = line.split()
+                assert len(tok) == 2
+                new_tag = tok[1]
+                if tok[1] != "O":
+                    prefix, label = tok[1].split("-")
+                    if label == "Indicator":
+                        label = "O"
+                        new_tag = f"{prefix}-{label}"
+                f_out.write(f"{tok[0]} {new_tag}\n")
+            else:
+                f_out.write("\n")
 
 
 def get_labels(
