@@ -454,8 +454,8 @@ class Preprocess:
         self.vocab_tags = Vocab()
 
     def build_vocab(self, data, instances, features):
-        data_X = torch.zeros(instances, features, dtype=torch.int)
-        data_y = torch.zeros(instances, features, dtype=torch.int)
+        data_X = torch.zeros(instances, features, dtype=torch.long)
+        data_y = torch.zeros(instances, features, dtype=torch.long)
         for i, sentence_tags in enumerate(data):
             for j, word in enumerate(sentence_tags[0]):
                 data_X[i, j] = self.vocab_words.getIdx(word=word, add=True)
@@ -470,8 +470,8 @@ class Preprocess:
 
     def transform_prep_data(self, data, instances, n_max_feats: int):
         # to be used only on dev data
-        data_X = torch.zeros(instances, n_max_feats, dtype=torch.int)
-        data_y = torch.zeros(instances, n_max_feats, dtype=torch.int)
+        data_X = torch.zeros(instances, n_max_feats, dtype=torch.long)
+        data_y = torch.zeros(instances, n_max_feats, dtype=torch.long)
         for i, sentence_tags in enumerate(data):
             truncated_sentence = sentence_tags[0][:n_max_feats]
             for j, word in enumerate(truncated_sentence):
