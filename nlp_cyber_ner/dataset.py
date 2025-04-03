@@ -515,28 +515,28 @@ def get_labels(
     return [labels for _, labels in gt_data]
 
 
-def preds_to_tags(idx2word, pred_labels: torch.Tensor, gt_data: list[list[tuple[str]]]):
+def preds_to_tags(idx2label, gt_labels: list[tuple[str]], pred_labels: torch.Tensor):
     """
     Converts the predicted labels to tags.
     """
     global_labels = []
-    for (_, placeholder), labels_idxs in zip(gt_data, pred_labels):
-        labels = []
+    for placeholder, labels_idxs in zip(gt_labels, pred_labels):
+        labels = ["O"] * len(placeholder)
 
-        for i in range(len(placeholder)):
-            labels.append(idx2word[labels_idxs[i]])
+        for i in range(min(len(labels_idxs), len(placeholder))):
+            labels[i] = idx2label[labels_idxs[i]]
         global_labels.append(labels)
     return global_labels
 
 
 def prepare_output_file(
     transformer: Preprocess,
-    gt_data: list[list[tuple[str]]],
+    gt_labels: list[tuple[str]],
     pred_labels: torch.Tensor,
     input_file: str,
     output_file: str,
 ):
-    global_labels = preds_to_tags(transformer, pred_labels, gt_data)
+    global_labels = preds_to_tags(transformer, gt_labels, pred_labels)
 
     with (
         open(output_file, mode="w", encoding="utf-8") as f_out,
