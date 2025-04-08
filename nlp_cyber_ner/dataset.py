@@ -567,9 +567,7 @@ def unify_labels_cyner(path: Path) -> None:
                 if current_tag != "O":
                     _, label = current_tag.split("-")
                     if label == "Indicator":
-                        label = "O"
-                        new_tag = f"{current_tag}-{label}"
-                        current_tag = new_tag
+                        current_tag = "O"
                 f_out.write(f"{tok[0]} {current_tag}\n")
             else:
                 f_out.write("\n")
