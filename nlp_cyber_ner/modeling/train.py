@@ -241,16 +241,17 @@ dev_packs = [
 ]
 
 for train_pack_name, train_data in train_packs:
-    transformer = Preprocess()
-    max_len = max([len(x[0]) for x in train_data])
-
-    train_X, train_y, idx2word, idx2label = transformer.build_vocab(
-        train_data, len(train_data), max_len
-    )
-
-    model = train(train_X, train_y, idx2word, idx2label, max_len)
-
     for dev_pack_name, dev_data in dev_packs:
+        train_data, _ = remove_leakage(train_data, dev_data)
+        transformer = Preprocess()
+        max_len = max([len(x[0]) for x in train_data])
+
+        train_X, train_y, idx2word, idx2label = transformer.build_vocab(
+            train_data, len(train_data), max_len
+        )
+
+        model = train(train_X, train_y, idx2word, idx2label, max_len)
+
         dev_X, _ = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
         dev_tokens, dev_labels = list(zip(*dev_data))
 
