@@ -563,13 +563,14 @@ def unify_labels_cyner(path: Path) -> None:
             if line:
                 tok = line.split()
                 assert len(tok) == 2
-                new_tag = tok[1]
-                if tok[1] != "O":
-                    prefix, label = tok[1].split("-")
+                current_tag = tok[1]
+                if current_tag != "O":
+                    _, label = current_tag.split("-")
                     if label == "Indicator":
                         label = "O"
-                        new_tag = f"{prefix}-{label}"
-                f_out.write(f"{tok[0]} {new_tag}\n")
+                        new_tag = f"{current_tag}-{label}"
+                        current_tag = new_tag
+                f_out.write(f"{tok[0]} {current_tag}\n")
             else:
                 f_out.write("\n")
 
