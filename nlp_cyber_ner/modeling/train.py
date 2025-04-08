@@ -252,3 +252,11 @@ for train_pack_name, train_data in train_packs:
             metrics = evaluate(model, dev_X, dev_y, idx2label)
             mlflow.log_params(hyperparams)
             mlflow.log_metrics(metrics)
+            mlflow.log_params(
+                {
+                    "train_size": train_X.shape[0],
+                    "train_input_size": train_X.shape[1],
+                    "dev_size": dev_X.shape[0],
+                    "dev_input_size": dev_X.shape[1],
+                }
+            )
