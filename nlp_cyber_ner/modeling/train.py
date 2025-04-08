@@ -5,8 +5,14 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
-from nlp_cyber_ner.config import PROCESSED_DATA_DIR, load_dotenv
-from nlp_cyber_ner.dataset import Preprocess, get_labels, preds_to_tags, read_iob2_file
+from nlp_cyber_ner.config import DATA_DIR, PROCESSED_DATA_DIR, load_dotenv
+from nlp_cyber_ner.dataset import (
+    Preprocess,
+    list_to_conll,
+    preds_to_tags,
+    read_iob2_file,
+    remove_leakage,
+)
 from nlp_cyber_ner.span_f1 import span_f1
 
 end_labels = {
@@ -175,14 +181,14 @@ def train(
     return model
 
 
-def evaluate(
+def test_pass(
     model: TaggerModel,
     dev_X: torch.Tensor,
-    dev_labels: list[tuple[str]],
-    idx2label: list[str],
-) -> dict[str, float]:
+    return_labels_idx: bool = True,
+) -> torch.Tensor:
     """
-    Span F1 evaluation function.
+    Performs forward pass on the model and returns the predictions.
+    if return_labels is True, returns the labels, instead of probabilities.
     """
     all_predictions = []
 
@@ -192,26 +198,31 @@ def evaluate(
     with torch.no_grad():
         for (batch_dev,) in dev_loader:
             batch_dev = batch_dev.to(device)  # run on cuda if possible
-            predictions_dev = model.forward(batch_dev)
-
-            all_predictions.append(predictions_dev.cpu())
+            batch_probas_dev = model.forward(batch_dev)
+            all_predictions.append(batch_probas_dev.cpu())
 
     # eval using Span_F1
-    predictions_dev = torch.cat(all_predictions, dim=0)
-    print(predictions_dev.shape)
-    labels_dev = torch.argmax(predictions_dev, 2)
-    print(labels_dev.shape)
 
-    labels_dev = preds_to_tags(idx2label, dev_labels, labels_dev)
-
-    metrics = span_f1(dev_labels, labels_dev)
-
+    # to minimise memory usage, we delete the model and dev_X, even though it takes performance hit
     del dev_X
-    del predictions_dev
-    del labels_dev
     del model
     gc.collect()
     torch.cuda.empty_cache()
+
+    probas_dev = torch.cat(all_predictions, dim=0)
+    if not return_labels_idx:
+        return probas_dev
+    else:
+        labels_idx_dev = torch.argmax(probas_dev, 2)
+        return labels_idx_dev
+
+
+def evaluate(
+    gt_labels: list,
+    pred_labels: list,
+):
+    metrics = span_f1(gt_labels, pred_labels)
+
     return metrics
 
 
@@ -241,15 +252,20 @@ for train_pack_name, train_data in train_packs:
 
     for dev_pack_name, dev_data in dev_packs:
         dev_X, _ = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
-        dev_y = get_labels(dev_data)
+        dev_tokens, dev_labels = list(zip(*dev_data))
 
         name: str = f"train-{train_pack_name}-eval-{dev_pack_name}"
 
         # train_X, train_y, dev_X, dev_y, test_X, test_y, idx2word, idx2label, max_len = train_pack
         mlflow.set_experiment(name)
         with mlflow.start_run(run_name=name):
-            assert isinstance(dev_y, list), "Dev y is not a list!"
-            metrics = evaluate(model, dev_X, dev_y, idx2label)
+            assert isinstance(dev_labels, list), "Dev y is not a list!"
+
+            pred_labels_idx_dev = test_pass(model, dev_X, return_labels_idx=True)
+
+            labels_dev = preds_to_tags(idx2label, dev_labels, pred_labels_idx_dev)
+
+            metrics = evaluate(dev_labels, labels_dev)
             mlflow.log_params(hyperparams)
             mlflow.log_metrics(metrics)
             mlflow.log_params(
