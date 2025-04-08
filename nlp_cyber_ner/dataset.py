@@ -415,6 +415,7 @@ def read_dnrti(path: Path, word_index=0, tag_index=1):
         data.append((current_words, current_tags))
     return data
 
+
 def remove_leakage(train_data, test_data):
     """
     Removes sentences from train_data that also appear in test_data,
@@ -436,11 +437,15 @@ def remove_leakage(train_data, test_data):
 
 # Makes sure that DEV and train remoain separate
 def prepare_cross_dataset(
-    train_reader, dev_reader, test_reader,
-    train_path, dev_path, test_path,
+    train_reader,
+    dev_reader,
+    test_reader,
+    train_path,
+    dev_path,
+    test_path,
     remove_leakage_from_test=True,
     dev_split_ratio=None,
-    reader_kwargs=None
+    reader_kwargs=None,
 ):
     reader_kwargs = reader_kwargs or {}
 
@@ -451,24 +456,32 @@ def prepare_cross_dataset(
     if remove_leakage_from_test:
         train_data, removed_train = remove_leakage(train_data, test_data)
         dev_data, removed_dev = remove_leakage(dev_data, test_data)
-        print(f"Removed {len(removed_train)} train and {len(removed_dev)} dev overlapping sentences.")
+        print(
+            f"Removed {len(removed_train)} train and {len(removed_dev)} dev overlapping sentences."
+        )
 
     # Optional re-split
     if dev_split_ratio:
         combined_train = train_data + dev_data  # only combine if you're resplitting
-        train_data, dev_data = train_test_split(combined_train, test_size=dev_split_ratio, random_state=42)
+        train_data, dev_data = train_test_split(
+            combined_train, test_size=dev_split_ratio, random_state=42
+        )
 
     # Preprocessing
     transformer = Preprocess()
     max_len = max(len(x[0]) for x in train_data)
-    train_X, train_y, idx2word, idx2label = transformer.build_vocab(train_data, len(train_data), max_len)
+    train_X, train_y, idx2word, idx2label = transformer.build_vocab(
+        train_data, len(train_data), max_len
+    )
 
-    dev_X, dev_y = transformer.transform_prep_data(dev_data, len(dev_data), max_len) if dev_data else (None, None)
+    dev_X, dev_y = (
+        transformer.transform_prep_data(dev_data, len(dev_data), max_len)
+        if dev_data
+        else (None, None)
+    )
     test_X, test_y = transformer.transform_prep_data(test_data, len(test_data), max_len)
 
     return transformer, train_X, train_y, dev_X, dev_y, test_X, test_y, idx2word, idx2label
-
-
 
 
 class Vocab:
