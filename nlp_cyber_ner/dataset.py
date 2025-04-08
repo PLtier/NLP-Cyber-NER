@@ -583,18 +583,44 @@ def get_labels(
     return [labels for _, labels in gt_data]
 
 
-def preds_to_tags(idx2label, gt_labels: list[tuple[str]], pred_labels: torch.Tensor):
+def preds_to_tags(
+    idx2label: list[str], gt_labels: list[tuple[str]], pred_labels: torch.Tensor
+) -> list[list[str]]:
     """
-    Converts the predicted labels to tags.
+    Given indicies of predictions, returns the tags.
+    gt_labels are only used in order to determine the length of the sentences.
+    Important: if the sentence was longer than input, it truncates the sentence to the length of the input.
+    See the
     """
-    global_labels = []
+    global_labels: list[list[str]] = []
     for placeholder, labels_idxs in zip(gt_labels, pred_labels):
         labels = ["O"] * len(placeholder)
 
-        for i in range(min(len(labels_idxs), len(placeholder))):
+        max_len = min(len(labels_idxs), len(placeholder))
+        for i in range(max_len):
             labels[i] = idx2label[labels_idxs[i]]
         global_labels.append(labels)
     return global_labels
+
+
+def list_to_conll(
+    tokens: list[list[str]],
+    tags: list[list[str]],
+    output_file: str | Path,
+) -> Path:
+    """
+    Saves tokens and tags to a conll file.
+    Returns path.
+    """
+    assert [len(x) for x in tokens] == [len(x) for x in tags], (
+        "Tokens and tags have different lengths!"
+    )
+    with open(output_file, mode="w", encoding="utf-8") as f_out:
+        for token, tag in zip(tokens, tags):
+            for t, l in zip(token, tag):
+                f_out.write(f"{t} {l}\n")
+            f_out.write("\n")
+    return Path(output_file)
 
 
 def prepare_output_file(

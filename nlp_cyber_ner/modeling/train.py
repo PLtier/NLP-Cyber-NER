@@ -267,6 +267,11 @@ for train_pack_name, train_data in train_packs:
             labels_dev = preds_to_tags(idx2label, dev_labels, pred_labels_idx_dev)
 
             metrics = evaluate(dev_labels, labels_dev)
+
+            store_preds_path = DATA_DIR / "predictions" / f"{name}.json"
+
+            list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
+
             mlflow.log_params(hyperparams)
             mlflow.log_metrics(metrics)
             mlflow.log_params(
@@ -277,3 +282,4 @@ for train_pack_name, train_data in train_packs:
                     "dev_input_size": dev_X.shape[1],
                 }
             )
+            mlflow.log_artifact(str(store_preds_path), artifact_path="predictions")
