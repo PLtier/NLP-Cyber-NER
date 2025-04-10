@@ -280,8 +280,11 @@ for train_pack_name, train_data in train_packs:
             metrics = evaluate(dev_labels, labels_dev)
 
             store_preds_path = DATA_DIR / "predictions" / f"{name}.txt"
+            store_trains_path = DATA_DIR / "train" / f"{name}.txt"
 
             list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
+            train_tokens, train_labels = list(zip(*train_data))
+            list_to_conll(train_tokens, train_labels, store_trains_path)  # type: ignore
 
             mlflow.log_params(hyperparams)
             mlflow.log_metrics(metrics)
@@ -294,3 +297,4 @@ for train_pack_name, train_data in train_packs:
                 }
             )
             mlflow.log_artifact(str(store_preds_path), artifact_path="predictions")
+            mlflow.log_artifact(str(store_trains_path), artifact_path="train")
