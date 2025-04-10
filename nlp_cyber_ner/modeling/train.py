@@ -27,6 +27,7 @@ end_labels = {
     "B-Malware",
 }
 
+print('goes well')
 cyner_path = PROCESSED_DATA_DIR / "cyner"
 cyner_train_path = cyner_path / "train.unified"
 cyner_dev_path = cyner_path / "valid.unified"
@@ -39,6 +40,7 @@ A = set(tag for _, tags in cyner_train_data for tag in tags)
 B = set(tag for _, tags in cyner_dev_data for tag in tags)
 C = set(tag for _, tags in cyner_test_data for tag in tags)
 assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
+print("cyner loaded")
 
 aptner_path = PROCESSED_DATA_DIR / "APTNer"
 aptner_train_path = aptner_path / "APTNERtrain.unified"
@@ -51,6 +53,7 @@ A = set(tag for _, tags in aptner_train_data for tag in tags)
 B = set(tag for _, tags in aptner_dev_data for tag in tags)
 C = set(tag for _, tags in aptner_test_data for tag in tags)
 assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
+print("aptner loaded")
 
 attackner_path = PROCESSED_DATA_DIR / "attackner"
 attackner_train_path = attackner_path / "train.unified"
@@ -65,6 +68,7 @@ C = set(tag for _, tags in attackner_test_data for tag in tags)
 assert A == B == C == end_labels, (
     "The labels in the train_data, dev_data and test_data sets are not the same."
 )
+print("attackner loaded")
 
 dnrti_path = PROCESSED_DATA_DIR / "dnrti"
 dnrti_train_path = dnrti_path / "train.unified"
@@ -78,9 +82,11 @@ A = set(tag for _, tags in dnrti_train_data for tag in tags)
 B = set(tag for _, tags in dnrti_dev_data for tag in tags)
 C = set(tag for _, tags in dnrti_test_data for tag in tags)
 assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
+print("dnrti loaded")
 
 load_dotenv()
 mlflow.set_tracking_uri("https://dagshub.com/PLtier/NLP-Cyber-NER.mlflow")
+print("mlflow and load dotenv loaded")
 
 BATCH_SIZE = 32
 DIM_EMBEDDING = 100
@@ -101,7 +107,6 @@ hyperparams = {
 class TaggerModel(torch.nn.Module):
     def __init__(self, nwords, ntags):
         super().__init__()
-        # TODO Do Bidirectional LSTM
         self.embed = nn.Embedding(nwords, DIM_EMBEDDING)
         self.drop1 = nn.Dropout(p=0.5)
         self.lstm = nn.LSTM(DIM_EMBEDDING, LSTM_HIDDEN, batch_first=True, bidirectional=True)
@@ -249,18 +254,19 @@ for train_pack_name, train_data in train_packs:
         train_X, train_y, idx2word, idx2label = transformer.build_vocab(
             train_data, len(train_data), max_len
         )
-
+        
+        name: str = f"train-{train_pack_name}-eval-{dev_pack_name}"
+        print(f"train {name}")
         model = train(train_X, train_y, idx2word, idx2label, max_len)
 
         dev_X, _ = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
         dev_tokens, dev_labels = list(zip(*dev_data))
 
-        name: str = f"train-{train_pack_name}-eval-{dev_pack_name}"
 
         # train_X, train_y, dev_X, dev_y, test_X, test_y, idx2word, idx2label, max_len = train_pack
         mlflow.set_experiment(name)
         with mlflow.start_run(run_name=name):
-            assert isinstance(dev_labels, list), "Dev y is not a list!"
+            assert isinstance(dev_labels, tuple), "Dev y is not a list!"
 
             pred_labels_idx_dev = test_pass(model, dev_X, return_labels_idx=True)
 
@@ -268,7 +274,7 @@ for train_pack_name, train_data in train_packs:
 
             metrics = evaluate(dev_labels, labels_dev)
 
-            store_preds_path = DATA_DIR / "predictions" / f"{name}.json"
+            store_preds_path = DATA_DIR / "predictions" / f"{name}.txt"
 
             list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
 
