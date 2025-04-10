@@ -15,6 +15,8 @@ from nlp_cyber_ner.dataset import (
 )
 from nlp_cyber_ner.span_f1 import span_f1
 
+MAX_LEN = 120
+
 end_labels = {
     "B-Organization",
     "O",
@@ -27,7 +29,7 @@ end_labels = {
     "B-Malware",
 }
 
-print('goes well')
+print("goes well")
 cyner_path = PROCESSED_DATA_DIR / "cyner"
 cyner_train_path = cyner_path / "train.unified"
 cyner_dev_path = cyner_path / "valid.unified"
@@ -132,7 +134,7 @@ def train(
     train_y: torch.Tensor,
     idx2word: list[str],
     idx2label: list[str],
-    max_len: int,
+    input_size: int,
 ) -> TaggerModel:
     train_dataset = TensorDataset(train_X, train_y)
     train_loader = DataLoader(train_dataset, BATCH_SIZE)  # drop_last=True
@@ -166,7 +168,7 @@ def train(
 
             # calculate loss
             loss = loss_function(
-                predicted_values.view(batch_X.shape[0] * max_len, -1), batch_y.flatten()
+                predicted_values.view(batch_X.shape[0] * input_size, -1), batch_y.flatten()
             )  # TODO: Input
             loss_sum += loss.item()  # avg later
 
@@ -249,19 +251,22 @@ for train_pack_name, train_data in train_packs:
     for dev_pack_name, dev_data in dev_packs:
         train_data, _ = remove_leakage(train_data, dev_data)
         transformer = Preprocess()
-        max_len = max([len(x[0]) for x in train_data])
 
+        max_len = MAX_LEN
+        # can use obtained from train, but in order to make models more comparable, make them the same.
+        # max_len = max([len(x[0]) for x in train_data])
+
+        # input_size = max_len
         train_X, train_y, idx2word, idx2label = transformer.build_vocab(
             train_data, len(train_data), max_len
         )
-        
+
         name: str = f"train-{train_pack_name}-eval-{dev_pack_name}"
         print(f"train {name}")
-        model = train(train_X, train_y, idx2word, idx2label, max_len)
+        model = train(train_X, train_y, idx2word, idx2label, input_size=max_len)
 
         dev_X, _ = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
         dev_tokens, dev_labels = list(zip(*dev_data))
-
 
         # train_X, train_y, dev_X, dev_y, test_X, test_y, idx2word, idx2label, max_len = train_pack
         mlflow.set_experiment(name)

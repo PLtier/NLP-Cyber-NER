@@ -3,7 +3,7 @@ from pathlib import Path
 import jsonlines
 import torch
 
-from nlp_cyber_ner.config import PROCESSED_DATA_DIR
+from nlp_cyber_ner.config import INTERIM_DATA_DIR, PROCESSED_DATA_DIR
 
 aptner_labels = set(
     [
@@ -86,7 +86,11 @@ def clean_aptner(path: Path) -> None:
     """
     with (
         open(path, "r", encoding="utf-8") as f,
-        open(path.with_suffix(".cleaned"), "w", encoding="utf-8") as f_out,
+        open(
+            INTERIM_DATA_DIR / "APTNer" / path.with_suffix(".cleaned").name,
+            "w",
+            encoding="utf-8",
+        ) as f_out,
     ):
         for line in f:
             line = line.strip()
@@ -121,7 +125,11 @@ def unify_labels_aptner(path: Path) -> None:
 
     with (
         open(path, "r", encoding="utf-8") as f,
-        open(path.with_suffix(".unified"), "w", encoding="utf-8") as f_out,
+        open(
+            PROCESSED_DATA_DIR / "APTNer" / path.with_suffix(".unified").name,
+            "w",
+            encoding="utf-8",
+        ) as f_out,
     ):
         for line in f:
             line = line.strip()
@@ -521,9 +529,9 @@ class Preprocess:
         self.vocab_words = Vocab()
         self.vocab_tags = Vocab()
 
-    def build_vocab(self, data, instances, features):
-        data_X = torch.zeros(instances, features, dtype=torch.long)
-        data_y = torch.zeros(instances, features, dtype=torch.long)
+    def build_vocab(self, data, instances, n_features):
+        data_X = torch.zeros(instances, n_features, dtype=torch.long)
+        data_y = torch.zeros(instances, n_features, dtype=torch.long)
         for i, sentence_tags in enumerate(data):
             for j, word in enumerate(sentence_tags[0]):
                 data_X[i, j] = self.vocab_words.getIdx(word=word, add=True)
@@ -629,7 +637,7 @@ def prepare_output_file(
     input_file: str,
     output_file: str,
 ):
-    global_labels = preds_to_tags(transformer, gt_labels, pred_labels)
+    global_labels = preds_to_tags(transformer, gt_labels, pred_labels)  # TODO: to be adjusted.
 
     with (
         open(output_file, mode="w", encoding="utf-8") as f_out,
