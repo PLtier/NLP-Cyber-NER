@@ -285,7 +285,7 @@ for train_pack_name, train_data in train_packs:
                     "train_size": train_X.shape[0],
                     "train_input_size": train_X.shape[1],
                     "dev_size": dev_X.shape[0],
-                    "dev_input_size": dev_X.shape[1],
+                    "dev_input_size": max(len(x[0]) for x in dev_data),
                 }
             )
             mlflow.log_artifact(str(store_preds_path), artifact_path="predictions")
