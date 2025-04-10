@@ -583,7 +583,7 @@ def get_labels(
 
 
 def preds_to_tags(
-    idx2label: list[str], gt_labels: list[tuple[str]], pred_labels: torch.Tensor
+    idx2label: list[str], gt_labels: tuple[list[str]], pred_labels: torch.Tensor
 ) -> list[list[str]]:
     """
     Given indicies of predictions, returns the tags.

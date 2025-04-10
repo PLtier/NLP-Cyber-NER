@@ -223,7 +223,7 @@ def test_pass(
 
 
 def evaluate(
-    gt_labels: list,
+    gt_labels: tuple,
     pred_labels: list,
 ):
     metrics = span_f1(gt_labels, pred_labels)
