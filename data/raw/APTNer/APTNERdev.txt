@@ -6,6 +6,7 @@ AES S-ENCR
 for O
 encryption O
 . O
+
 ( O
 with O
 ECB B-ENCR
@@ -141,9 +142,7 @@ version O
 but O
 must O
 compelling O
-: O
-
-Quasar B-MAL
+: OQuasar B-MAL
 version I-MAL
 1.1.0.0 E-MAL
 names O
@@ -443,9 +442,7 @@ Our O
 solution O
 is O
 to O
-: O
-
-Translate O
+: OTranslate O
 on O
 the O
 fly O
@@ -586,6 +583,7 @@ sends O
 a O
 command O
 . O
+
 for O
 example O
 , O
@@ -780,9 +778,7 @@ GUI E-TOOL
 for O
 each O
 client O
-: O
-
-Get O
+: OGet O
 system O
 information O
 . O
@@ -1249,9 +1245,7 @@ path O
 “ O
 ..\..\ B-FILE
 secret_info.doc E-FILE
-” O
-
-will O
+” Owill O
 result O
 in O
 writing O
@@ -1846,18 +1840,14 @@ typically O
 { O
 “mth O
 ” O
-: O
-
-” O
+: O” O
 some_method O
 ” O
 , O
 “ O
 data O
 ” O
-: O
-
-” O
+: O” O
 some_encrypted_data O
 ” O
 } O
@@ -2287,9 +2277,7 @@ a O
 few O
 other O
 commands O
-: O
-
-Check O
+: OCheck O
 if O
 the O
 computer O
@@ -2338,6 +2326,7 @@ the O
 associated O
 executable O
 . O
+
 “ O
 Setup O
 ” O
@@ -2384,9 +2373,7 @@ used O
 in O
 this O
 attack O
-: O
-
-WildFire S-TOOL
+: OWildFire S-TOOL
 properly O
 classifies O
 these O
@@ -3263,6 +3250,7 @@ the O
 PowerShell B-TOOL
 script E-TOOL
 . O
+
 njRAT S-MAL
 is O
 a O
@@ -3936,26 +3924,31 @@ this O
 attack O
 campaign O
 . O
+
 14b9d54f07f3facf1240c5ba89aa2410 S-FILE
 ( O
 googleupdate.exe S-FILE
 ) O
 . O
+
 2b0bd7e43c1f98f9db804011a54c11d6 S-FILE
 ( O
 malib.dll S-FILE
 ) O
 . O
+
 feec4b571756e8c015c884cb5441166b S-FILE
 ( O
 msccvs.dll S-FILE
 ) O
 . O
+
 84d9d0524e14d9ab5f88bbce6d2d2582 S-FILE
 ( O
 officeupdate.exe S-FILE
 ) O
 . O
+
 khanji.ddns.net S-DOM
 139.190.6.180 S-IP
 39.40.141.25 S-IP
@@ -3963,9 +3956,11 @@ khanji.ddns.net S-DOM
 39.40.44.245 S-IP
 39.40.67.219 S-IP
 . O
+
 http://pastebin.com/raw/5j4hc8gT S-URL
 http://pastebin.com/raw/6bwniBtB S-URL
 . O
+
 028caf3b1f5174ae092ecf435c1fccc2 S-FILE
 7732d5349a0cfa1c3e4bcfa0c06949e4 S-FILE
 9909f8558209449348a817f297429a48 S-FILE
@@ -4258,9 +4253,7 @@ work O
 on O
 this O
 subject O
-in O
-
-“ O
+in O“ O
 Pulling O
 Back O
 the O
@@ -4854,9 +4847,7 @@ is O
 downloading O
 a O
 payload O
-: O
-
-http://ditetec.com S-DOM/ts.exe S-FILE
+: Ohttp://ditetec.com S-DOM/ts.exe S-FILE
 http://ditetec.com S-DOM/u2.exe S-FILE
 http://domass.com.ua S-DOM/index.gif S-FILE
 http://firop.com S-DOM/ego.exe S-FILE
@@ -4977,52 +4968,63 @@ of O
 this O
 writing O
 . O
+
 29c7740f487a461a96fad1c8db3921ccca8cc3e7548d44016da64cf402a475ad S-SHA2
 2016-12-10 B-TIME
 01 E-TIME
 . O
+
 d5e56b9b5f52293b209a60c2ccd0ade6c883f9d3ec09571a336a3a4d4c79134b S-SHA2
 2016-12-10 B-TIME
 03 E-TIME
 C:\RAMDrive\Charles\heaven\reams\Teac.pdb O
 . O
+
 dd5f237153856d19cf20e80ff8238ca42047113c44fae27b5c3ad00be2755eea S-SHA2
 2016-12-10 B-TIME
 16 E-TIME
 C:\Cleaner\amuse\rang\AutoPopulate\la.pdb O
 . O
+
 a5001e9b29078f532b1a094c8c16226d20c03922e37a4fca2e9172350bc160a0 S-SHA2
 2016-12-20 B-TIME
 18 E-TIME
 . O
+
 8284ec768a06b606044defe2c2da708ca6b3b51f8e58cb66f61bfca56157bc88 S-SHA2
 2017-07-05 B-TIME
 10 E-TIME
 . O
+
 f0ce51eb0e6c33fdb8e1ccb36b9f42139c1dfc58d243195aedc869c7551a5f89 S-SHA2
 2017-07-09 B-TIME
 20 E-TIME
 C:\TableAdapter\encyclopedia\Parik.pdb O
 . O
+
 145d47f4c79206c6c9f74b0ab76c33ad0fd40ac6724b4fac6f06afec47b307c6 S-SHA2
 2017-07-10 B-TIME
 08 E-TIME
 C:\ayakhnin\reprductive\distortedc.pdb O
 . O
+
 dc8f34829d5fede991b478cf9117fb18c32d639573a827227b2fc50f0b475085 S-SHA2
 2017-07-11 B-TIME
 01 E-TIME
 C:\positioning\scrapping\Szets\thi.pdb O
 . O
+
 7fe1069c118611113b4e34685e7ee58cb469bda4aa66a22db10842c95f332c77 S-SHA2
 2017-07-11 B-TIME
 02 E-TIME
 C:\NeXT\volatile\legacyExchangeDNs.pdb O
 . O
+
 5edf117e7f8cd176b1efd0b5fd40c6cd530699e7a280c5c7113d06e9c21d6976 S-SHA2
 2017-07-12 B-TIME
 23 E-TIME
 . O
+
 2a80fdda87127bdc56fd35c3e04eb64a01a159b7b574177e2e346439c97b770a S-SHA2
 2017-07-13 B-TIME
 00. E-TIME
@@ -5030,92 +5032,112 @@ a9021e253ae52122cbcc2284b88270ceda8ad9647515d6cca96db264a76583f5 S-SHA2
 2017-07-18 B-TIME
 00 E-TIME
 . O
+
 dd639d76ff6f33bbfaf3bd398056cf4e95e27822bd9476340c7703f5b38e0183 S-SHA2
 2017-07-18 B-TIME
 00 E-TIME
 . O
+
 e5a00b49d4ab3e5a3a8f60278b9295f3d252e3e04dadec2624bb4dcb2eb0fada S-SHA2
 2017-07-24 B-TIME
 17 E-TIME
 . O
+
 6263730ef54fbed0c2d3a7c6106b6e8b12a6b2855a03e7caa8fb184ed1eabeb2 S-SHA2
 2017-07-24 B-TIME
 22 E-TIME
 C:\Snapshot\Diskette\hiding\ROCKMA.pdb O
 . O
+
 43bfaf9a2a4d46695bb313a32d88586c510d040844f29852c755845a5a09d9df S-SHA2
 2017-07-25 B-TIME
 06 E-TIME
 . O
+
 b41660db6dcb0d3c7b17f98eae3141924c8c0ee980501ce541b42dc766f85628 S-SHA2
 2017-07-25 B-TIME
 06 E-TIME
 C:\mdb\Changed\Container\praise.pdb O
 . O
+
 9acdad02ca8ded6043ab52b4a7fb2baac3a08c9f978ce9da2eb51c816a9e7a2e S-SHA2
 2017-07-25 B-TIME
 07 E-TIME
 . O
+
 2ddaa30ba3c3e625e21eb7ce7b93671ad53326ef8b6e2bc20bc0d2de72a3929d S-SHA2
 2017-07-25 B-TIME
 20 E-TIME
 C:\helpers\better\Expr\Eight\DS.pdb O
 . O
+
 b836576877b2fcb3cacec370e5e6a029431f59d5070da89d94200619641ca0c4 S-SHA2
 2017-07-26 B-TIME
 12 E-TIME
 C:\V\regard\violates\update\AMBW\a.pdb O
 . O
+
 0972fc9602b00595e1022d9cfe7e9c9530d4e9adb5786fea830324b3f7ff4448 S-SHA2
 2017-07-26 B-TIME
 20 E-TIME
 . O
+
 2c258ac862d5e31d8921b64cfa7e5a9cd95cca5643c9d51db4c2fcbe75fa957a S-SHA2
 2017-07-27 B-TIME
 01 E-TIME
 C:\executablery\constructed\IIc.pdb O
 . O
+
 dd9c558ba58ac81a2142ecb308ac8d0f044c7059a039d2e367024d953cd14a00 S-SHA2
 2017-07-27 B-TIME
 02 E-TIME
 . O
+
 cb3173a820ac392005de650bbd1dd24543a91e72d4d56300a7795e887a8323b2 S-SHA2
 2017-07-31 B-TIME
 14 E-TIME
 C:\letterbxing\EVP\Chices\legit.pdb O
 . O
+
 a636f49814ea6603534f780b83a5d0388f5a5d0eb848901e1e1bf2d19dd84f05 S-SHA2
 2017-07-31 B-TIME
 18 E-TIME
 C:\Biomuse\moment\705\cnvincing.pdb O
 . O
+
 677dd11912a0f13311d025f88caabeeeb1bda27c7c1b5c78cffca36de46e8560 S-SHA2
 2017-07-31 B-TIME
 21 E-TIME
 . O
+
 fdedf0f90d42d3779b07951d1e8826c7015b3f3e724ab89e350c9608e1f23852 S-SHA2
 2017-08-01 B-TIME
 21 E-TIME
 . O
+
 142bf7f47bfbd592583fbcfa22a25462df13da46451b17bb984d50ade68a5b17 S-SHA2
 2017-08-02 B-TIME
 09 E-TIME
 . O
+
 6f4b2c95b1a0f320da1b1eaa918c338c0bab5cddabe169f12ee734243ed8bba8 S-SHA2
 2017-08-02 B-TIME
 12 E-TIME
 C:\cataloging\Dr\VarianceShadows11.pdb O
 . O
+
 fd5fd7058cf157ea249d4dcba71331f0041b7cf8fd635f37ad13aed1b06bebf2 S-SHA2
 2017-08-04 B-TIME
 02 E-TIME
 C:\dumplings\That\BIT\Warez\loc.pdb O
 . O
+
 5785c2d68d6f669b96c3f31065f0d9804d2ab1f333a90d225bd993e66656b7d9 S-SHA2
 2017-08-07 B-TIME
 12 E-TIME
 C:\Lgisys\hypothesized\donatedc.pdb O
 . O
+
 675719a9366386034c285e99bf33a1a8bafc7644874b758f307d9a288e95bdbd S-SHA2
 2017-08-07 B-TIME
 17 E-TIME
@@ -5323,9 +5345,7 @@ below O
 set O
 of O
 domains O
-: O
-
-amellet.bit S-DOM
+: Oamellet.bit S-DOM
 danrnysvp.com S-DOM
 ejtmjealr.com S-DOM
 firop.com S-DOM
@@ -5430,9 +5450,7 @@ the O
 following O
 four O
 sites O
-: O
-
-ejtmjealr.com S-DOM
+: Oejtmjealr.com S-DOM
 gefinsioje.com S-DOM
 gesofgamd.com S-DOM
 ponedobla.bit S-DOM
@@ -5994,9 +6012,7 @@ Malware O
 Was O
 Inserted O
 Into O
-Networks O
-
-. O
+Networks O. O
 
 Researchers O
 from O
@@ -6409,9 +6425,7 @@ foothold O
 and O
 subsequent O
 operations O
-: O
-
-Attackers O
+: OAttackers O
 send O
 a O
 spear B-ACT
@@ -6623,20 +6637,21 @@ list O
 of O
 documents O
 included O
-: O
-
-cv.doc S-FILE
+: Ocv.doc S-FILE
 : O
 f4d18316e367a80e1005f38445421b1f S-MD5
 . O
+
 cv_itworx.doc S-FILE
 : O
 45b0e5a457222455384713905f886bd4 S-MD5
 . O
+
 cv_mci.doc S-FILE
 : O
 f4d18316e367a80e1005f38445421b1f S-MD5
 . O
+
 discount_voucher_codes.xlsm S-FILE
 : O
 19cea065aa033f5bcfa94a583ae59c08 S-MD5
@@ -6651,14 +6666,17 @@ Health_insurance_registration.doc S-FILE
 : O
 1b5e33e5a244d2d67d7a09c4ccf16e56 S-MD5
 . O
+
 job_titles.doc S-FILE
 : O
 fa72c068361c05da65bf2117db76aaa8 S-MD5
 . O
+
 job_titles_itworx.doc S-FILE
 : O
 43fad2d62bc23ffdc6d301571135222c S-MD5
 . O
+
 job_titles_mci.doc S-FILE
 : O
 ce25f1597836c28cf415394fb350ae93 S-MD5
@@ -6900,6 +6918,7 @@ Saudi O
 Arabia O
 ” O
 . O
+
 maps-modon.club S-URL
 : O
 The O
@@ -7598,6 +7617,7 @@ three O
 additional O
 samples O
 . O
+
 spear B-ACT
 phishing E-ACT
 : O
@@ -7605,6 +7625,7 @@ phishing E-ACT
 5e5ea1a67c2538dbc01df28e4ea87472 S-MD5
 d30b8468d16b631cafe458fd94cc3196 S-MD5
 . O
+
 spear B-ACT
 phishing E-ACT
 : O
@@ -7740,20 +7761,22 @@ related O
 to O
 this O
 domain O
-: O
-
-83be35956e5d409306a81e88a1dc89fd S-MD5
+: O83be35956e5d409306a81e88a1dc89fd S-MD5
 . O
+
 45.63.10.99 S-IP
 . O
+
 69.87.223.26 S-IP
 . O
 
 URLs B-IP
 go-microstf.com E-IP
 . O
+
 69.87.223.26:8080/eiloShaegae1 S-IP
 . O
+
 go-microstf.com/checkfile.aspx S-IP
 . O
 
@@ -7984,9 +8007,7 @@ for O
 this O
 version O
 were O
-: O
-
-Shamoon2 S-MAL
+: OShamoon2 S-MAL
 : O
 07d6406036d6e06dc8019e3ade6ee7de S-MD5
 . O
@@ -8243,9 +8264,7 @@ interesting O
 techniques O
 , O
 including O
-: O
-
-Customized B-TOOL
+: OCustomized B-TOOL
 evasion I-TOOL
 based I-TOOL
 on I-TOOL
@@ -8595,9 +8614,7 @@ can O
 observe O
 the O
 following O
-: O
-
-Active O
+: OActive O
 setup O
 : O
 StubPath O
@@ -9405,9 +9422,7 @@ applications O
 These O
 vulnerabilities O
 include O
-: O
-
-CVE-2015-6585 S-VULID
+: OCVE-2015-6585 S-VULID
 : O
 Hangul B-TOOL
 Word I-TOOL
@@ -10033,9 +10048,7 @@ systems O
 open O
 to O
 compromise O
-: O
-
-Patch O
+: OPatch O
 applications O
 and O
 operating O
@@ -11088,9 +11101,7 @@ Phantom O
 of O
 the O
 Opaera O
-: O
-
-New O
+: ONew O
 KASPERAGENT S-MAL
 Malware O
 Campaign O
@@ -11446,9 +11457,7 @@ files O
 display O
 “ O
 extended-capability O
-” O
-
-including O
+” Oincluding O
 the O
 functionality O
 to O
@@ -11469,9 +11478,7 @@ files O
 These O
 “ O
 extended-capability O
-” O
-
-samples O
+” Osamples O
 called O
 out O
 to O
@@ -11494,9 +11501,7 @@ KASPERAGENT S-MAL
 used O
 “ O
 Chrome S-TOOL
-” O
-
-as O
+” Oas O
 the O
 user O
 agent O
@@ -11508,9 +11513,7 @@ samples O
 use O
 “ O
 OPAERA O
-” O
-
-– O
+” O– O
 a O
 possible O
 misspelling O
@@ -11518,9 +11521,7 @@ of O
 the O
 “ O
 Opera S-TOOL
-” O
-
-– O
+” O– O
 browser O
 . O
 
@@ -11556,9 +11557,7 @@ agent O
 string O
 “ O
 OPAERA O
-” O
-
-, O
+” O, O
 included O
 the O
 kasper O
@@ -11659,9 +11658,7 @@ file O
 name O
 “ O
 testproj.exe S-FILE
-” O
-
-and O
+” Oand O
 was O
 identified O
 within O
@@ -11693,9 +11690,7 @@ of O
 Fuqaha O
 ’s O
 Assassination O
-” O
-
-, O
+” O, O
 a O
 reference O
 to O
@@ -11970,9 +11965,7 @@ to O
 the O
 initial O
 files O
-; O
-
-testproj.exe S-FILE
+; Otestproj.exe S-FILE
 dropped O
 benign O
 decoy O
@@ -12176,9 +12169,7 @@ marked O
 “ O
 Very O
 Secret O
-” O
-
-and O
+” Oand O
 addressed O
 to O
 Yahya O
@@ -12756,9 +12747,7 @@ ministries O
 in O
 Gaza S-LOC
 , O
-” O
-
-further O
+” Ofurther O
 straining O
 the O
 relationship O
@@ -13388,9 +13377,7 @@ during O
 and O
 2018 S-TIME
 include O
-: O
-
-A O
+: OA O
 well-known O
 international O
 organization O
@@ -13970,9 +13957,7 @@ customers O
 against O
 APT28 S-APT
 attacks O
-: O
-
-Trojan.Sofacy S-MAL
+: OTrojan.Sofacy S-MAL
 Backdoor.SofacyX S-MAL
 Infostealer.Sofacy S-MAL
 OSX.Sofacy S-MAL
@@ -13992,12 +13977,9 @@ customers O
 against O
 Earworm S-APT
 attacks O
-: O
-
-Trojan.Zekapab S-MAL
+: OTrojan.Zekapab S-MAL
 Backdoor.Zekapab S-MAL
 . O
-
 
 A O
 BREXIT-themed O
@@ -14425,6 +14407,7 @@ the O
 same O
 purpose O
 . O
+
 iDefense S-IDTY
 analysts O
 recently O
@@ -14453,9 +14436,7 @@ EU S-IDTY
 
 Brexit B-FILE
 15.11.2018.docx E-FILE
-: O
-
-405655be03df45881aa88b55603bef1d S-MD5
+: O405655be03df45881aa88b55603bef1d S-MD5
 . O
 
 Of O
@@ -14548,9 +14529,7 @@ two O
 different O
 .dotm S-FILE
 components O
-: O
-
-Filename O
+: OFilename O
 : O
 attachedTemplate.dotm S-FILE
 MD5 S-ENCR
@@ -14574,9 +14553,7 @@ the O
 following O
 URLs O
 respectively O
-: O
-
-http://109.248.148.42/office/thememl/2012/main/attachedTemplate.dotm S-URL
+: Ohttp://109.248.148.42/office/thememl/2012/main/attachedTemplate.dotm S-URL
 http://109.248.148.42/officeDocument/2006/relationships/templates.dotm S-URL
 . O
 
@@ -14613,13 +14590,12 @@ a O
 .docm S-FILE
 file O
 . O
+
 attachedTemplate.dotm S-FILE
 dropped O
 the O
 following O
-: O
-
-Filename O
+: OFilename O
 : O
 ntslwin.exe S-FILE
 MD5 S-ENCR
@@ -14632,13 +14608,12 @@ MD5 S-ENCR
 : O
 9d703d31795bac83c4dd90527d149796 S-MD5
 . O
+
 templates.dotm S-FILE
 dropped O
 the O
 following O
-: O
-
-Filename O
+: OFilename O
 : O
 ntslwin.exe S-FILE
 MD5 S-ENCR
@@ -14716,9 +14691,7 @@ once O
 unpacked O
 by O
 UPX S-TOOL
-: O
-
-Filename O
+: OFilename O
 : O
 ntslwin.exe S-FILE
 MD5 S-ENCR
@@ -14849,9 +14822,7 @@ are O
 used O
 for O
 persistence O
-: O
-
-Key O
+: OKey O
 : O
 HKCU\Software\Microsoft\Windows\CurrentVersion\Run\AudioMgr O
 Value O
@@ -14874,9 +14845,7 @@ are O
 used O
 for O
 persistence O
-: O
-
-Key O
+: OKey O
 : O
 HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\GoogleIndexer O
 Value O
@@ -14890,9 +14859,7 @@ of O
 information O
 collected O
 includes O
-: O
-
-Results O
+: OResults O
 from O
 the O
 commands O
@@ -14960,9 +14927,7 @@ address O
 and O
 URI O
 pattern O
-: O
-
-109.248.148.42 S-IP
+: O109.248.148.42 S-IP
 /agr-enum/progress-inform/cube.php?res= O
 . O
 
@@ -14976,9 +14941,7 @@ searching O
 for O
 the O
 following O
-: O
-
-Network O
+: ONetwork O
 : O
 Presence O
 of O
@@ -15007,9 +14970,7 @@ Persistence O
 mechanism O
 Registry O
 Key O
-: O
-
-Key O
+: OKey O
 : O
 HKCU\Software\Microsoft\Windows\CurrentVersion\Run\AudioMgr O
 Key O
@@ -15040,7 +15001,6 @@ following O
 file O
 hashes O
 . O
-
 
 “ O
 Cyber O
@@ -15573,17 +15533,11 @@ dropper O
 installs O
 2 O
 files O
-: O
-
-netwf.bat S-FILE
-: O
-
-executes O
+: Onetwf.bat S-FILE
+: Oexecutes O
 netwf.dll S-FILE
 netwf.dll S-FILE
-: O
-
-the O
+: Othe O
 payload O
 . O
 
@@ -15593,9 +15547,7 @@ implements O
 2 O
 persistence O
 mechanisms O
-: O
-
-HKCU\Environment\UserInitMprLogonScript O
+: OHKCU\Environment\UserInitMprLogonScript O
 to O
 execute O
 the O
@@ -15826,9 +15778,7 @@ of O
 the O
 Seduploader S-MAL
 features O
-: O
-
-Screenshot O
+: OScreenshot O
 capture O
 ( O
 with O
@@ -15836,22 +15786,14 @@ the O
 GDI S-TOOL
 API S-TOOL
 ) O
-; O
-
-data/configuration O
+; Odata/configuration O
 Exfiltration S-ACT
-; O
-
-Execution O
+; OExecution O
 of O
 code O
-; O
-
-File O
+; OFile O
 downloading O
-; O
-
-The O
+; OThe O
 Command B-TOOL
 & I-TOOL
 Control E-TOOL
@@ -16132,7 +16074,6 @@ MUTEX O
 name O
 . O
 
-
 APT28 S-APT
 : O
 AT O
@@ -16175,9 +16116,7 @@ information O
 operations O
 against O
 the O
-U.S. S-LOC
-
-Our O
+U.S. S-LOCOur O
 visibility O
 into O
 the O
@@ -16683,9 +16622,7 @@ activity O
 . O
 
 OSCE S-IDTY
-: O
-
-NOVEMBER B-TIME
+: ONOVEMBER B-TIME
 2016 E-TIME
 , O
 The O
@@ -16716,9 +16653,7 @@ Union E-IDTY
 ( O
 CDU S-IDTY
 ) O
-: O
-
-APRIL B-TIME
+: OAPRIL B-TIME
 - I-TIME
 MAY I-TIME
 2016 E-TIME
@@ -16759,9 +16694,7 @@ accounts O
 Pussy O
 Riot O
 AUGUST S-TIME
-: O
-
-2015 S-TIME
+: O2015 S-TIME
 , O
 APT28 S-APT
 targets O
@@ -16786,9 +16719,7 @@ Affairs E-IDTY
 , O
 Pakistani B-IDTY
 Military E-IDTY
-: O
-
-JULY B-TIME
+: OJULY B-TIME
 2015 E-TIME
 , O
 APT28 S-APT
@@ -16829,9 +16760,7 @@ Bundestag I-IDTY
 & I-IDTY
 Political I-IDTY
 Parties E-IDTY
-: O
-
-JUNE B-TIME
+: OJUNE B-TIME
 2015 E-TIME
 , O
 Germany S-LOC
@@ -16903,9 +16832,7 @@ Ministry I-IDTY
 of I-IDTY
 Foreign I-IDTY
 Affairs E-IDTY
-: O
-
-OCTOBER B-TIME
+: OOCTOBER B-TIME
 2014 E-TIME
 THROUGH O
 SEPTEMBER B-TIME
@@ -16959,9 +16886,7 @@ Government O
 Power O
 Exchange O
 websites O
-: O
-
-JUNE B-TIME
+: OJUNE B-TIME
 AND I-TIME
 SEPTEMBER I-TIME
 2014 E-TIME
@@ -17052,9 +16977,8 @@ American O
 athletes O
 taking O
 doping. O
-” O
 
-The O
+” OThe O
 DNC S-IDTY
 announced O
 it O
@@ -17760,6 +17684,7 @@ an O
 “ O
 influence O
 campaign. O
+
 ” O
 This O
 influence O
@@ -18020,9 +17945,7 @@ developers O
 . O
 
 CHOPSTICK S-MAL
-: O
-
-backdoor O
+: Obackdoor O
 , O
 Xagent S-MAL
 , O
@@ -18032,9 +17955,7 @@ SPLM S-MAL
 . O
 
 EVILTOSS S-MAL
-: O
-
-backdoor O
+: Obackdoor O
 , O
 Sedreco S-MAL
 , O
@@ -18048,9 +17969,7 @@ NETUI S-MAL
 . O
 
 GAMEFISH S-MAL
-: O
-
-backdoor O
+: Obackdoor O
 , O
 Sednit S-MAL
 , O
@@ -18062,9 +17981,7 @@ Sofacy S-MAL
 . O
 
 SOURFACE S-MAL
-: O
-
-downloader O
+: Odownloader O
 , O
 Older O
 version O
@@ -18075,18 +17992,14 @@ Sofacy S-MAL
 . O
 
 OLDBAIT S-MAL
-: O
-
-credential O
+: Ocredential O
 harvester O
 , O
 Sasfis S-MAL
 . O
 
 CORESHELL S-MAL
-: O
-
-downloader O
+: Odownloader O
 , O
 Newer O
 version O
@@ -18301,7 +18214,6 @@ of O
 the O
 compromise O
 . O
-
 
 Threat B-APT
 Group I-APT
@@ -18955,9 +18867,7 @@ held O
 the O
 following O
 titles O
-: O
-
-National O
+: ONational O
 political O
 director O
 Finance O
@@ -19494,9 +19404,7 @@ targeted O
 by O
 other O
 means O
-: O
-
-gop.com S-DOM
+: Ogop.com S-DOM
 — O
 used O
 by O
@@ -19954,9 +19862,7 @@ these O
 types O
 of O
 attacks O
-: O
-
-Educate O
+: OEducate O
 users O
 about O
 the O
@@ -20009,7 +19915,6 @@ the O
 full O
 URL O
 . O
-
 
 Sofacy S-APT
 APT O
@@ -21422,9 +21327,7 @@ of O
 the O
 following O
 commands O
-: O
-
-Write O
+: OWrite O
 a O
 new O
 file O
@@ -21556,6 +21459,7 @@ a O
 row O
 , O
 i.e. O
+
 if O
 file O
 or O
@@ -21645,9 +21549,7 @@ the O
 main O
 binary O
 are O
-: O
-
-intelnetservice.com S-DOM
+: Ointelnetservice.com S-DOM
 intelsupport.net S-DOM
 The O
 export O
@@ -21709,9 +21611,7 @@ GMT S-TOOL
 ) O
 Exported O
 functions O
-: O
-
-10001580: O
+: O10001580: O
 Init O
 10001620: O
 InternetExchange O
@@ -22082,9 +21982,7 @@ GMT S-TOOL
 ) O
 Exported O
 functions O
-: O
-
-10002B55: O
+: O10002B55: O
 Applicate O
 Most O
 of O
@@ -22186,9 +22084,7 @@ hardcoded O
 C2 S-TOOL
 server O
 names O
-: O
-
-drivres-update.info S-DOM
+: Odrivres-update.info S-DOM
 softupdates.info S-DOM
 The O
 module O
@@ -22211,7 +22107,6 @@ its O
 C2 S-TOOL
 servers O
 . O
-
 
 Sofacy S-APT
 APT O
@@ -22521,6 +22416,7 @@ drives O
 , O
 i.e O
 . O
+
 the O
 sample O
 with O
@@ -22564,9 +22460,7 @@ the O
 following O
 configuration O
 parameters O
-: O
-
-Path O
+: OPath O
 – O
 location O
 of O
@@ -22657,9 +22551,7 @@ GMT S-TOOL
 ) O
 Exported O
 functions O
-: O
-
-10002500: O
+: O10002500: O
 NvMswt O
 10002860: O
 NvReg O
@@ -22821,7 +22713,6 @@ stop O
 processing O
 . O
 
-
 How O
 they O
 did O
@@ -22912,6 +22803,7 @@ the O
 presidential O
 election O
 . O
+
 " O
 The O
 espionage O
@@ -23396,7 +23288,6 @@ Clinton O
 campaigns O
 . O
 
-
 Bears O
 in O
 the O
@@ -23523,6 +23414,7 @@ cases O
 CrowdStrike S-SECTEAM
 Services O
 Inc. O
+
 , O
 our O
 Incident B-SECTEAM
@@ -24477,6 +24369,7 @@ an O
 uncommon O
 scenario O
 . O
+
 “ O
 Putin O
 ’s O
@@ -24533,9 +24426,7 @@ and O
 ‘ O
 active O
 measures O
-’ O
-
-remit O
+’ Oremit O
 , O
 SVR O
 , O
@@ -24934,7 +24825,6 @@ for O
 possible O
 outcomes O
 . O
-
 
 Corporate O
 IoT S-TOOL
@@ -25447,9 +25337,7 @@ C2 S-TOOL
 during O
 these O
 intrusions O
-: O
-
-167.114.153.55 S-IP
+: O167.114.153.55 S-IP
 94.237.37.28 S-IP
 82.118.242.171 S-IP
 31.220.61.251 S-IP
@@ -25651,7 +25539,6 @@ in O
 this O
 article O
 . O
-
 
 BRONZE B-APT
 PRESIDENT E-APT
@@ -26118,9 +26005,7 @@ to O
 the O
 following O
 observations O
-: O
-
-The O
+: OThe O
 NGOs S-IDTY
 targeted O
 by O
@@ -26407,9 +26292,7 @@ archiving O
 specific O
 file O
 types O
-: O
-
-Cobalt B-TOOL
+: OCobalt B-TOOL
 Strike E-TOOL
 — O
 This O
@@ -27028,6 +26911,7 @@ under O
 %AppData% O
 ( O
 e.g. O
+
 , O
 \AppData\Roaming\Temp O
 ) O
@@ -27064,9 +26948,7 @@ part O
 of O
 its O
 operations O
-: O
-
-Powerview.ps1 S-FILE
+: OPowerview.ps1 S-FILE
 — O
 This O
 PowerShell-based S-TOOL
@@ -27618,8 +27500,10 @@ port O
 including O
 mail O
 . O
+
 svrchost O
 . O
+
 com O
 , O
 using O
@@ -27638,15 +27522,18 @@ subdomains O
 of O
 svchosts O
 . O
+
 com O
 , O
 svrchost O
 . O
+
 com O
 , O
 and O
 strust O
 . O
+
 club O
 . O
 
@@ -28158,7 +28045,6 @@ f14eaf5d648aebb2ed7b00b2cf4349263b30fb1c S-SHA1
 , O
 2ea9ccf653f63bcc3549a313ec9d0bada341556cc32dd2ca4b73e0c034492740 S-SHA2
 . O
-
 
 Operation O
 AppleJeus S-ACT
@@ -28771,9 +28657,7 @@ using O
 the O
 following O
 commands O
-: O
-
-cmd.exe S-FILE
+: Ocmd.exe S-FILE
 /c O
 dir O
 rasext.dll S-FILE
@@ -28912,9 +28796,7 @@ Telegram S-TOOL
 messenger O
 download O
 folder O
-: O
-
-C:\Users\[user O
+: OC:\Users\[user O
 name]\Downloads\Telegram O
 Desktop\UnionCryptoTraderSetup.exe S-FILE
 . O
@@ -29584,7 +29466,6 @@ operandi O
 considerably O
 . O
 
-
 NEW O
 CYBER B-ACT
 ESPIONAGE E-ACT
@@ -30209,9 +30090,7 @@ comprised O
 of O
 three O
 subgroups O
-: O
-
-Gaza B-APT
+: OGaza B-APT
 Cybergang E-APT
 Group O
 1 O
@@ -30635,9 +30514,7 @@ on O
 the O
 following O
 themes O
-: O
-
-The O
+: OThe O
 Conflict O
 between O
 Hamas S-IDTY
@@ -31124,15 +31001,11 @@ icon O
 . O
 
 Hanieh_will_remain_abroad_and_Hamas_steps_up_in_Gaza.r23 S-FILE
-: O
-
-e8d73a94d8ff18c7791bf4547bc4ee2d3f62082c594d3c3cf7d640f7bbd15614 S-SHA2
+: Oe8d73a94d8ff18c7791bf4547bc4ee2d3f62082c594d3c3cf7d640f7bbd15614 S-SHA2
 . O
 
 Hanieh_will_remain_abroad_and_Hamas_steps_up_in_Gaza.exe S-FILE
-: O
-
-7bb719f1c64d627ecb1f13c97dc050a7bb1441497f26578f7b2a9302adbbb128 S-SHA2
+: O7bb719f1c64d627ecb1f13c97dc050a7bb1441497f26578f7b2a9302adbbb128 S-SHA2
 . O
 
 When O
@@ -31220,9 +31093,7 @@ the O
 infected O
 operating O
 system O
-: O
-
-C:\Users\user\AppData\Roaming\Microsoft\Windows\Start B-FILE
+: OC:\Users\user\AppData\Roaming\Microsoft\Windows\Start B-FILE
 Menu\Programs\Startup\runawy.exe E-FILE
 . O
 
@@ -31243,9 +31114,7 @@ scheduled O
 task O
 for O
 persistence O
-: O
-
-SCHTASKS O
+: OSCHTASKS O
 /Create O
 /f O
 /SC O
@@ -31259,9 +31128,7 @@ C:\Users\<USER>\runawy.exe S-FILE
 . O
 
 Urgent_Information_Report.exe S-FILE
-: O
-
-6e896099a3ceb563f43f49a255672cfd14d88799f29617aa362ecd2128446a47 S-SHA2
+: O6e896099a3ceb563f43f49a255672cfd14d88799f29617aa362ecd2128446a47 S-SHA2
 . O
 
 The O
@@ -31323,10 +31190,9 @@ installs O
 the O
 backdoor O
 . O
-%appdata%\info.docx S-FILE
-: O
 
-2c50eedc260c82dc176447aa4116ad37112864f4e1e3e95c4817499d9f18a90d S-SHA2
+%appdata%\info.docx S-FILE
+: O2c50eedc260c82dc176447aa4116ad37112864f4e1e3e95c4817499d9f18a90d S-SHA2
 . O
 
 The O
@@ -31352,15 +31218,11 @@ locations O
 
 C:\Users\user\AppData\Roaming\Microsoft\Windows\Start B-FILE
 Menu\Programs\Startup\Blaster.lnk E-FILE
-: O
-
-4254dc8c368cbc36c8a11035dcd0f4b05d587807fa9194d58f0ba411bfd65842 S-SHA2
+: O4254dc8c368cbc36c8a11035dcd0f4b05d587807fa9194d58f0ba411bfd65842 S-SHA2
 . O
 
 C:\Users\user\AppData\Roaming\Blaster.exe S-FILE
-: O
-
-cf32479ed30ae959c4ec8a286bb039425d174062b26054c80572b4625646c551 S-SHA2
+: Ocf32479ed30ae959c4ec8a286bb039425d174062b26054c80572b4625646c551 S-SHA2
 . O
 
 The O
@@ -31456,9 +31318,7 @@ of O
 the O
 backdoor O
 binaries O
-: O
-
-W:\Visual B-FILE
+: OW:\Visual B-FILE
 Studio I-FILE
 2017\Spark4.2\Release\Spark4.2.pdb E-FILE
 . O
@@ -31470,9 +31330,7 @@ allows O
 the O
 attackers O
 to O
-: O
-
-Collect O
+: OCollect O
 information O
 about O
 the O
@@ -31542,9 +31400,7 @@ backdoor O
 under-the-radar O
 , O
 including O
-: O
-
-Packing O
+: OPacking O
 the O
 payloads O
 with O
@@ -31726,9 +31582,7 @@ check O
 serves O
 two O
 purposes O
-: O
-
-It O
+: OIt O
 minimizes O
 the O
 risk O
@@ -31976,9 +31830,7 @@ an O
 array O
 like O
 this O
-: O
-
-[27089,28618,9833,4170,25722,19977,2369,21426,3435,7442,30146,21719,16140,16280,16688,22550,19867,194,3298] O
+: O[27089,28618,9833,4170,25722,19977,2369,21426,3435,7442,30146,21719,16140,16280,16688,22550,19867,194,3298] O
 . O
 
 The O
@@ -31988,9 +31840,7 @@ then O
 encoded O
 with O
 Base64 S-ENCR
-: O
-
-" O
+: O" O
 WzI3MDg5LDI4NjE4LDk4MzMsNDE3MCwyNTcyMiwxOTk3NywyMzY5LDIxNDI2LDM0MzUsNzQ0MiwzMDE0NiwyMTcxOSwxNjE0MCwxNjI4MCwxNjY4OCwyMjU1MCwxOTg2NywxOTQsMzI5OF0= O
 " O
 . O
@@ -32036,9 +31886,7 @@ sent O
 to O
 the O
 server O
-: O
-
-" O
+: O" O
 ZjRTc1dTTU9nVW5FaXM3bGgvbU90MTlVMHFkb1c5SFFuRXhhSVR5YytIQkZremk3bk5wY21BUEZRYitJenA1cnlJY1lxREJJZ1RrL0N4UzZWcVVQM0pTUWFISlhKWG8wN1BxWE1hYThHSUdEVnBFakYrNlp1bXBvdUZMRFNYQVhxYk9tSElWYTFOTlpJK0hFVVBmTG9CQUV3VCtqQ2FCVUE1aHQ2SzllSHREMUpOdkdBUXZ3TWgyLzhtVHpha2I0TE81ZlpURTQyUmVjdFY1M0ZpemlRR1FLL1gzNE9mcU0zR0JqQ1ZnN1hCSmFGaC94RHBDMkNBRmZaSTVoVlhsaTBtQW5SR3N5QzVRY2lMNkpZVFJuRTQrUzBjdjU4SjY4ejRCL2FNbW9IakRheHdQd1RPUElkOHNDbDRVbmp2ZDM0ZVZlZTB1QVA0UHo0YllyVHRMZVRnPT0= O
 " O
 . O
@@ -32101,9 +31949,7 @@ other O
 Gaza O
 Cybergang O
 groups O
-: O
-
-Gaza B-APT
+: OGaza B-APT
 Cybergang E-APT
 Group O
 2 O
@@ -32111,9 +31957,7 @@ with O
 the O
 Micropsia B-MAL
 backdoor E-MAL
-: O
-
-In O
+: OIn O
 this O
 instance O
 , O
@@ -32472,7 +32316,6 @@ the O
 attack O
 . O
 
-
 Reviving O
 MuddyC3 S-TOOL
 Used O
@@ -32495,6 +32338,7 @@ founded O
 by O
 Iran S-LOC
 . O
+
 “ O
 that O
 has O
@@ -32627,6 +32471,7 @@ c2 S-TOOL
 source O
 code O
 . O
+
 they O
 announced O
 that O
@@ -32687,6 +32532,7 @@ the O
 tools O
 ) O
 . O
+
 so O
 i O
 didn’t O
@@ -32703,6 +32549,7 @@ i O
 left O
 it O
 . O
+
 last O
 week O
 i O
@@ -32793,12 +32640,11 @@ about O
 the O
 muddyc3 S-TOOL
 tool O
-: O
-
-Coded O
+: OCoded O
 with O
 python2.7 S-TOOL
 . O
+
 works O
 as O
 C2 S-TOOL
@@ -32812,6 +32658,7 @@ script O
 when O
 requested O
 . O
+
 i O
 didn’t O
 find O
@@ -32844,6 +32691,7 @@ the O
 functions O
 removed O
 . O
+
 its O
 make O
 use O
@@ -32883,6 +32731,7 @@ the O
 same O
 time O
 . O
+
 the O
 agent O
 must O
@@ -32902,6 +32751,7 @@ to O
 the O
 C2 S-TOOL
 . O
+
 there O
 is O
 template O
@@ -32920,6 +32770,7 @@ the O
 C2 S-TOOL
 run O
 . O
+
 include O
 functions O
 but O
@@ -32930,9 +32781,7 @@ in O
 the O
 initial O
 POC S-TOOL
-: O
-
-upload O
+: Oupload O
 , O
 download O
 , O
@@ -32989,11 +32838,7 @@ C2 S-TOOL
 . O
 
 C2 S-TOOL
-interface O
-
-: O
-
-simple O
+interface O: Osimple O
 CLI S-TOOL
 interface O
 that O
@@ -33012,7 +32857,6 @@ the O
 initial O
 payloads O
 . O
-
 
 The O
 Nitro S-APT
@@ -33674,9 +33518,7 @@ Bangladesh S-LOC
 and O
 the O
 UK S-LOC
-; O
-
-however O
+; Ohowever O
 , O
 overall O
 there O
@@ -33784,6 +33626,7 @@ under O
 the O
 war O
 . O
+
 scr O
 ” O
 . O
@@ -34113,6 +33956,7 @@ associated O
 with O
 antivirus-groups.com S-DOM
 . O
+
 pr[REMOVED].noIP
 . O
 
@@ -34126,18 +33970,21 @@ org S-DOM
 , O
 173.252.205.64 S-IP
 . O
+
 antivirus-groups.com S-DOM
 : O
 74.82.166.205 S-IP
 , O
 204.74.215.58 S-IP
 . O
+
 domain.rm6.org S-DOM
 : O
 216.131.95.22 S-IP
 , O
 222.255.28.27 S-IP
 . O
+
 anti-virus.sytes.net S-DOM
 : O
 173.252.205.36 S-IP
@@ -34417,7 +34264,6 @@ and O
 manufacturing O
 processes O
 . O
-
 
 Outlaw S-APT
 Updates O
@@ -34801,6 +34647,7 @@ are O
 considered O
 “ O
 loud. O
+
 ” O
 These O
 involved O
@@ -34939,6 +34786,7 @@ via O
 security O
 through O
 obscurity. O
+
 ” O
 They O
 attempted O
@@ -35142,11 +34990,7 @@ the O
 wrapper O
 script O
 initall O
-: O
-
-2e2c9d08c7c955f6ce5e27e70b0ec78a888c276d71a72daa0ef9e3e40f019a1a S-SHA2
-
-initall O
+: O2e2c9d08c7c955f6ce5e27e70b0ec78a888c276d71a72daa0ef9e3e40f019a1a S-SHA2initall O
 . O
 
 Another O
@@ -35326,15 +35170,10 @@ kit O
 to O
 keep O
 running O
-: O
-
-0c458dfe0a2a01ab300c857fdc3373b75fbb8ccfa23d16eff0d6ab888a1a28f6 S-SHA2
-
-init O
+: O0c458dfe0a2a01ab300c857fdc3373b75fbb8ccfa23d16eff0d6ab888a1a28f6 S-SHA2init O
 . O
-93ce211a71867017723cd78969aa4cac9d21c3d8f72c96ee3e1b2712c0eea494 S-SHA2
 
-init2 O
+93ce211a71867017723cd78969aa4cac9d21c3d8f72c96ee3e1b2712c0eea494 S-SHA2init2 O
 . O
 
 Both O
@@ -35743,7 +35582,6 @@ Coinminer.Linux.MALXMR.SMDSL64 S-MAL
 : O
 649280bd4c5168009c1cff30e5e1628bcf300122b49d339e3ea3f3b6ff8f9a79 S-SHA2
 . O
-
 
 Actors O
 Still O
@@ -36970,6 +36808,7 @@ this O
 second O
 organization O
 . O
+
 es.exe S-FILE
 : O
 Mimikatz S-TOOL
@@ -36987,6 +36826,7 @@ WinRAR S-TOOL
 , O
 26d9212ec8dbca45383eb95ec53c05357851bd7529fa0761d649f62e90c4e9fd S-SHA2
 . O
+
 atec.exe S-FILE
 : O
 Compiled O
@@ -36996,6 +36836,7 @@ tool O
 , O
 a4aca75bcc8f18b8a2316fd67a7e545c59b871d32de0b325f56d22584038fa10 S-SHA2
 . O
+
 dmp.exe S-FILE	
 : O
 Dumpert S-TOOL
@@ -37404,9 +37245,7 @@ has O
 the O
 following O
 attributes O
-: O
-
-Name O
+: OName O
 winexesvc.exe S-FILE
 Size O
 23552 O
@@ -37434,9 +37273,7 @@ Artifact O
 the O
 following O
 attributes O
-: O
-
-Name O
+: OName O
 svchost.exe S-FILE
 Size O
 1062912 O
@@ -38673,9 +38510,7 @@ had O
 the O
 following O
 attributes O
-: O
-
-MD5 S-ENCR
+: OMD5 S-ENCR
 b84b66bcdecd4b4529014619ed649d76 S-MD5
 SHA1 S-ENCR
 fef1725ad72e4ef0432f8cb0cb73bf7ead339a7c S-SHA1
@@ -38983,7 +38818,6 @@ to O
 Sofacy S-APT
 . O
 
-
 A O
 Slice O
 of O
@@ -39046,6 +38880,7 @@ and O
 protect O
 against O
 . O
+
 2017 S-TIME
 was O
 not O
