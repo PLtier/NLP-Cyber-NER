@@ -203,6 +203,7 @@ SAS S-IDTY
 2018 S-TIME
 . O
 
+
 A O
 journey O
 to O
@@ -1367,6 +1368,7 @@ in O
 the O
 configuration O
 . O
+
 
 Sofacy S-APT
 Group’s O
@@ -2956,7 +2958,6 @@ February B-TIME
 2018 E-TIME
 attacks O
 . O
-
 115fd8c619fa173622c7a1e84efdf6fed08a25d3ca3095404dcbd5ac3deb1f03 S-SHA2
 was O
 another O
@@ -3246,6 +3247,7 @@ DDE S-PROT
 exploitation O
 technique O
 . O
+
 
 Sofacy S-APT
 Uses O
@@ -6075,6 +6077,7 @@ addresses O
 128.199.199.187 S-IP
 . O
 
+
 Operation O
 RussianDoll S-ACT
 : O
@@ -7052,6 +7055,7 @@ Windows B-OS
 and O
 later O
 . O
+
 
 Sofacy S-APT
 Attacks O
@@ -8668,6 +8672,7 @@ Filename O
 Upcoming_Events_February_2018.xls S-FILE
 . O
 
+
 APT28 S-APT
 Targets O
 Hospitality O
@@ -9566,6 +9571,7 @@ avoided O
 whenever O
 possible O
 . O
+
 
 Sofacy S-APT
 Continues O
@@ -12078,6 +12084,7 @@ bishtr.cam47@post.cz S-EMAIL
 lobrek.chizh@post.cz S-EMAIL
 cervot.woprov@post.cz S-EMAIL
 . O
+
 
 THE O
 DUKES S-APT
@@ -14634,7 +14641,6 @@ in O
 the O
 wild O
 . O
-
 8 O
 days O
 after O
@@ -17219,6 +17225,7 @@ an O
 office O
 . O
 
+
 THE O
 DUKES S-APT
 7 O
@@ -17934,7 +17941,6 @@ on O
 underground O
 markets O
 . O
-
 2015 S-TIME
 : O
 The O
@@ -18629,7 +18635,6 @@ payloads O
 or O
 commands O
 . O
-
 2015 S-TIME
 : O
 CloudDuke S-MAL
@@ -19113,7 +19118,6 @@ act O
 with O
 impunity O
 . O
-
 2015 S-TIME
 : O
 Continuing O
@@ -19314,6 +19318,7 @@ tools O
 and O
 techniques O
 . O
+
 
 A O
 XENOTIME S-APT
@@ -20040,7 +20045,6 @@ emerging O
 adversary O
 activity O
 . O
-
 ( O
 Or O
 for O
@@ -20063,7 +20067,6 @@ such O
 as O
 Turla S-APT
 . O
-
 ) O
 FireEye S-SECTEAM
 ’s O
@@ -21113,6 +21116,7 @@ these O
 decisions O
 . O
 
+
 TRITON S-MAL
 Attribution O
 : O
@@ -21221,7 +21225,6 @@ Mechanics E-IDTY
 CNIIHM S-IDTY
 ; O
 a.k.a. O
-
 ЦНИИХМ S-IDTY
 ) O
 , O
@@ -22193,7 +22196,6 @@ service O
 ‘ O
 ProgramDataUpdater S-TOOL
 . O
-
 ’ O
 The O
 malicious O
@@ -22709,6 +22711,7 @@ intrusion O
 operators O
 . O
 
+
 Xenotime S-APT
 . O
 
@@ -23063,7 +23066,6 @@ on O
 victim O
 hosts O
 . O
-
 ( O
 Full O
 reports O
@@ -23082,7 +23084,6 @@ Dragos S-SECTEAM
 WorldView S-TOOL
 customers O
 . O
-
 ) O
 Because O
 the O
@@ -23437,6 +23438,7 @@ via O
 Dragos S-SECTEAM
 WorldView S-TOOL
 . O
+
 
 Threat B-APT
 Group I-APT
@@ -24945,7 +24947,6 @@ TG-3390 S-APT
 : O
 74.63.195.237 S-IP
 . O
-
 1cb4b74e9d030afbb18accf6ee2bfca1 S-MD5
 MD5 S-ENCR
 hash O
@@ -24953,7 +24954,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 b333b5d541a0488f4e710ae97c46d9c2 S-MD5
 MD5 S-ENCR
 hash O
@@ -24961,7 +24961,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 86a05dcffe87caf7099dda44d9ec6b48 S-MD5
 MD5 S-ENCR
 hash O
@@ -24969,7 +24968,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 93e40da0bd78bebe5e1b98c6324e9b5b S-MD5
 MD5 S-ENCR
 hash O
@@ -24977,7 +24975,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 f43d9c3e17e8480a36a62ef869212419 S-MD5
 MD5 S-ENCR
 hash O
@@ -24985,7 +24982,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 57e85fc30502a925ffed16082718ec6c S-MD5
 MD5 S-ENCR
 hash O
@@ -24993,7 +24989,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 4251aaf38a485b08d5562c6066370f09 S-MD5
 MD5 S-ENCR
 hash O
@@ -25001,7 +24996,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 bbfd1e703f55ce779b536b5646a0cdc1 S-MD5
 MD5 S-ENCR
 hash O
@@ -25009,7 +25003,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 12a522cb96700c82dc964197adb57ddf S-MD5
 MD5 S-ENCR
 hash O
@@ -25017,7 +25010,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 728e5700a401498d91fb83159beec834 S-MD5
 MD5 S-ENCR
 hash O
@@ -25025,7 +25017,6 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 2bec1860499aae1dbcc92f48b276f998 S-MD5
 MD5 S-ENCR
 hash O
@@ -25033,62 +25024,55 @@ HttpBrowser S-MAL
 RAT O
 dropper O
 . O
-
 014122d7851fa8bf4070a8fc2acd5dc5 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 0ae996b31a2c3ed3f0bc14c7a96bea38 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 1a76681986f99b216d5c0f17ccff2a12 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 380c02b1fd93eb22028862117a2f19e3 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 40a9a22da928cbb70df48d5a3106d887 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 46cf2f9b4a4c35b62a32f28ac847c575 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 5436c3469cb1d87ea404e8989b28758d S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
-
 692cecc94ac440ec673dc69f37bc0409 S-MD5
 MD5 S-ENCR
 hash O
 HttpBrowser S-MAL
 RAT O
 . O
+
 
 Living O
 Off O
@@ -26895,6 +26879,7 @@ every O
 day O
 . O
 
+
 Suckfly S-APT
 : O
 Revealing O
@@ -28590,6 +28575,7 @@ ssl.2upgrades.com S-DOM
 fli.fedora-dns-update.com S-DOM
 . O
 
+
 Indian O
 organizations O
 targeted O
@@ -29705,7 +29691,6 @@ the O
 .dll S-FILE
 file O
 . O
-
 iviewers.dll S-FILE
 : O
 Used O
@@ -29718,7 +29703,6 @@ then O
 decrypt O
 them O
 . O
-
 msfled O
 : O
 The O
@@ -29889,7 +29873,6 @@ April B-TIME
 , I-TIME
 2014 E-TIME
 . O
-
 ssl.2upgrades.com S-DOM
 kumar.pari@yandex.com S-EMAIL
 176.58.96.234 S-IP
@@ -29898,7 +29881,6 @@ July B-TIME
 , I-TIME
 2014 E-TIME
 . O
-
 bss.pvtcdn.com S-DOM
 registrar@mail.zgsj.com S-EMAIL
 106.184.1.38 S-IP
@@ -30171,6 +30153,7 @@ Suckfly S-APT
 's O
 operations O
 . O
+
 
 THE O
 DUKES S-APT
@@ -33097,6 +33080,7 @@ its O
 operators O
 . O
 
+
 THE O
 DUKES S-APT
 7 O
@@ -34312,6 +34296,7 @@ detail O
 to O
 note O
 . O
+
 
 Threat O
 Actor O
@@ -36617,6 +36602,7 @@ Achilles S-MAL
 heel O
 . O
 
+
 A O
 XENOTIME S-APT
 to O
@@ -36668,7 +36654,6 @@ mean—neither O
 more O
 nor O
 less. O
-
 ” O
 – O
 Through O
@@ -37380,7 +37365,6 @@ emerging O
 adversary O
 activity O
 . O
-
 ( O
 Or O
 for O
@@ -37403,7 +37387,6 @@ such O
 as O
 Turla S-APT
 . O
-
 ) O
 FireEye S-SECTEAM
 ’s O
@@ -38449,6 +38432,7 @@ these O
 decisions O
 . O
 
+
 Threat B-APT
 Group I-APT
 3390 E-APT
@@ -38493,7 +38477,6 @@ X- O
 " O
 ( O
 e.g. O
-
 , O
 " O
 X-Session S-TOOL
@@ -38883,7 +38866,6 @@ passwords O
 from O
 memory O
 . O
-
 gsecdump S-TOOL
 — O
 obtains O
@@ -38891,7 +38873,6 @@ passwords O
 from O
 memory O
 . O
-
 winrar S-TOOL
 — O
 compresses O
@@ -38899,7 +38880,6 @@ data O
 for O
 Exfiltration S-ACT
 . O
-
 nbtscan S-TOOL
 — O
 scans O
