@@ -191,7 +191,7 @@ def unify_labels_dnrti(path: Path) -> None:
                         label = "Organization"
                     elif label == "Tool":
                         label = "System"
-                    elif label == "Way":
+                    elif label == "Exp":
                         label = "Vulnerability"
                     elif label == "SamFile":
                         label = "Malware"
