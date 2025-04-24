@@ -299,8 +299,8 @@ significant O
 focus O
 on O
 the O
-space O
-sector O
+space B-Organization
+sector I-Organization
 . O
 
 Research O
@@ -393,9 +393,9 @@ paved O
 the O
 way O
 for O
-private O
-security O
-companies O
+private B-Organization
+security I-Organization
+companies I-Organization
 to O
 expose O
 advanced O
@@ -422,9 +422,9 @@ paved O
 the O
 way O
 for O
-private O
-security O
-companies O
+private B-Organization
+security I-Organization
+companies I-Organization
 to O
 expose O
 advanced O
@@ -502,11 +502,11 @@ This O
 threat B-Organization
 group I-Organization
 attacked O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 and O
-aerospace O
-companies O
+aerospace B-Organization
+companies I-Organization
 . O
 
 The O
@@ -583,9 +583,9 @@ these O
 attacks O
 began O
 with O
-spear O
-phishing O
-messages O
+spear B-Vulnerability
+phishing I-Vulnerability
+messages I-Vulnerability
 but O
 have O
 not O
@@ -606,8 +606,8 @@ Rancor B-Organization
 attackers B-Organization
 were O
 targeting O
-political O
-entities O
+political B-Organization
+entities I-Organization
 . O
 
 Additionally O
@@ -627,8 +627,8 @@ website O
 belonging O
 to O
 the O
-Cambodia O
-Government O
+Cambodia B-Organization
+Government I-Organization
 and O
 in O
 at O
@@ -636,7 +636,7 @@ least O
 once O
 case O
 , O
-Facebook O
+Facebook B-Organization
 . O
 
 Our O
@@ -790,10 +790,10 @@ vectors O
 mostly O
 revolving O
 around O
-drive-by O
-downloads O
+drive-by B-Vulnerability
+downloads I-Vulnerability
 and O
-spam O
+spam B-Vulnerability
 . O
 
 They O
@@ -957,11 +957,11 @@ successfully O
 steal O
 money O
 from O
-financial O
-institutions O
+financial B-Organization
+institutions I-Organization
 and O
 their O
-customers O
+customers B-Organization
 in O
 Russia O
 . O
@@ -1008,7 +1008,7 @@ Ukraine O
 to O
 our O
 global O
-customers O
+customers B-Organization
 . O
 
 Shortly O
@@ -1567,8 +1567,8 @@ tailored O
 to O
 target O
 Ukrainian O
-government O
-institutions O
+government B-Organization
+institutions I-Organization
 . O
 
 Related O
@@ -1649,8 +1649,8 @@ targeted O
 attacks O
 against O
 Ukrainian O
-government O
-organizations O
+government B-Organization
+organizations I-Organization
 earlier O
 this O
 year O
@@ -1762,8 +1762,8 @@ the O
 attack O
 against O
 Ukrainian O
-government O
-organizations O
+government B-Organization
+organizations I-Organization
 . O
 
 In O
@@ -1783,8 +1783,8 @@ malware I-System
 began O
 targeting O
 Ukranian O
-government O
-organizations O
+government B-Organization
+organizations I-Organization
 for O
 information O
 harvesting O
@@ -1818,8 +1818,8 @@ a O
 history O
 of O
 targeting O
-political O
-organizations O
+political B-Organization
+organizations I-Organization
 . O
 
 The O
@@ -1832,10 +1832,10 @@ Mimic I-Organization
 have O
 primarily O
 targeted O
-Uyghur O
+Uyghur B-Organization
 and O
-Tibetan O
-activists O
+Tibetan B-Organization
+activists I-Organization
 as O
 well O
 as O
@@ -1864,7 +1864,7 @@ Scarlet B-Organization
 Mimic I-Organization
 deploys O
 both O
-spear-phishing O
+spear-phishing B-Vulnerability
 and O
 watering O
 hole O
@@ -1883,7 +1883,7 @@ other O
 attackers B-Organization
 who O
 use O
-spear-phishing O
+spear-phishing B-Vulnerability
 to O
 infect O
 victims O
@@ -1923,8 +1923,8 @@ significant O
 interest O
 in O
 both O
-Muslim O
-activists O
+Muslim B-Organization
+activists I-Organization
 and O
 those O
 interested O
@@ -1953,8 +1953,8 @@ previously O
 identified O
 individuals O
 ( O
-spear O
-phishing O
+spear B-Vulnerability
+phishing I-Vulnerability
 ) O
 as O
 well O
@@ -2037,8 +2037,8 @@ mission O
 collecting O
 information O
 on O
-minority O
-groups O
+minority B-Organization
+groups I-Organization
 who O
 reside O
 in O
@@ -2122,13 +2122,13 @@ who O
 belong O
 to O
 these O
-minority O
-groups O
+minority B-Organization
+groups I-Organization
 as O
 well O
 as O
 their O
-supporters O
+supporters B-Organization
 , O
 but O
 we've O
@@ -2145,8 +2145,8 @@ individuals O
 working O
 inside O
 government O
-anti-terrorist O
-organizations O
+anti-terrorist B-Organization
+organizations I-Organization
 . O
 
 We O
@@ -2205,7 +2205,7 @@ we O
 identified O
 a O
 full O
-e-mail O
+e-mail B-Vulnerability
 uploaded O
 to O
 an O
@@ -2233,7 +2233,7 @@ Mimic I-Organization
 broke O
 from O
 the O
-spear-phishing O
+spear-phishing B-Vulnerability
 pattern O
 described O
 above O
@@ -2329,7 +2329,7 @@ Scarlet B-Organization
 Mimic I-Organization
 . O
 
-Microsoft O
+Microsoft B-Organization
 patched O
 this O
 vulnerability O
@@ -2361,11 +2361,11 @@ older O
 vulnerabilities O
 in O
 their O
-spear-phishing O
+spear-phishing B-Vulnerability
 efforts O
 . O
 
-Microsoft O
+Microsoft B-Organization
 patched O
 this O
 vulnerability O
@@ -2396,7 +2396,7 @@ older O
 vulnerabilities O
 in O
 their O
-spear-phishing O
+spear-phishing B-Vulnerability
 efforts O
 . O
 
@@ -2592,8 +2592,8 @@ Scarlet B-Organization
 Mimic I-Organization
 primarily O
 deploys O
-spear-phishing O
-e-mails O
+spear-phishing B-Vulnerability
+e-mails I-Vulnerability
 to O
 infect O
 its O
@@ -2693,10 +2693,10 @@ out O
 attacks O
 using O
 both O
-spear-phishing O
+spear-phishing B-Vulnerability
 and O
-watering O
-holes O
+watering B-Vulnerability
+holes I-Vulnerability
 since O
 at O
 least O
@@ -2779,8 +2779,8 @@ The O
 group B-Organization
 primarily O
 deploys O
-spear-phishing O
-e-mails O
+spear-phishing B-Vulnerability
+e-mails I-Vulnerability
 to O
 infect O
 its O
@@ -3214,8 +3214,8 @@ identities O
 
 When O
 using O
-email O
-scams O
+email B-Vulnerability
+scams I-Vulnerability
 , O
 SilverTerrier B-Organization
 actors I-Organization
@@ -3303,9 +3303,9 @@ or O
 Shell O
 , O
 a O
-global O
-energy O
-company O
+global B-Organization
+energy I-Organization
+company I-Organization
 , O
 would O
 commission O
@@ -3343,20 +3343,20 @@ social O
 media O
 accounts O
 on O
-Google® O
+Google® B-Organization
 , O
-Facebook® O
+Facebook® B-Organization
 , O
-MySpace® O
+MySpace® B-Organization
 , O
-Instagram® O
+Instagram® B-Organization
 , O
 and O
 various O
-dating O
-and O
-blogging O
-sites O
+dating B-Organization
+and I-Organization
+blogging I-Organization
+sites I-Organization
 . O
 
 Earlier O
@@ -3371,8 +3371,8 @@ advanced O
 persistent O
 attack O
 targeting O
-telecommunications O
-providers O
+telecommunications B-Organization
+providers I-Organization
 that O
 has O
 been O
@@ -3419,8 +3419,8 @@ the O
 threat B-Organization
 actor I-Organization
 against O
-telecommunications O
-providers O
+telecommunications B-Organization
+providers I-Organization
 . O
 
 Threat B-Organization
@@ -3675,8 +3675,8 @@ attacks O
 against O
 Australian O
 web O
-hosting O
-providers O
+hosting B-Organization
+providers I-Organization
 . O
 
 This O
@@ -4048,8 +4048,8 @@ steal O
 communications O
 data O
 of O
-specific O
-individuals O
+specific B-Organization
+individuals I-Organization
 in O
 various O
 countries O
@@ -4209,8 +4209,8 @@ be O
 focused O
 mainly O
 on O
-government O
-entities O
+government B-Organization
+entities I-Organization
 in O
 South O
 America O
@@ -4219,8 +4219,8 @@ Southeast O
 Asia O
 and O
 has O
-infiltrated O
-organizations O
+infiltrated B-Organization
+organizations I-Organization
 in O
 Argentina O
 , O
@@ -4322,7 +4322,7 @@ with O
 the O
 North O
 Korean O
-government O
+government B-Organization
 compromising O
 electric O
 utilities O
@@ -4369,9 +4369,9 @@ had O
 and O
 embarrass O
 the O
-South O
-Korean O
-Government O
+South B-Organization
+Korean I-Organization
+Government I-Organization
 , O
 a O
 technique O
@@ -4474,7 +4474,7 @@ but O
 not O
 a O
 full-fledged O
-banker O
+banker B-Organization
 . O
 
 FormBook B-System
@@ -4502,8 +4502,8 @@ early O
 The O
 malware B-System
 may O
-inject O
-itself O
+inject B-Vulnerability
+itself I-Vulnerability
 into O
 browser O
 processes O
@@ -4602,8 +4602,8 @@ of O
 sponsorship O
 by O
 the O
-Chinese O
-government O
+Chinese B-Organization
+government B-Organization
 . O
 
 The O
@@ -4671,8 +4671,8 @@ early O
 May O
 , O
 the O
-phishing O
-lures O
+phishing B-Vulnerability
+lures I-Vulnerability
 leveraged O
 RTF B-Malware
 attachments I-Malware
@@ -4849,8 +4849,8 @@ ActiveMime B-Malware
 files I-Malware
 that O
 employ O
-social O
-engineering O
+social B-Vulnerability
+engineering I-Vulnerability
 methods O
 to O
 entice O
@@ -4870,7 +4870,7 @@ the O
 malicious B-Malware
 attachments I-Malware
 via O
-spear-phishing O
+spear-phishing B-Vulnerability
 emails O
 . O
 
@@ -4917,7 +4917,7 @@ for O
 APT32’s B-Organization
 tools O
 and O
-phishing O
+phishing B-Vulnerability
 lures O
 . O
 
@@ -4970,21 +4970,21 @@ and O
 private O
 entities O
 including O
-government O
-agencies O
+government B-Organization
+agencies I-Organization
 , O
-research O
-institutes O
+research B-Organization
+institutes I-Organization
 , O
-maritime O
-agencies O
+maritime B-Organization
+agencies I-Organization
 , O
-sea O
-construction O
+sea B-Organization
+construction I-Organization
 , O
 and O
-shipping O
-enterprises O
+shipping B-Organization
+enterprises I-Organization
 . O
 
 In O
@@ -4994,7 +4994,7 @@ track O
 who O
 opened O
 the O
-phishing O
+phishing B-Vulnerability
 emails O
 , O
 viewed O
@@ -5016,8 +5016,8 @@ analytics O
 software O
 designed O
 for O
-sales O
-organizations O
+sales B-Organization
+organizations I-Organization
 . O
 
 Since O
@@ -5038,14 +5038,14 @@ vested O
 interest O
 in O
 Vietnama's O
-manufacturing O
+manufacturing B-Organization
 , O
-consumer O
-products O
+consumer B-Organization
+products I-Organization
 , O
 and O
-hospitality O
-sectors O
+hospitality B-Organization
+sectors I-Organization
 . O
 
 Mandiant B-Organization
@@ -5259,8 +5259,8 @@ Southeast O
 Asia O
 and O
 the O
-public O
-sector O
+public B-Organization
+sector I-Organization
 worldwide O
 . O
 
@@ -5418,7 +5418,7 @@ each O
 client O
 uses O
 unique O
-infrastructure O
+infrastructure B-Organization
 , O
 making O
 it O
@@ -5566,7 +5566,7 @@ campaign O
 primarily O
 affected O
 the O
-government O
+government B-Organization
 sector O
 in O
 the O
@@ -5584,8 +5584,8 @@ campaign O
 primarily O
 affected O
 the O
-government O
-sector O
+government B-Organization
+sector I-Organization
 in O
 the O
 Middle O
@@ -5872,8 +5872,8 @@ targets O
 victims O
 and O
 uses O
-spear O
-phishing O
+spear B-Vulnerability
+phishing I-Vulnerability
 to O
 distribute O
 its O
@@ -6413,8 +6413,8 @@ their O
 2017 O
 campaign O
 against O
-law O
-firms O
+law B-Organization
+firms I-Organization
 . O
 
 This O
@@ -6484,11 +6484,11 @@ and O
 then O
 self-propagated O
 through O
-stolen O
-credentials O
+stolen B-Vulnerability
+credentials I-Vulnerability
 and O
-SMB O
-exploits O
+SMB B-Vulnerability
+exploits I-Vulnerability
 , O
 including O
 the O
@@ -6798,9 +6798,9 @@ vulnerable O
 merchant O
 websites O
 and O
-compromising O
-payment O
-card O
+compromising B-Vulnerability
+payment I-Vulnerability
+card I-Vulnerability
 processing O
 devices O
 . O
@@ -6861,9 +6861,9 @@ by O
 threat O
 actors B-Organization
 is O
-changing O
-their O
-system's O
+changing B-Vulnerability
+their I-Vulnerability
+system's I-Vulnerability
 MAC O
 Address O
 to O
@@ -6976,9 +6976,9 @@ Brazilian O
 threat O
 actors B-Organization
 via O
-social O
-media O
-forums O
+social B-Organization
+media I-Organization
+forums I-Organization
 such O
 as O
 Facebook O
@@ -7360,9 +7360,9 @@ exploited O
 the O
 networks O
 of O
-governments O
+governments B-Organization
 and O
-organizations O
+organizations B-Organization
 across O
 the O
 region O
@@ -7488,9 +7488,9 @@ emails O
 is O
 a O
 weaponized O
-Microsoft O
-Office O
-document O
+Microsoft B-Vulnerability
+Office I-Vulnerability
+document I-Vulnerability
 containing O
 a O
 malicious O
@@ -7640,8 +7640,8 @@ associated O
 with O
 the O
 targeted O
-ATM O
-vendors O
+ATM B-Organization
+vendors I-Organization
 and O
 will O
 replace O
@@ -7796,9 +7796,9 @@ we O
 identified O
 target O
 the O
-ATM O
-vendor O
-Diebold O
+ATM B-Organization
+vendor I-Organization
+Diebold I-Organization
 . O
 
 This O
@@ -7910,8 +7910,8 @@ required O
 to O
 target O
 different O
-ATM O
-vendors O
+ATM B-Organization
+vendors I-Organization
 worldwide O
 . O
 
@@ -8001,7 +8001,7 @@ FireEye B-Organization
 Labs O
 detects O
 this O
-phishing O
+phishing B-Vulnerability
 attack O
 and O
 customers O
@@ -8072,8 +8072,8 @@ attributing O
 APT28 B-Organization
 to O
 the O
-Russian O
-government O
+Russian B-Organization
+government I-Organization
 . O
 
 The O
@@ -8093,8 +8093,8 @@ and O
 a O
 script O
 to O
-inject O
-shellcode O
+inject B-Vulnerability
+shellcode I-Vulnerability
 into O
 the O
 userinit.exe B-Malware
@@ -8232,7 +8232,7 @@ earliest O
 technical O
 evidence O
 that O
-NSA O
+NSA B-Organization
 hackers O
 and O
 developers O
@@ -8282,7 +8282,7 @@ for O
 a O
 slew O
 of O
-NSA O
+NSA B-Organization
 hacking O
 tools O
 and O
@@ -8506,7 +8506,7 @@ victims O
 
 The O
 leaked O
-NSA O
+NSA B-Organization
 documents O
 and O
 tools O
@@ -8533,8 +8533,8 @@ operations O
 pursued O
 by O
 the O
-spy O
-agency O
+spy B-Organization
+agency I-Organization
 over O
 the O
 past O
@@ -8563,7 +8563,7 @@ provides O
 evidence O
 that O
 the O
-NSA O
+NSA B-Organization
 had O
 once O
 launched O
@@ -8647,11 +8647,11 @@ leaked O
 files O
 show O
 the O
-NSA O
+NSA B-Organization
 was O
 allegedly O
 targeting O
-EastNets O
+EastNets B-Organization
 in O
 Dubai O
 , O
@@ -8672,14 +8672,14 @@ from O
 that O
 show O
 the O
-NSA O
+NSA B-Organization
 was O
 also O
 targeting O
 oil O
 and O
-investment O
-companies O
+investment B-Organization
+companies I-Organization
 across O
 the O
 Middle O
@@ -8724,8 +8724,8 @@ by O
 researchers O
 at O
 Russian O
-security O
-firm O
+security B-Organization
+firm I-Organization
 Kaspersky B-Organization
 Lab I-Organization
 , O
@@ -8883,7 +8883,7 @@ National O
 Security O
 Agency O
 – O
-NSA O
+NSA B-Organization
 's O
 hacking O
 tools O
@@ -8971,7 +8971,7 @@ tools O
 used O
 by O
 the O
-NSA O
+NSA B-Organization
 including O
 the O
 notorious O
@@ -9079,8 +9079,8 @@ Enforcement O
 Slingshot B-System
 loads O
 signed O
-vulnerable O
-drivers O
+vulnerable B-Vulnerability
+drivers I-Vulnerability
 and O
 runs O
 its O
@@ -9281,8 +9281,8 @@ were O
 the O
 result O
 of O
-spear O
-phishing O
+spear B-Vulnerability
+phishing I-Vulnerability
 attempts O
 against O
 the O
@@ -9369,8 +9369,8 @@ target O
 both O
 private O
 and O
-government O
-entities O
+government B-Organization
+entities I-Organization
 within O
 Japan O
 . O
@@ -9462,9 +9462,9 @@ the O
 use O
 of O
 a O
-domain O
-hosting O
-company O
+domain B-Organization
+hosting I-Organization
+company I-Organization
 that O
 accepts O
 BTC O
@@ -9748,7 +9748,7 @@ were O
 customized O
 for O
 Canadian O
-audiences O
+audiences B-Organization
 . O
 
 Emotet B-System
@@ -9817,7 +9817,7 @@ were O
 customized O
 for O
 Canadian O
-audiences O
+audiences B-Organization
 . O
 
 Emotet O
@@ -9954,8 +9954,8 @@ TA542 O
 distributed O
 millions O
 of O
-Emotet-laden O
-emails O
+Emotet-laden B-Vulnerability
+emails I-Vulnerability
 in O
 both O
 English O
@@ -9993,11 +9993,11 @@ targeting O
 Canada O
 with O
 " O
-Canada O
-Post O
+Canada B-Organization
+Post I-Organization
 " O
-themed O
-lures O
+themed B-Vulnerability
+lures I-Vulnerability
 between O
 January O
 1 O
@@ -10319,9 +10319,9 @@ level O
 too O
 . O
 
-Microsoft O
-Threat O
-Intelligence O
+Microsoft B-Organization
+Threat I-Organization
+Intelligence I-Organization
 refers O
 to O
 the O
@@ -10406,9 +10406,9 @@ data-wiping O
 operation O
 . O
 
-Microsoft O
-Threat O
-Intelligence O
+Microsoft B-Organization
+Threat I-Organization
+Intelligence I-Organization
 has O
 observed O
 that O
@@ -10423,7 +10423,7 @@ dubbed O
 Depriz B-Organization
 " O
 by O
-Microsoft O
+Microsoft B-Organization
 , O
 reuses O
 several O
@@ -10545,12 +10545,12 @@ February O
 
 In O
 all O
-emails O
+emails B-Vulnerability
 sent O
 to O
 these O
-government O
-officials O
+government B-Organization
+officials I-Organization
 , O
 the O
 actor O
@@ -10603,13 +10603,13 @@ used O
 it O
 to O
 send O
-spear O
-phishing O
-emails O
+spear B-Vulnerability
+phishing I-Vulnerability
+emails I-Vulnerability
 to O
 Indian O
-government O
-officials O
+government B-Organization
+officials I-Organization
 on O
 the O
 same O
@@ -10665,8 +10665,8 @@ documents O
 directly O
 as O
 an O
-email O
-attachment O
+email B-Vulnerability
+attachment I-Vulnerability
 . O
 
 In O
@@ -10696,13 +10696,13 @@ used O
 it O
 to O
 send O
-spear O
-phishing O
-emails O
+spear B-Vulnerability
+phishing I-Vulnerability
+emails I-Vulnerability
 to O
 Indian O
-government O
-officials O
+government B-Organization
+officials I-Organization
 on O
 the O
 same O
@@ -10729,8 +10729,8 @@ across O
 a O
 number O
 of O
-spear O
-phishing O
+spear B-Vulnerability
+phishing I-Vulnerability
 incidents O
 . O
 
@@ -10766,7 +10766,7 @@ which O
 targeted O
 the O
 Indian O
-embassies O
+embassies B-Organization
 in O
 Saudi O
 Arabia O
@@ -10780,8 +10780,8 @@ February O
 2016 O
 , O
 Indian O
-army O
-officials O
+army B-Organization
+officials I-Organization
 issued O
 a O
 warning O
@@ -10814,8 +10814,8 @@ smartphones O
 used O
 by O
 Indian O
-army O
-personnel O
+army B-Organization
+personnel I-Organization
 . O
 
 The O
@@ -10842,18 +10842,18 @@ Karachi O
 According O
 to O
 the O
-security O
-firm O
+security B-Organization
+firm I-Organization
 , O
 this O
 campaign O
 targeted O
 Indian O
-military O
-officials O
+military B-Organization
+officials I-Organization
 via O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 , O
 distributing O
 spyware O
@@ -10898,8 +10898,8 @@ and O
 working O
 in O
 the O
-hospitality O
-sector O
+hospitality B-Organization
+sector I-Organization
 . O
 
 Two O
@@ -10913,7 +10913,7 @@ custom O
 executables O
 as O
 legitimate O
-Microsoft O
+Microsoft B-Organization
 implants O
 — O
 were O
@@ -11094,8 +11094,8 @@ and O
 living O
 off O
 the O
-land O
-tactics O
+land B-Vulnerability
+tactics I-Vulnerability
 , O
 such O
 as O
@@ -11155,8 +11155,8 @@ media O
 telecommunications O
 , O
 and O
-engineering O
-sectors O
+engineering B-Organization
+sectors I-Organization
 . O
 
 Whitefly B-Organization
@@ -11456,8 +11456,8 @@ UK-based O
 organization O
 in O
 the O
-hospitality O
-sector O
+hospitality B-Organization
+sector I-Organization
 . O
 
 Whitefly B-Organization
@@ -11498,8 +11498,8 @@ also O
 targeted O
 chemical O
 and O
-think O
-tank O
+think B-Organization
+tank I-Organization
 sectors O
 around O
 the O
@@ -11566,8 +11566,8 @@ has O
 been O
 observed O
 targeting O
-technology O
-companies O
+technology B-Organization
+companies I-Organization
 in O
 Germany O
 , O
@@ -11660,8 +11660,8 @@ at O
 a O
 Middle O
 Eastern O
-government O
-agency O
+government B-Organization
+agency I-Organization
 . O
 
 The O
@@ -11678,8 +11678,8 @@ targeted O
 a O
 Middle O
 Eastern O
-government O
-agency O
+government B-Organization
+agency I-Organization
 . O
 
 The O
@@ -11804,8 +11804,8 @@ Waledac B-System
 that O
 also O
 leveraged O
-peer-to-peer O
-communications O
+peer-to-peer B-Vulnerability
+communications I-Vulnerability
 . O
 
 Although O
@@ -12011,8 +12011,8 @@ IP O
 address O
 within O
 the O
-government O
-agency O
+government B-Organization
+agency I-Organization
 . O
 
 Unit B-Organization
@@ -12201,7 +12201,7 @@ an O
 operation O
 targeting O
 computer O
-users O
+users B-Organization
 in O
 Burkina O
 Faso O
@@ -12665,9 +12665,9 @@ group O
 that O
 had O
 been O
-uploaded O
-to O
-VirusTotal O
+uploaded B-Vulnerability
+to I-Vulnerability
+VirusTotal I-Vulnerability
 . O
 
 Each O
@@ -12714,8 +12714,8 @@ document O
 and O
 send O
 another O
-spear-phishing O
-email O
+spear-phishing B-Vulnerability
+email I-Vulnerability
 , O
 this O
 time O
@@ -13006,10 +13006,10 @@ malicious B-Malware
 document I-Malware
 through O
 a O
-spear O
-phishing O
-email O
-message O
+spear B-Vulnerability
+phishing I-Vulnerability
+email I-Vulnerability
+message I-Vulnerability
 . O
 
 At O
@@ -13333,9 +13333,9 @@ control O
 (C2) O
 server O
 over O
-The O
-Onion O
-Router O
+The B-Vulnerability
+Onion I-Vulnerability
+Router I-Vulnerability
 (Tor) O
 network O
 if O
@@ -13513,13 +13513,13 @@ to O
 a O
 Czech O
 Republic O
-hospitality O
-organization O
+hospitality B-Organization
+organization I-Organization
 in O
 addition O
 to O
 a O
-government O
+government B-Organization
 website O
 in O
 Montenegro O
@@ -13531,11 +13531,11 @@ has O
 not O
 directly O
 observed O
-BACKSWING O
+BACKSWING B-Organization
 delivering O
 BADRABBIT B-Malware
 , O
-BACKSWING O
+BACKSWING B-Organization
 was O
 observed O
 on O
@@ -13557,8 +13557,8 @@ BADRABBIT B-Malware
 dropper I-Malware
 . O
 
-Harvested O
-credentials O
+Harvested B-Vulnerability
+credentials I-Vulnerability
 provided O
 by O
 an O
@@ -13631,8 +13631,8 @@ however O
 TA459 O
 opportunistically O
 used O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 with O
 a O
 Microsoft B-Malware
@@ -13671,8 +13671,8 @@ however O
 attackers O
 opportunistically O
 used O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 with O
 a O
 Microsoft B-Malware
@@ -13735,8 +13735,8 @@ The O
 documents B-Malware
 attached O
 to O
-spear-phishing O
-e-mails O
+spear-phishing B-Vulnerability
+e-mails I-Vulnerability
 used O
 in O
 both O
@@ -14193,12 +14193,12 @@ content O
 
 In O
 all O
-emails O
+emails B-Vulnerability
 sent O
 to O
 these O
-government O
-officials O
+government B-Organization
+officials I-Organization
 , O
 the O
 actor O
@@ -14227,18 +14227,18 @@ payload O
 According O
 to O
 the O
-security O
-firm O
+security B-Organization
+firm I-Organization
 , O
 this O
 campaign O
 targeted O
 Indian O
-military O
-officials O
+military B-Organization
+officials I-Organization
 via O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 , O
 distributing O
 spyware O
@@ -14257,16 +14257,16 @@ PLATINUM B-Organization
 persistent O
 use O
 of O
-spear O
-phishing O
-tactics O
+spear B-Vulnerability
+phishing I-Vulnerability
+tactics I-Vulnerability
 ( O
-phishing O
+phishing B-Vulnerability
 attempts O
 aimed O
 at O
-specific O
-individuals O
+specific B-Organization
+individuals I-Organization
 ) O
 and O
 access O
@@ -14290,16 +14290,16 @@ group B-Organization
 persistent O
 use O
 of O
-spear O
-phishing O
-tactics O
+spear B-Vulnerability
+phishing I-Vulnerability
+tactics I-Vulnerability
 ( O
-phishing O
+phishing B-Vulnerability
 attempts O
 aimed O
 at O
-specific O
-individuals O
+specific B-Organization
+individuals I-Organization
 ) O
 and O
 access O
@@ -14337,8 +14337,8 @@ in O
 which O
 criminals B-Organization
 use O
-APT O
-techniques O
+APT B-Vulnerability
+techniques I-Vulnerability
 directly O
 against O
 the O
@@ -14348,7 +14348,7 @@ instead O
 of O
 through O
 its O
-customers O
+customers B-Organization
 . O
 
 Carbanak B-Vulnerability
@@ -14363,7 +14363,7 @@ fraud O
 including O
 theft O
 from O
-consumer O
+consumer B-Organization
 and O
 corporate O
 bank O
@@ -14405,7 +14405,7 @@ affecting O
 one O
 of O
 its O
-customers O
+customers B-Organization
 . O
 
 PIVY B-System
@@ -14423,14 +14423,14 @@ as O
 Nitro O
 that O
 targeted O
-chemical O
-makers O
+chemical B-Organization
+makers I-Organization
 , O
-government O
-agencies O
+government B-Organization
+agencies I-Organization
 , O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 , O
 and O
 human O
@@ -14478,8 +14478,8 @@ in O
 which O
 criminals B-Organization
 use O
-APT O
-techniques O
+APT B-Vulnerability
+techniques I-Vulnerability
 directly O
 against O
 the O
@@ -14489,7 +14489,7 @@ instead O
 of O
 through O
 its O
-customers O
+customers B-Organization
 . O
 
 Carbanak B-Vulnerability
@@ -14504,7 +14504,7 @@ fraud O
 including O
 theft O
 from O
-consumer O
+consumer B-Organization
 and O
 corporate O
 bank O
@@ -14546,7 +14546,7 @@ affecting O
 one O
 of O
 its O
-customers O
+customers B-Organization
 . O
 
 Alternatively O
@@ -14557,9 +14557,9 @@ also O
 possible O
 that O
 APT41 B-Organization
-injected O
-malicious O
-code O
+injected B-Vulnerability
+malicious I-Vulnerability
+code I-Vulnerability
 into O
 the O
 package O
@@ -14797,8 +14797,8 @@ routes O
 SectorJ04 B-Organization
 used O
 the O
-spear O
-phishing O
+spear B-Vulnerability
+phishing I-Vulnerability
 email O
 to O
 spread O
@@ -14877,7 +14877,7 @@ Typically O
 APT10 B-Organization
 tends O
 to O
-employ O
+employ B-Vulnerability
 a O
 namesquatting O
 scheme O
@@ -14993,8 +14993,8 @@ which O
 specializes O
 in O
 attacking O
-various O
-companies O
+various B-Organization
+companies I-Organization
 to O
 get O
 access O
@@ -15044,7 +15044,7 @@ using O
 fake O
 Google O
 Docs O
-phishing O
+phishing B-Vulnerability
 pages O
 to O
 collect O
@@ -15057,7 +15057,7 @@ Scattered B-Organization
 Canary I-Organization
 began O
 using O
-phishing O
+phishing B-Vulnerability
 pages O
 of O
 commonly O
@@ -15338,9 +15338,9 @@ campaign O
 , O
 APT32 B-Organization
 leveraged O
-social O
-engineering O
-emails O
+social B-Vulnerability
+engineering I-Vulnerability
+emails I-Vulnerability
 with O
 Microsoft B-Malware
 ActiveMime I-Malware
@@ -15449,10 +15449,10 @@ system O
 1) O
 , O
 and O
-executing O
+executing B-Vulnerability
 it O
-using O
-ShellExecute() O
+using B-Vulnerability
+ShellExecute() I-Vulnerability
 . O
 
 APT28 B-Organization
@@ -15609,8 +15609,8 @@ used O
 custom O
 malware O
 and O
-APT O
-techniques O
+APT B-Vulnerability
+techniques I-Vulnerability
 to O
 steal O
 millions O
@@ -15620,8 +15620,8 @@ while O
 infecting O
 hundreds O
 of O
-financial O
-institutions O
+financial B-Organization
+institutions I-Organization
 in O
 at O
 least O
@@ -15670,8 +15670,8 @@ however O
 TA459 O
 opportunistically O
 used O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 with O
 a O
 Microsoft B-Malware
@@ -15710,8 +15710,8 @@ however O
 attackers O
 opportunistically O
 used O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 with O
 a O
 Microsoft B-Malware
@@ -15774,8 +15774,8 @@ The O
 documents B-Malware
 attached O
 to O
-spear-phishing O
-e-mails O
+spear-phishing B-Vulnerability
+e-mails I-Vulnerability
 used O
 in O
 both O
@@ -16232,7 +16232,7 @@ content O
 
 In O
 all O
-emails O
+emails B-Vulnerability
 sent O
 to O
 these O
@@ -16266,8 +16266,8 @@ payload O
 According O
 to O
 the O
-security O
-firm O
+security B-Organization
+firm I-Organization
 , O
 this O
 campaign O
@@ -16276,8 +16276,8 @@ Indian O
 military O
 officials O
 via O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 , O
 distributing O
 spyware O
@@ -16296,11 +16296,11 @@ PLATINUM B-Organization
 persistent O
 use O
 of O
-spear O
-phishing O
-tactics O
+spear B-Vulnerability
+phishing I-Vulnerability
+tactics I-Vulnerability
 ( O
-phishing O
+phishing B-Vulnerability
 attempts O
 aimed O
 at O
@@ -16329,11 +16329,11 @@ group B-Organization
 persistent O
 use O
 of O
-spear O
-phishing O
-tactics O
+spear B-Vulnerability
+phishing I-Vulnerability
+tactics I-Vulnerability
 ( O
-phishing O
+phishing B-Vulnerability
 attempts O
 aimed O
 at O
@@ -16376,8 +16376,8 @@ in O
 which O
 criminals B-Organization
 use O
-APT O
-techniques O
+APT B-Vulnerability
+techniques I-Vulnerability
 directly O
 against O
 the O
@@ -16465,11 +16465,11 @@ targeted O
 chemical O
 makers O
 , O
-government O
-agencies O
+government B-Organization
+agencies I-Organization
 , O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 , O
 and O
 human O
@@ -16517,8 +16517,8 @@ in O
 which O
 criminals B-Organization
 use O
-APT O
-techniques O
+APT B-Vulnerability
+techniques I-Vulnerability
 directly O
 against O
 the O
@@ -17568,8 +17568,8 @@ on O
 behalf O
 of O
 the O
-Iranian O
-Government O
+Iranian B-Organization
+Government I-Organization
 , O
 with O
 a O
@@ -17653,7 +17653,7 @@ also O
 from O
 South O
 Korean O
-companies O
+companies B-Organization
 , O
 primarily O
 in O
@@ -17670,8 +17670,8 @@ Suckfly O
 's O
 attacks O
 on O
-government O
-organizations O
+government B-Organization
+organizations I-Organization
 that O
 provide O
 information O
@@ -17755,8 +17755,8 @@ specifically O
 aerospace O
 ( O
 including O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 ) O
 , O
 automotive O
@@ -17850,8 +17850,8 @@ specifically O
 aerospace O
 ( O
 including O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 ) O
 , O
 automotive O
@@ -17930,9 +17930,9 @@ the O
 website O
 of O
 an O
-international O
-industry O
-organization O
+international B-Organization
+industry I-Organization
+organization I-Organization
 that O
 affected O
 aerospace O
@@ -17946,8 +17946,8 @@ technology O
 government O
 , O
 and O
-utilities O
-organizations O
+utilities B-Organization
+organizations I-Organization
 around O
 the O
 world O
@@ -18004,23 +18004,23 @@ websites O
 vulnerability O
 scans O
 of O
-network O
-services O
+network B-Vulnerability
+services I-Vulnerability
 on O
 the O
 internet O
 , O
 and O
-brute-force O
-login O
+brute-force B-Vulnerability
+login I-Vulnerability
 attempts O
 . O
 
 Leafminer B-Organization
 also O
 utilized O
-Process O
-Doppelganging O
+Process B-Vulnerability
+Doppelganging I-Vulnerability
 , O
 a O
 detection O
@@ -18050,16 +18050,16 @@ Proofpoint B-Organization
 detected O
 and O
 blocked O
-spearphishing O
-emails O
+spearphishing B-Vulnerability
+emails I-Vulnerability
 from O
 this O
 group B-Organization
 targeting O
 a O
 US O
-shipbuilding O
-company O
+shipbuilding B-Organization
+company I-Organization
 and O
 a O
 US O
@@ -18081,8 +18081,8 @@ the O
 actor B-Organization
 sent O
 targeted O
-spearphishing O
-emails O
+spearphishing B-Vulnerability
+emails I-Vulnerability
 containing O
 malicious O
 URLs O
@@ -18091,8 +18091,8 @@ to O
 documents O
 to O
 multiple O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 . O
 
 Between O
@@ -18105,8 +18105,8 @@ the O
 Leviathan B-Organization
 sent O
 targeted O
-spearphishing O
-emails O
+spearphishing B-Vulnerability
+emails I-Vulnerability
 containing O
 malicious O
 URLs O
@@ -18115,17 +18115,17 @@ to O
 documents O
 to O
 multiple O
-defense O
-contractors O
+defense B-Organization
+contractors I-Organization
 . O
 
 The O
 Leviathan B-Organization
 generally O
 emailed O
-Microsoft O
-Excel O
-documents O
+Microsoft B-Vulnerability
+Excel I-Vulnerability
+documents I-Vulnerability
 with O
 malicious O
 macros O
@@ -18141,7 +18141,7 @@ frequently O
 related O
 to O
 the O
-Navy O
+Navy B-Organization
 . O
 
 Instead O
@@ -18158,9 +18158,9 @@ employed O
 spearphish B-Vulnerability
 exploits I-Vulnerability
 , O
-strategic O
-web O
-compromises O
+strategic B-Vulnerability
+web I-Vulnerability
+compromises I-Vulnerability
 , O
 and O
 watering O
@@ -18178,11 +18178,11 @@ threat B-Organization
 actors I-Organization
 sent O
 a O
-spear-phishing O
-email O
+spear-phishing B-Vulnerability
+email I-Vulnerability
 to O
 an O
-individual O
+individual B-Organization
 at O
 the O
 French O
@@ -18202,11 +18202,11 @@ Lotus B-Organization
 Blossom I-Organization
 sent O
 a O
-spear-phishing O
-email O
+spear-phishing B-Vulnerability
+email I-Vulnerability
 to O
 an O
-individual O
+individual B-Organization
 at O
 the O
 French O
@@ -18234,10 +18234,10 @@ systems O
 instead O
 relying O
 on O
-Excel O
+Excel B-Vulnerability
 and O
-Word O
-documents O
+Word B-Vulnerability
+documents I-Vulnerability
 containing O
 malicious O
 macros O
@@ -18248,9 +18248,9 @@ Magic O
 Hound O
 campaign O
 used O
-Word O
+Word B-Vulnerability
 and O
-Excel O
+Excel B-Vulnerability
 documents O
 containing O
 malicious O
@@ -18274,9 +18274,9 @@ campaign O
 , O
 APT32 B-Organization
 leveraged O
-social O
-engineering O
-emails O
+social B-Vulnerability
+engineering I-Vulnerability
+emails I-Vulnerability
 with O
 Microsoft B-Malware
 ActiveMime I-Malware
@@ -18291,13 +18291,13 @@ macros O
 APT33 B-Organization
 often O
 conducts O
-spear-phishing O
+spear-phishing B-Vulnerability
 operations O
 using O
 a O
 built-in O
-phishing O
-module O
+phishing B-Vulnerability
+module I-Vulnerability
 . O
 
 In O
@@ -18307,8 +18307,8 @@ attack O
 , O
 APT33 B-Organization
 sent O
-spear-phishing O
-emails O
+spear-phishing B-Vulnerability
+emails I-Vulnerability
 to O
 workers O
 in O
@@ -18318,10 +18318,10 @@ industry O
 . O
 
 These O
-emails O
+emails B-Vulnerability
 included O
-recruitment-themed O
-lures O
+recruitment-themed B-Vulnerability
+lures I-Vulnerability
 and O
 links O
 to O
@@ -18341,7 +18341,7 @@ compromised B-System
 accounts I-System
 to O
 conduct O
-spear-phishing O
+spear-phishing B-Vulnerability
 operations O
 . O
 
@@ -18357,13 +18357,13 @@ tools I-System
 and O
 often O
 conducts O
-spear-phishing O
+spear-phishing B-Vulnerability
 operations O
 using O
 a O
 built-in O
-phishing O
-module O
+phishing B-Vulnerability
+module I-Vulnerability
 from O
 " O
 ALFA B-System
