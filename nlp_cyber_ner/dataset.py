@@ -178,7 +178,9 @@ def unify_labels_dnrti(path: Path) -> None:
 
     with (
         open(path, "r", encoding="utf-8") as f,
-        open(path.with_suffix(".unified"), "w", encoding="utf-8") as f_out,
+        open(
+            PROCESSED_DATA_DIR / "DNRTI" / path.with_suffix(".unified").name, "w", encoding="utf-8"
+        ) as f_out,
     ):
         for line in f:
             line = line.strip()

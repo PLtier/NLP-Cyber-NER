@@ -120,8 +120,8 @@ provides O
 the O
 attackers B-Organization
 with O
-remote B-Vulnerability
-access I-Vulnerability
+remote O
+access O
 to O
 the O
 compromised O
@@ -181,8 +181,8 @@ by O
 copying O
 itself O
 over O
-network B-Vulnerability
-shares I-Vulnerability
+network O
+shares O
 . O
 
 In O
@@ -200,8 +200,8 @@ be O
 a O
 highly O
 targeted O
-phishing B-Vulnerability
-email I-Vulnerability
+phishing O
+email O
 to O
 a O
 high-ranking O
@@ -222,8 +222,8 @@ as O
 part O
 of O
 a O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 against O
 a O
 government O
@@ -244,8 +244,8 @@ as O
 part O
 of O
 a O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 against O
 a O
 government O
@@ -515,9 +515,9 @@ the O
 DDE B-System
 protocol I-System
 to O
-remotely B-Vulnerability
-execute I-Vulnerability
-commands I-Vulnerability
+remotely O
+execute O
+commands O
 in O
 memory O
 on O
@@ -628,9 +628,9 @@ vulnerabilities O
 . O
 
 These O
-socially B-Vulnerability
-engineered I-Vulnerability
-emails I-Vulnerability
+socially O
+engineered O
+emails O
 contain O
 web O
 links O
@@ -646,9 +646,9 @@ macros O
 It O
 contains O
 an O
-additional B-Vulnerability
-meta I-Vulnerability
-tag I-Vulnerability
+additional O
+meta O
+tag O
 at O
 the O
 end O
@@ -768,8 +768,8 @@ in O
 addition O
 to O
 sending O
-malware B-Vulnerability
-lures I-Vulnerability
+malware O
+lures O
 , O
 the O
 Patchwork B-Organization
@@ -782,7 +782,7 @@ tracking O
 links O
 in O
 their O
-e-mails B-Vulnerability
+e-mails O
 for O
 the O
 purpose O
@@ -792,8 +792,8 @@ which O
 recipients O
 opened O
 their O
-e-mail B-Vulnerability
-messages I-Vulnerability
+e-mail O
+messages O
 . O
 
 The O
@@ -845,10 +845,10 @@ that O
 attempt O
 to O
 exploit O
-CVE-2017-8570 O
+CVE-2017-8570 B-Vulnerability
 ( O
-Composite O
-Moniker O
+Composite B-Vulnerability
+Moniker B-Vulnerability
 ) O
 . O
 
@@ -933,8 +933,8 @@ document O
 and O
 send O
 another O
-spear-phishing B-Vulnerability
-email I-Vulnerability
+spear-phishing O
+email O
 , O
 this O
 time O
@@ -954,7 +954,7 @@ Word B-Malware
 document I-Malware
 usually O
 exploits O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 . O
 
 Sometimes O
@@ -969,7 +969,7 @@ instead O
 , O
 which O
 exploits O
-CVE-2014-6352 O
+CVE-2014-6352 B-Vulnerability
 . O
 
 Sometimes O
@@ -983,7 +983,7 @@ instead O
 , O
 which O
 exploits O
-CVE-2014-6352 O
+CVE-2014-6352 B-Vulnerability
 . O
 
 From O
@@ -1215,9 +1215,9 @@ EPS B-Malware
 files I-Malware
 targeting O
 the O
-CVE-2015-2545 O
+CVE-2015-2545 B-Vulnerability
 and O
-CVE-2017-0261 O
+CVE-2017-0261 B-Vulnerability
 vulnerabilities O
 . O
 
@@ -1229,7 +1229,7 @@ Patchwork B-Organization
 focused O
 on O
 the O
-CVE-2017-0261 O
+CVE-2017-0261 B-Vulnerability
 vulnerability O
 , O
 however O
@@ -1250,7 +1250,7 @@ to O
 attack O
 the O
 older O
-CVE-2015-2545 O
+CVE-2015-2545 B-Vulnerability
 vulnerability O
 . O
 
@@ -1364,10 +1364,10 @@ has O
 been O
 repurposed O
 to O
-find B-Vulnerability
-and I-Vulnerability
-exfiltrate I-Vulnerability
-documents I-Vulnerability
+find O
+and O
+exfiltrate O
+documents O
 . O
 
 The O
@@ -1545,8 +1545,8 @@ using O
 stolen O
 material O
 as O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 content O
 to O
 target O
@@ -1560,8 +1560,8 @@ also O
 been O
 seen O
 using O
-Heartbleed O
-vulnerability O
+Heartbleed B-Vulnerability
+vulnerability I-Vulnerability
 in O
 order O
 to O
@@ -1577,8 +1577,8 @@ also O
 been O
 seen O
 using O
-Heartbleed O
-vulnerability O
+Heartbleed B-Vulnerability
+vulnerability I-Vulnerability
 in O
 order O
 to O
@@ -1616,7 +1616,7 @@ a O
 specific O
 vulnerability O
 ( O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 ) O
 . O
 
@@ -1624,7 +1624,7 @@ PittyTiger B-Organization
 could O
 also O
 use O
-CVE-2014-1761 O
+CVE-2014-1761 B-Vulnerability
 , O
 which O
 is O
@@ -1920,8 +1920,8 @@ Tiger I-Organization
 group I-Organization
 mostly O
 uses O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 in O
 order O
 to O
@@ -1941,8 +1941,8 @@ social O
 engineering O
 to O
 deliver O
-spearphishing B-Vulnerability
-emails I-Vulnerability
+spearphishing O
+emails O
 , O
 in O
 a O
@@ -1957,9 +1957,9 @@ and O
 Chinese O
 , O
 and O
-email B-Vulnerability
-phishing I-Vulnerability
-pages I-Vulnerability
+email O
+phishing O
+pages O
 to O
 their O
 targets O
@@ -2070,11 +2070,11 @@ PLATINUM B-Organization
 persistent O
 use O
 of O
-spear B-Vulnerability
-phishing I-Vulnerability
-tactics I-Vulnerability
+spear O
+phishing O
+tactics O
 ( O
-phishing B-Vulnerability
+phishing O
 attempts O
 aimed O
 at O
@@ -2086,8 +2086,8 @@ access O
 to O
 previously O
 undiscovered O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 have O
 made O
 it O
@@ -2103,11 +2103,11 @@ group B-Organization
 persistent O
 use O
 of O
-spear B-Vulnerability
-phishing I-Vulnerability
-tactics I-Vulnerability
+spear O
+phishing O
+tactics O
 ( O
-phishing B-Vulnerability
+phishing O
 attempts O
 aimed O
 at O
@@ -2119,8 +2119,8 @@ access O
 to O
 previously O
 undiscovered O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 have O
 made O
 it O
@@ -2173,8 +2173,8 @@ once O
 
 PLATINUM B-Organization
 often O
-spear B-Vulnerability
-phishes I-Vulnerability
+spear O
+phishes O
 its O
 targets O
 at O
@@ -2226,8 +2226,8 @@ its O
 intended O
 victims O
 using O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 . O
 
 PLATINUM B-Organization
@@ -2293,8 +2293,8 @@ used O
 a O
 number O
 of O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 , O
 for O
 which O
@@ -2401,7 +2401,7 @@ Windows O
 ( O
 later O
 designated O
-CVE-2013-7331 O
+CVE-2013-7331 B-Vulnerability
 ) O
 to O
 read O
@@ -2436,7 +2436,7 @@ PostScript O
 interpreter O
 ( O
 designated O
-CVE-2015-2545 O
+CVE-2015-2545 B-Vulnerability
 ) O
 that O
 enabled O
@@ -2451,8 +2451,8 @@ and O
 drop O
 an O
 attacker-generated O
-malicious B-Vulnerability
-DLL I-Vulnerability
+malicious O
+DLL O
 onto O
 the O
 computer O
@@ -2473,10 +2473,10 @@ malicious B-Malware
 document I-Malware
 through O
 a O
-spear B-Vulnerability
-phishing I-Vulnerability
-email I-Vulnerability
-message I-Vulnerability
+spear O
+phishing O
+email O
+message O
 . O
 
 The O
@@ -2488,7 +2488,7 @@ unknown O
 vulnerability O
 ( O
 designated O
-CVE-2015-2546 O
+CVE-2015-2546 B-Vulnerability
 ) O
 in O
 the O
@@ -2537,7 +2537,7 @@ PostScript O
 interpreter O
 ( O
 designated O
-CVE-2015-2545 O
+CVE-2015-2545 B-Vulnerability
 ) O
 that O
 enabled O
@@ -2552,8 +2552,8 @@ and O
 drop O
 an O
 attacker-generated O
-malicious B-Vulnerability
-DLL I-Vulnerability
+malicious O
+DLL O
 onto O
 the O
 computer O
@@ -2567,8 +2567,8 @@ made O
 use O
 of O
 four O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 during O
 these O
 two O
@@ -2576,9 +2576,9 @@ attack O
 campaigns O
 ( O
 two O
-remote B-Vulnerability
-code I-Vulnerability
-execution I-Vulnerability
+remote O
+code O
+execution O
 bugs O
 , O
 one O
@@ -2606,8 +2606,8 @@ either O
 acquire O
 professionally O
 written O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 from O
 unknown O
 markets O
@@ -2617,8 +2617,8 @@ research O
 and O
 utilize O
 the O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 themselves O
 . O
 
@@ -2983,8 +2983,8 @@ using O
 a O
 variety O
 of O
-injection B-Vulnerability
-techniques I-Vulnerability
+injection O
+techniques O
 . O
 
 At O
@@ -3139,8 +3139,8 @@ PLATINUM B-Organization
 has O
 used O
 several O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 against O
 their O
 victims O
@@ -3154,8 +3154,8 @@ to O
 inject O
 code O
 via O
-hot B-Vulnerability
-patching I-Vulnerability
+hot O
+patching O
 was O
 first O
 documented O
@@ -3286,7 +3286,7 @@ installed O
 
 Even O
 if O
-CVE-2015-2546 O
+CVE-2015-2546 B-Vulnerability
 affected O
 Windows O
 10 O
@@ -3318,11 +3318,11 @@ For O
 example O
 , O
 one O
-zero-day O
-vulnerability O
+zero-day B-Vulnerability
+vulnerability I-Vulnerability
 exploit O
 ( O
-CVE-2015-2545 O
+CVE-2015-2545 B-Vulnerability
 ) O
 used O
 by O
@@ -3420,8 +3420,8 @@ been O
 discovered O
 misusing O
 the O
-AMT B-Vulnerability
-SOL I-Vulnerability
+AMT O
+SOL O
 feature O
 for O
 communication O
@@ -3445,8 +3445,8 @@ itself O
 but O
 rather O
 misused O
-AMT B-Vulnerability
-SOL I-Vulnerability
+AMT O
+SOL O
 within O
 target O
 networks O
@@ -3530,8 +3530,8 @@ PLATINUM B-Organization
 might O
 have O
 obtained O
-compromised B-Vulnerability
-credentials I-Vulnerability
+compromised O
+credentials O
 from O
 victim O
 networks O
@@ -3561,10 +3561,10 @@ on O
 the O
 system O
 , O
-proceeded B-Vulnerability
-to I-Vulnerability
-provision I-Vulnerability
-AMT I-Vulnerability
+proceeded O
+to O
+provision O
+AMT O
 . O
 
 During O
@@ -3719,8 +3719,8 @@ researching O
 or O
 purchasing O
 complicated O
-zero-day O
-exploits O
+zero-day B-Vulnerability
+exploits I-Vulnerability
 , O
 the O
 ability O
@@ -3823,7 +3823,7 @@ through O
 the O
 use O
 of O
-spear-phishing B-Vulnerability
+spear-phishing O
 packaged O
 with O
 embedded O
@@ -4086,7 +4086,7 @@ of O
 an O
 exploit O
 for O
-CVE-2016-4117 O
+CVE-2016-4117 B-Vulnerability
 , O
 a O
 vulnerability O
@@ -5135,8 +5135,8 @@ a O
 few O
 samples O
 of O
-internal B-Vulnerability
-emails I-Vulnerability
+internal O
+emails O
 from O
 the O
 company O
@@ -5251,17 +5251,17 @@ communications O
 , O
 such O
 as O
-phone B-Vulnerability
-calls I-Vulnerability
+phone O
+calls O
 , O
-text B-Vulnerability
-messages I-Vulnerability
+text O
+messages O
 , O
-Skype B-Vulnerability
-calls I-Vulnerability
+Skype O
+calls O
 , O
 or O
-emails B-Vulnerability
+emails O
 . O
 
 In O
@@ -5850,7 +5850,7 @@ victim O
 to O
 engage O
 in O
-communication B-Vulnerability
+communication O
 with O
 an O
 operator O
@@ -5864,7 +5864,7 @@ unique O
 insight O
 into O
 the O
-email B-Vulnerability
+email O
 dialogue O
 between O
 a O
@@ -5877,8 +5877,8 @@ operator O
 . O
 
 Initial O
-victim B-Vulnerability
-communication I-Vulnerability
+victim O
+communication O
 with O
 the O
 INDRIK B-Organization
@@ -5979,8 +5979,8 @@ INDRIK B-Organization
 SPIDER I-Organization
 specifies O
 the O
-geographical B-Vulnerability
-location I-Vulnerability
+geographical O
+location O
 of O
 where O
 the O
@@ -6016,7 +6016,7 @@ decryptor I-System
 In O
 an O
 extensive O
-email B-Vulnerability
+email O
 to O
 the O
 victim O
@@ -6607,7 +6607,7 @@ for O
 this O
 campaign O
 identified O
-email B-Vulnerability
+email O
 as O
 the O
 primary O
@@ -6750,8 +6750,8 @@ OurMine O
 might O
 have O
 used O
-social B-Vulnerability
-engineering I-Vulnerability
+social O
+engineering O
 to O
 trick O
 WikiLeaks B-Organization
@@ -6788,8 +6788,8 @@ attackers O
 might O
 have O
 used O
-social B-Vulnerability
-engineering I-Vulnerability
+social O
+engineering O
 to O
 trick O
 WikiLeaks B-Organization
@@ -7336,11 +7336,11 @@ were O
 being O
 mass-distributed O
 via O
-email B-Vulnerability
-spam I-Vulnerability
+email O
+spam O
 and O
-exploit B-Vulnerability
-kits I-Vulnerability
+exploit O
+kits O
 , O
 but O
 also O
@@ -8010,10 +8010,10 @@ victim O
 machines O
 , O
 the O
-Rocke O
-group O
-exploits O
-vulnerabilities O
+Rocke B-Vulnerability
+group I-Vulnerability
+exploits I-Vulnerability
+vulnerabilities I-Vulnerability
 in O
 Apache O
 Struts O
@@ -8166,9 +8166,9 @@ by O
 attempting O
 to O
 exploit O
-CVE-2018-1000861 O
+CVE-2018-1000861 B-Vulnerability
 and O
-CVE-2019-1003000 O
+CVE-2019-1003000 B-Vulnerability
 . O
 
 By O
@@ -8306,8 +8306,8 @@ to O
 a O
 selection O
 of O
-NSA O
-exploits O
+NSA B-Vulnerability
+exploits I-Vulnerability
 and O
 hacking O
 tools O
@@ -9304,8 +9304,8 @@ targeted O
 attacks O
 using O
 multiple O
-stolen B-Vulnerability
-certificates I-Vulnerability
+stolen O
+certificates O
 , O
 as O
 well O
@@ -9938,7 +9938,7 @@ attack O
 using O
 0-day O
 vulnerabilities O
-(CVE-2018-8174) O
+(CVE-2018-8174) B-Vulnerability
 in O
 the O
 wild O
@@ -10443,7 +10443,7 @@ access O
 to O
 zero-day O
 vulnerabilities O
-(CVE-2018-0802) O
+(CVE-2018-0802) B-Vulnerability
 , O
 and O
 the O
@@ -10482,7 +10482,7 @@ been O
 reports O
 of O
 real-time O
-phishing B-Vulnerability
+phishing O
 in O
 the O
 wild O
@@ -10512,7 +10512,7 @@ that O
 simplifies O
 the O
 real-time O
-phishing B-Vulnerability
+phishing O
 technique O
 . O
 
@@ -10716,11 +10716,11 @@ reverse O
 shell O
 , O
 and O
-modifying B-Vulnerability
+modifying O
 its O
 command O
 and O
-control B-Vulnerability
+control O
 (C2) O
 configuration O
 . O
@@ -10879,8 +10879,8 @@ of O
 this O
 recently O
 observed O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 campaign O
 . O
 
@@ -10938,8 +10938,8 @@ Figure O
 4:Figure O
 4: O
 Sample O
-spear B-Vulnerability
-phishing I-Vulnerability
+spear O
+phishing O
 email O
 containing O
 macro-based O
@@ -11053,7 +11053,7 @@ with O
 the O
 exploitation O
 of O
-CVE-2017-10271 O
+CVE-2017-10271 B-Vulnerability
 following O
 the O
 public O
@@ -11139,7 +11139,7 @@ if O
 its O
 vulnerable O
 to O
-EternalBlue O
+EternalBlue B-Vulnerability
 , O
 and O
 uses O
@@ -11166,7 +11166,7 @@ we've O
 observed O
 involve O
 exploiting O
-CVE-2017-10271 O
+CVE-2017-10271 B-Vulnerability
 , O
 leveraging O
 PowerShell B-System
@@ -11183,10 +11183,10 @@ system O
 1) O
 , O
 and O
-executing B-Vulnerability
+executing O
 it O
-using B-Vulnerability
-ShellExecute() I-Vulnerability
+using O
+ShellExecute() O
 . O
 
 The O
@@ -11315,7 +11315,7 @@ employing O
 this O
 latest O
 Flash O
-zero-day O
+zero-day B-Vulnerability
 are O
 a O
 suspected O
@@ -11540,7 +11540,7 @@ of O
 Zyklon B-Organization
 malware O
 being O
-delivered B-Vulnerability
+delivered O
 primarily O
 through O
 spam B-System
@@ -11555,7 +11555,7 @@ at O
 least O
 three O
 known O
-vulnerabilities O
+vulnerabilities B-Vulnerability
 in O
 Microsoft O
 Office O
@@ -11576,11 +11576,11 @@ Zyklon B-Organization
 attack O
 flowInfection O
 Techniques O
-CVE-2017-8759 O
+CVE-2017-8759 B-Vulnerability
 . O
 
 This O
-vulnerability O
+vulnerability B-Vulnerability
 was O
 discovered O
 by O
@@ -11633,9 +11633,9 @@ control O
 (C2) O
 server O
 over O
-The B-Vulnerability
-Onion I-Vulnerability
-Router I-Vulnerability
+The O
+Onion O
+Router O
 (Tor) O
 network O
 if O
@@ -11652,7 +11652,7 @@ URL O
 in O
 OLE O
 object O
-CVE-2017-11882 O
+CVE-2017-11882 B-Vulnerability
 Similarly O
 , O
 we O
@@ -11665,7 +11665,7 @@ another O
 recently O
 discovered O
 vulnerability O
-(CVE-2017-11882) O
+(CVE-2017-11882) B-Vulnerability
 in O
 Microsoft O
 Office O
@@ -12381,8 +12381,8 @@ BADRABBIT B-Malware
 dropper I-Malware
 . O
 
-Harvested B-Vulnerability
-credentials I-Vulnerability
+Harvested O
+credentials O
 provided O
 by O
 an O
@@ -12568,9 +12568,9 @@ group O
 mainly O
 utilizes O
 a O
-spear B-Vulnerability
-phishing I-Vulnerability
-email I-Vulnerability
+spear O
+phishing O
+email O
 with O
 MS O
 Word O
@@ -12613,14 +12613,14 @@ the O
 infected O
 system O
 distributed O
-additional B-Vulnerability
-botnet I-Vulnerability
+additional O
+botnet O
 malware O
 , O
-ransomware B-Vulnerability
+ransomware O
 and O
-email B-Vulnerability
-stealers B-Vulnerability
+email O
+stealers O
 . O
 
 The O
@@ -13169,7 +13169,7 @@ they O
 are O
 vulnerable O
 to O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 patched O
 in O
@@ -13295,7 +13295,7 @@ that O
 were O
 vulnerable O
 to O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 that O
 we O
@@ -13326,7 +13326,7 @@ and O
 by O
 exploiting O
 the O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 vulnerability O
 patched O
@@ -13529,7 +13529,7 @@ triggers O
 an O
 exploit O
 for O
-CVE-2017-8759 O
+CVE-2017-8759 B-Vulnerability
 , O
 a O
 remote O
@@ -13601,7 +13601,7 @@ organizations O
 released O
 alerts O
 on O
-CVE-2019-0604 O
+CVE-2019-0604 B-Vulnerability
 exploitation O
 , O
 including O
@@ -13632,7 +13632,7 @@ which O
 actors B-Organization
 used O
 the O
-CVE-2019-0604 O
+CVE-2019-0604 B-Vulnerability
 to O
 exploit O
 SharePoint O
@@ -13672,7 +13672,7 @@ they O
 are O
 vulnerable O
 to O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 patched O
 in O
@@ -13738,7 +13738,7 @@ in O
 SharePoint O
 tracked O
 in O
-CVE-2019-0604 O
+CVE-2019-0604 B-Vulnerability
 . O
 
 The O
@@ -13762,7 +13762,7 @@ that O
 were O
 vulnerable O
 to O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 that O
 we O
@@ -13793,7 +13793,7 @@ and O
 by O
 exploiting O
 the O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 vulnerability O
 patched O
@@ -13828,7 +13828,7 @@ some O
 known O
 vulnerability O
 like O
-CVE-2017-11882 O
+CVE-2017-11882 B-Vulnerability
 , O
 or O
 documents B-System
@@ -13879,7 +13879,7 @@ a O
 result O
 of O
 their O
-phishing O
+phishing B-Vulnerability
 attacks O
 . O
 
@@ -13892,11 +13892,11 @@ spread O
 from O
 a O
 unique O
-watering B-Vulnerability
-hole I-Vulnerability
+watering O
+hole O
 website O
 exploiting O
-CVE-2018-8174 O
+CVE-2018-8174 B-Vulnerability
 , O
 a O
 VBScript O
@@ -13908,7 +13908,7 @@ This O
 malicious O
 site O
 used O
-CVE-2019-0752 O
+CVE-2019-0752 B-Vulnerability
 , O
 an O
 Internet O
@@ -13945,9 +13945,9 @@ injected O
 with O
 exploits O
 for O
-CVE-2018-8174 O
+CVE-2018-8174 B-Vulnerability
 or O
-CVE-2019-0752 O
+CVE-2019-0752 B-Vulnerability
 . O
 
 In O
@@ -13966,7 +13966,7 @@ vulnerability O
 in O
 Microsoft O
 Office: O
-CVE-2017-11882 O
+CVE-2017-11882 B-Vulnerability
 , O
 a O
 remote O
@@ -14003,7 +14003,7 @@ triggers O
 an O
 exploit O
 for O
-CVE-2017-8759 O
+CVE-2017-8759 B-Vulnerability
 , O
 a O
 remote O
@@ -14020,7 +14020,7 @@ Zebrocy B-Organization
 activity O
 initiates O
 with O
-spearphishing B-Vulnerability
+spearphishing O
 operations O
 delivering O
 various O
@@ -14033,8 +14033,8 @@ the O
 use O
 of O
 any O
-0day O
-exploits O
+0day B-Vulnerability
+exploits I-Vulnerability
 . O
 
 On O
@@ -14052,7 +14052,7 @@ for O
 the O
 Microsoft O
 Office O
-vulnerability O
+vulnerability B-Vulnerability
 to O
 target O
 a O
@@ -14079,7 +14079,7 @@ used O
 a O
 Flash O
 vulnerability O
-CVE-2016-7855 O
+CVE-2016-7855 B-Vulnerability
 along O
 with O
 this O
@@ -14110,8 +14110,8 @@ investigating O
 another O
 Adobe O
 Flash O
-zero O
-day O
+zero B-Vulnerability
+day I-Vulnerability
 . O
 
 Through O
@@ -14124,7 +14124,7 @@ handler O
 vulnerability O
 described O
 in O
-CVE-2017-1099 O
+CVE-2017-1099 B-Vulnerability
 , O
 the O
 observed O
@@ -14138,8 +14138,8 @@ early O
 May O
 , O
 the O
-phishing B-Vulnerability
-lures I-Vulnerability
+phishing O
+lures O
 leveraged O
 RTF B-Malware
 attachments I-Malware
@@ -14151,7 +14151,7 @@ Windows O
 vulnerability O
 described O
 in O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 As O
@@ -14165,7 +14165,7 @@ March O
 malicious B-Malware
 documents I-Malware
 exploiting O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 were O
 used O
 to O
@@ -14189,7 +14189,7 @@ or O
 bit O
 versions O
 of O
-CVE-2017-0001 O
+CVE-2017-0001 B-Vulnerability
 to O
 escalate O
 privileges O
@@ -14216,7 +14216,7 @@ in O
 a O
 document B-Malware
 named O
-Trump's_Attack_on_Syria_English.docx” O
+Trump's_Attack_on_Syria_English.docx” B-Vulnerability
 . O
 
 The O
@@ -14233,7 +14233,7 @@ or O
 bit O
 versions O
 of O
-CVE-2017-0001 O
+CVE-2017-0001 B-Vulnerability
 to O
 escalate O
 privileges O
@@ -14260,12 +14260,12 @@ in O
 a O
 document B-Malware
 named O
-Trump's_Attack_on_Syria_English.docx” O
+Trump's_Attack_on_Syria_English.docx” B-Vulnerability
 . O
 
 In O
 all O
-emails B-Vulnerability
+emails O
 sent O
 to O
 these O
@@ -14287,7 +14287,7 @@ document I-Malware
 that O
 exploited O
 the O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 vulnerability O
 to O
 drop O
@@ -14308,7 +14308,7 @@ actors O
 continue O
 to O
 leverage O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 to O
 exploit O
 Microsoft B-Malware
@@ -14320,15 +14320,15 @@ Gorgon O
 Group O
 campaign O
 leveraged O
-spear B-Vulnerability
-phishing I-Vulnerability
-emails I-Vulnerability
+spear O
+phishing O
+emails O
 with O
 Microsoft B-Malware
 Word I-Malware
 documents I-Malware
 exploiting O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 Ke3chang B-Organization
@@ -14336,11 +14336,11 @@ has O
 also O
 leveraged O
 a O
-Java O
-zero-day O
-vulnerability O
+Java B-Vulnerability
+zero-day I-Vulnerability
+vulnerability I-Vulnerability
 ( O
-CVE-2012-4681 O
+CVE-2012-4681 B-Vulnerability
 ) O
 , O
 as O
@@ -14354,22 +14354,22 @@ for O
 Microsoft B-Malware
 Word I-Malware
 ( O
-CVE-2010-3333 O
+CVE-2010-3333 B-Vulnerability
 ) O
 and O
 Adobe B-System
 PDF I-System
 Reader I-System
 ( O
-CVE-2010-2883 O
+CVE-2010-2883 B-Vulnerability
 ) O
 . O
 
 Documents B-Malware
 with O
 the O
-Flash O
-exploit O
+Flash B-Vulnerability
+exploit I-Vulnerability
 managed O
 to O
 evade O
@@ -14390,7 +14390,7 @@ of O
 the O
 documents B-Malware
 exploited O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 to O
 deliver O
 the O
@@ -14408,17 +14408,17 @@ attempt O
 to O
 exploit O
 the O
-Windows O
-OLE O
-Automation O
-Array O
-Remote O
-Code O
-Execution O
-Vulnerability O
+Windows B-Vulnerability
+OLE I-Vulnerability
+Automation I-Vulnerability
+Array I-Vulnerability
+Remote I-Vulnerability
+Code I-Vulnerability
+Execution I-Vulnerability
+Vulnerability I-Vulnerability
 tracked O
 by O
-CVE-2014-6332 O
+CVE-2014-6332 B-Vulnerability
 . O
 
 POWRUNER B-System
@@ -14431,7 +14431,7 @@ RTF B-Malware
 file I-Malware
 that O
 exploited O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 This O
@@ -14439,8 +14439,8 @@ bait B-Malware
 document I-Malware
 , O
 or O
-email B-Vulnerability
-attachment I-Vulnerability
+email O
+attachment O
 , O
 appears O
 to O
@@ -14455,7 +14455,7 @@ is O
 in O
 fact O
 an O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 exploit O
 , O
 an O
@@ -14498,7 +14498,7 @@ malicious O
 file I-Malware
 that O
 exploited O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 The O
@@ -14541,7 +14541,7 @@ files O
 also O
 enables O
 the O
-download B-Vulnerability
+download O
 of O
 TeamViewer B-System
 , O
@@ -14940,7 +14940,7 @@ LogMeIn O
 remote-access O
 software O
 using O
-stolen B-Vulnerability
+stolen O
 valid O
 user O
 credentials O
@@ -15292,7 +15292,7 @@ wild O
 to O
 exploit O
 the O
-Man-in-the-Disk O
+Man-in-the-Disk B-Vulnerability
 vulnerability O
 revealed O
 by O
@@ -15494,7 +15494,7 @@ June O
 , O
 APT41 B-Organization
 sent O
-spear-phishing B-Vulnerability
+spear-phishing O
 emails O
 using O
 an O
@@ -15553,9 +15553,9 @@ game O
 so O
 the O
 group O
-resorted B-Vulnerability
-to I-Vulnerability
-ransomware I-Vulnerability
+resorted O
+to O
+ransomware O
 to O
 attempt O
 to O
@@ -15593,10 +15593,10 @@ use O
 DLL O
 sideloading O
 to O
-run B-Vulnerability
-a I-Vulnerability
-malicious I-Vulnerability
-DLL I-Vulnerability
+run O
+a O
+malicious O
+DLL O
 that O
 has O
 code O
@@ -15619,7 +15619,7 @@ organizations O
 released O
 alerts O
 on O
-CVE-2019-0604 O
+CVE-2019-0604 B-Vulnerability
 exploitation O
 , O
 including O
@@ -15650,7 +15650,7 @@ which O
 actors B-Organization
 used O
 the O
-CVE-2019-0604 O
+CVE-2019-0604 B-Vulnerability
 to O
 exploit O
 SharePoint O
@@ -15690,7 +15690,7 @@ they O
 are O
 vulnerable O
 to O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 patched O
 in O
@@ -15756,7 +15756,7 @@ in O
 SharePoint O
 tracked O
 in O
-CVE-2019-0604 O
+CVE-2019-0604 B-Vulnerability
 . O
 
 The O
@@ -15780,7 +15780,7 @@ that O
 were O
 vulnerable O
 to O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 that O
 we O
@@ -15811,7 +15811,7 @@ and O
 by O
 exploiting O
 the O
-CVE-2017-0144 O
+CVE-2017-0144 B-Vulnerability
 (EternalBlue) O
 vulnerability O
 patched O
@@ -15846,7 +15846,7 @@ some O
 known O
 vulnerability O
 like O
-CVE-2017-11882 O
+CVE-2017-11882 B-Vulnerability
 , O
 or O
 documents B-System
@@ -15897,7 +15897,7 @@ a O
 result O
 of O
 their O
-phishing O
+phishing B-Vulnerability
 attacks O
 . O
 
@@ -15910,11 +15910,11 @@ spread O
 from O
 a O
 unique O
-watering B-Vulnerability
-hole I-Vulnerability
+watering O
+hole O
 website O
 exploiting O
-CVE-2018-8174 O
+CVE-2018-8174 B-Vulnerability
 , O
 a O
 VBScript O
@@ -15926,7 +15926,7 @@ This O
 malicious O
 site O
 used O
-CVE-2019-0752 O
+CVE-2019-0752 B-Vulnerability
 , O
 an O
 Internet O
@@ -15963,9 +15963,9 @@ injected O
 with O
 exploits O
 for O
-CVE-2018-8174 O
+CVE-2018-8174 B-Vulnerability
 or O
-CVE-2019-0752 O
+CVE-2019-0752 B-Vulnerability
 . O
 
 In O
@@ -15984,7 +15984,7 @@ vulnerability O
 in O
 Microsoft O
 Office: O
-CVE-2017-11882 O
+CVE-2017-11882 B-Vulnerability
 , O
 a O
 remote O
@@ -16021,7 +16021,7 @@ triggers O
 an O
 exploit O
 for O
-CVE-2017-8759 O
+CVE-2017-8759 B-Vulnerability
 , O
 a O
 remote O
@@ -16038,7 +16038,7 @@ Zebrocy B-Organization
 activity O
 initiates O
 with O
-spearphishing B-Vulnerability
+spearphishing O
 operations O
 delivering O
 various O
@@ -16051,8 +16051,8 @@ the O
 use O
 of O
 any O
-0day O
-exploits O
+0day B-Vulnerability
+exploits I-Vulnerability
 . O
 
 On O
@@ -16070,7 +16070,7 @@ for O
 the O
 Microsoft O
 Office O
-vulnerability O
+vulnerability B-Vulnerability
 to O
 target O
 a O
@@ -16097,7 +16097,7 @@ used O
 a O
 Flash O
 vulnerability O
-CVE-2016-7855 O
+CVE-2016-7855 B-Vulnerability
 along O
 with O
 this O
@@ -16128,8 +16128,8 @@ investigating O
 another O
 Adobe O
 Flash O
-zero O
-day O
+zero B-Vulnerability
+day I-Vulnerability
 . O
 
 Through O
@@ -16142,7 +16142,7 @@ handler O
 vulnerability O
 described O
 in O
-CVE-2017-1099 O
+CVE-2017-1099 B-Vulnerability
 , O
 the O
 observed O
@@ -16156,8 +16156,8 @@ early O
 May O
 , O
 the O
-phishing B-Vulnerability
-lures I-Vulnerability
+phishing O
+lures O
 leveraged O
 RTF B-Malware
 attachments I-Malware
@@ -16169,7 +16169,7 @@ Windows O
 vulnerability O
 described O
 in O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 As O
@@ -16183,7 +16183,7 @@ March O
 malicious B-Malware
 documents I-Malware
 exploiting O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 were O
 used O
 to O
@@ -16207,7 +16207,7 @@ or O
 bit O
 versions O
 of O
-CVE-2017-0001 O
+CVE-2017-0001 B-Vulnerability
 to O
 escalate O
 privileges O
@@ -16234,7 +16234,7 @@ in O
 a O
 document B-Malware
 named O
-Trump's_Attack_on_Syria_English.docx” O
+Trump's_Attack_on_Syria_English.docx” B-Vulnerability
 . O
 
 The O
@@ -16251,7 +16251,7 @@ or O
 bit O
 versions O
 of O
-CVE-2017-0001 O
+CVE-2017-0001 B-Vulnerability
 to O
 escalate O
 privileges O
@@ -16278,12 +16278,12 @@ in O
 a O
 document B-Malware
 named O
-Trump's_Attack_on_Syria_English.docx” O
+Trump's_Attack_on_Syria_English.docx” B-Vulnerability
 . O
 
 In O
 all O
-emails B-Vulnerability
+emails O
 sent O
 to O
 these O
@@ -16305,7 +16305,7 @@ document I-Malware
 that O
 exploited O
 the O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 vulnerability O
 to O
 drop O
@@ -16326,7 +16326,7 @@ actors O
 continue O
 to O
 leverage O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 to O
 exploit O
 Microsoft B-Malware
@@ -16338,15 +16338,15 @@ Gorgon O
 Group O
 campaign O
 leveraged O
-spear B-Vulnerability
-phishing I-Vulnerability
-emails I-Vulnerability
+spear O
+phishing O
+emails O
 with O
 Microsoft B-Malware
 Word I-Malware
 documents I-Malware
 exploiting O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 Ke3chang B-Organization
@@ -16354,11 +16354,11 @@ has O
 also O
 leveraged O
 a O
-Java O
-zero-day O
-vulnerability O
+Java B-Vulnerability
+zero-day I-Vulnerability
+vulnerability I-Vulnerability
 ( O
-CVE-2012-4681 O
+CVE-2012-4681 B-Vulnerability
 ) O
 , O
 as O
@@ -16372,22 +16372,22 @@ for O
 Microsoft B-Malware
 Word I-Malware
 ( O
-CVE-2010-3333 O
+CVE-2010-3333 B-Vulnerability
 ) O
 and O
 Adobe B-System
 PDF I-System
 Reader I-System
 ( O
-CVE-2010-2883 O
+CVE-2010-2883 B-Vulnerability
 ) O
 . O
 
 Documents B-Malware
 with O
 the O
-Flash O
-exploit O
+Flash B-Vulnerability
+exploit I-Vulnerability
 managed O
 to O
 evade O
@@ -16408,7 +16408,7 @@ of O
 the O
 documents B-Malware
 exploited O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 to O
 deliver O
 the O
@@ -16426,17 +16426,17 @@ attempt O
 to O
 exploit O
 the O
-Windows O
-OLE O
-Automation O
-Array O
-Remote O
-Code O
-Execution O
-Vulnerability O
+Windows B-Vulnerability
+OLE I-Vulnerability
+Automation I-Vulnerability
+Array I-Vulnerability
+Remote I-Vulnerability
+Code I-Vulnerability
+Execution I-Vulnerability
+Vulnerability I-Vulnerability
 tracked O
 by O
-CVE-2014-6332 O
+CVE-2014-6332 B-Vulnerability
 . O
 
 POWRUNER B-System
@@ -16449,7 +16449,7 @@ RTF B-Malware
 file I-Malware
 that O
 exploited O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 This O
@@ -16457,8 +16457,8 @@ bait B-Malware
 document I-Malware
 , O
 or O
-email B-Vulnerability
-attachment I-Vulnerability
+email O
+attachment O
 , O
 appears O
 to O
@@ -16473,7 +16473,7 @@ is O
 in O
 fact O
 an O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 exploit O
 , O
 an O
@@ -16516,7 +16516,7 @@ malicious O
 file I-Malware
 that O
 exploited O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 Due O
@@ -16787,11 +16787,11 @@ files B-Malware
 exploit O
 the O
 well-known O
-Microsoft O
-Office O
-vulnerability O
+Microsoft B-Vulnerability
+Office I-Vulnerability
+vulnerability I-Vulnerability
 , O
-CVE-2012-0158 O
+CVE-2012-0158 B-Vulnerability
 , O
 to O
 execute O
@@ -17124,13 +17124,13 @@ major O
 operating O
 systems O
 like O
-Windows B-Vulnerability
+Windows O
 (Bartender) O
 , O
-MacOS B-Vulnerability
+MacOS O
 (JukeBox) O
 and O
-Linux B-Vulnerability
+Linux O
 (DanceFloor) O
 . O
 
@@ -17366,8 +17366,8 @@ and O
 then O
 used O
 weaponized O
-Excel B-Vulnerability
-documents I-Vulnerability
+Excel O
+documents O
 to O
 deliver O
 RATs B-System
@@ -17623,7 +17623,7 @@ telemetry O
 
 The O
 new O
-spear-phishing B-Vulnerability
+spear-phishing O
 docs O
 used O
 by O
@@ -17659,9 +17659,9 @@ likely O
 that O
 MuddyWater B-Organization
 use O
-phishing B-Vulnerability
+phishing O
 or O
-spam B-Vulnerability
+spam O
 to O
 target O
 users O
@@ -17881,9 +17881,9 @@ the O
 DDE B-System
 protocol I-System
 to O
-remotely B-Vulnerability
-execute I-Vulnerability
-commands I-Vulnerability
+remotely O
+execute O
+commands O
 in O
 memory O
 on O
@@ -17902,14 +17902,14 @@ be O
 included O
 in O
 the O
-SFX B-Vulnerability
-file I-Vulnerability
+SFX O
+file O
 or O
 downloaded O
 by O
 the O
-batch B-Vulnerability
-script I-Vulnerability
+batch O
+script O
 . O
 
 Our O
@@ -17924,8 +17924,8 @@ group I-Organization
 then O
 planted O
 a O
-cron B-Vulnerability
-script I-Vulnerability
+cron O
+script O
 into O
 bank O
 's O
@@ -17948,9 +17948,9 @@ GCMAN B-Organization
 group I-Organization
 used O
 an O
-MS B-Vulnerability
-SQL I-Vulnerability
-injection I-Vulnerability
+MS O
+SQL O
+injection O
 in O
 commercial O
 software O
@@ -17985,9 +17985,9 @@ Gorgon B-Organization
 Group I-Organization
 used O
 common O
-URL B-Vulnerability
-shortening I-Vulnerability
-services I-Vulnerability
+URL O
+shortening O
+services O
 to O
 download O
 payloads O
@@ -17996,11 +17996,11 @@ payloads O
 Gorgon B-Organization
 used O
 numerous O
-decoy B-Vulnerability
-documents I-Vulnerability
+decoy O
+documents O
 and O
-phishing B-Vulnerability
-emails I-Vulnerability
+phishing O
+emails O
 , O
 both O
 styles O
@@ -18016,15 +18016,15 @@ Gorgon O
 Group O
 campaign O
 leveraged O
-spear B-Vulnerability
-phishing I-Vulnerability
-emails I-Vulnerability
+spear O
+phishing O
+emails O
 with O
 Microsoft B-Malware
 Word I-Malware
 documents I-Malware
 exploiting O
-CVE-2017-0199 O
+CVE-2017-0199 B-Vulnerability
 . O
 
 This O
@@ -18032,9 +18032,9 @@ malicious O
 document O
 contains O
 a O
-Visual B-Vulnerability
-Basic I-Vulnerability
-macro I-Vulnerability
+Visual O
+Basic O
+macro O
 that O
 dropped O
 and O
@@ -18072,10 +18072,10 @@ All O
 contain O
 the O
 same O
-Visual B-Vulnerability
-Basic I-Vulnerability
-macro I-Vulnerability
-code I-Vulnerability
+Visual O
+Basic O
+macro O
+code O
 and O
 author O
 name O
@@ -18087,8 +18087,8 @@ Ke3chang B-Organization
 attackers B-Organization
 have O
 used O
-spear-phishing B-Vulnerability
-emails I-Vulnerability
+spear-phishing O
+emails O
 . O
 
 Traditionally O
@@ -18098,8 +18098,8 @@ Ke3chang B-Organization
 attackers B-Organization
 have O
 used O
-spear-phishing B-Vulnerability
-emails I-Vulnerability
+spear-phishing O
+emails O
 with O
 either O
 a O
@@ -18114,9 +18114,9 @@ malicious O
 download O
 . O
 
-DLL B-Vulnerability
-hijacking I-Vulnerability
-techniques I-Vulnerability
+DLL O
+hijacking O
+techniques O
 have O
 been O
 seen O
@@ -18140,8 +18140,8 @@ resumes O
 Lazarus B-Organization
 ' O
 previous O
-phishing B-Vulnerability
-emails I-Vulnerability
+phishing O
+emails O
 , O
 posed O
 as O
@@ -18170,8 +18170,8 @@ resumes O
 Lazarus B-Organization
 ' O
 previous O
-phishing B-Vulnerability
-emails I-Vulnerability
+phishing O
+emails O
 , O
 posed O
 as O
@@ -18196,9 +18196,9 @@ heavily O
 targeted O
 individuals O
 with O
-spear B-Vulnerability
-phishing I-Vulnerability
-emails I-Vulnerability
+spear O
+phishing O
+emails O
 impersonating O
 job O
 recruiters O
@@ -18222,8 +18222,8 @@ may O
 be O
 present O
 on O
-network B-Vulnerability
-infrastructure I-Vulnerability
+network O
+infrastructure O
 compromised O
 with O
 Volgmer B-System
@@ -18234,8 +18234,8 @@ Notably O
 after O
 the O
 first O
-SMB B-Vulnerability
-packet I-Vulnerability
+SMB O
+packet O
 sent O
 to O
 the O
