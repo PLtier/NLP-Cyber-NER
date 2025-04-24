@@ -952,7 +952,6 @@ computer O
 and O
 environment O
 : O
-
 Commands O
 Arguments O
 SCREENSHOT O
@@ -1161,7 +1160,6 @@ databases O
 to O
 dump O
 : O
-
 Command O
 Arguments O
 DOWNLOAD_LIST O
@@ -1204,7 +1202,6 @@ database O
 names O
 ) O
 : O
-
 key3.db O
 Firefox O
 private O
@@ -2296,7 +2293,6 @@ used O
 by O
 Zebrocy B-Malware
 : O
-
 Mozilla O
 ( O
 Windows B-System
@@ -2562,7 +2558,6 @@ pivot O
 from O
 its O
 C2 O
-
 220.158.216.127 O
 to O
 gather O
@@ -3523,7 +3518,6 @@ successful O
 exploitation O
 is O
 : O
-
 User O
 must O
 open O
@@ -3533,7 +3527,6 @@ Word O
 email O
 attachment O
 ; O
-
 User O
 must O
 scroll O
@@ -3552,7 +3545,6 @@ DealersChoice O
 Flash O
 object O
 ; O
-
 The O
 Flash O
 object O
@@ -3572,7 +3564,6 @@ containing O
 exploit O
 code O
 ; O
-
 The O
 initial O
 Flash O
@@ -3589,7 +3580,6 @@ a O
 secondary O
 payload O
 ; O
-
 Victim O
 host O
 must O
@@ -4975,7 +4965,6 @@ object O
 
 DealersChoice O
 : O
-
 0cd9ac328d858d8d83c9eb73bfdc59a958873b3d71b24c888d7408d9512a41d7 O
 ( O
 Defence&Security_2018_Conference_Agenda.docx O
@@ -5604,7 +5593,6 @@ during O
 these O
 intrusions O
 : O
-
 167.114.153.55 O
 94.237.37.28 O
 82.118.242.171 O
@@ -6067,7 +6055,6 @@ C2 O
 IP O
 addresses O
 : O
-
 167.114.153.55 O
 94.237.37.28 O
 82.118.242.171 O
@@ -6264,7 +6251,6 @@ is O
 as O
 follows O
 : O
-
 User O
 clicks O
 link O
@@ -7063,11 +7049,9 @@ Entities O
 Release_Time O
 : O
 2018-02-28 O
-
 Report_URL O
 : O
 https://unit42.paloaltonetworks.com/unit42-sofacy-attacks-multiple-government-entities/ O
-
 The O
 Sofacy B-Organization
 group O
@@ -7764,7 +7748,6 @@ write O
 the O
 following O
 : O
-
 start O
 rundll32.exe O
 “ O
@@ -8609,7 +8592,6 @@ this O
 threat O
 by O
 : O
-
 WildFire B-Organization
 detects O
 all O
@@ -8685,7 +8667,6 @@ Release_Time O
 Report_URL O
 : O
 https://www.fireeye.com/blog/threat-research/2017/08/apt28-targets-hospitality-sector.html O
-
 FireEye B-Organization
 has O
 moderate O
@@ -9582,11 +9563,9 @@ Trojan B-Malware
 Release_Time O
 : O
 2018-11-20 O
-
 Report_URL O
 : O
 https://unit42.paloaltonetworks.com/unit42-sofacy-continues-global-attacks-wheels-new-cannon-trojan/ O
-
 In O
 late O
 October O
@@ -10469,7 +10448,6 @@ functionality O
 after O
 writing O
 the O
-
 ~temp.docm O
 and O
 ~msdn.exe O
@@ -11945,7 +11923,6 @@ the O
 following O
 ways O
 : O
-
 AutoFocus B-Organization
 customers O
 can O
@@ -12023,7 +12000,6 @@ Control O
 Delivery O
 Hashes O
 : O
-
 2cfc4b3686511f959f14889d26d3d9a0d06e27ee2bb54c9afb1ada6b8205c55f O
 af77e845f1b0a3ae32cb5cfa53ff22cc9dae883f05200e18ad8e10d7a8106392 O
 . O
@@ -12032,7 +12008,6 @@ Remote O
 Template O
 Hashes O
 : O
-
 f1e2bceae81ccd54777f7862c616f22b581b47e0dda5cb02d0a722168ef194a5 O
 fc69fb278e12fc7f9c49a020eff9f84c58b71e680a9e18f78d4e6540693f557d O
 . O
@@ -12040,14 +12015,12 @@ fc69fb278e12fc7f9c49a020eff9f84c58b71e680a9e18f78d4e6540693f557d O
 Remote O
 Templates O
 : O
-
 http://188.241.58.170/live/owa/office.dotm O
 . O
 
 Zebrocy B-Malware
 Hashes O
 : O
-
 6ad3eb8b5622145a70bec67b3d14868a1c13864864afd651fe70689c95b1399a O
 . O
 
@@ -12055,7 +12028,6 @@ Zebrocy B-Malware
 C2 O
 URLs O
 : O
-
 http://188.241.58.170/local/s3/filters.php O
 https://200.122.181.25/catalog/products/books.php O
 . O
@@ -12063,7 +12035,6 @@ https://200.122.181.25/catalog/products/books.php O
 Cannon B-Malware
 Hashes O
 : O
-
 61a1f3b4fb4dbd2877c91e81db4b1af8395547eab199bf920e9dd11a1127221e O
 . O
 
@@ -12071,7 +12042,6 @@ Cannon B-Malware
 email O
 Accounts O
 : O
-
 sahro.bella7@post.cz O
 trala.cosh2@post.cz O
 bishtr.cam47@post.cz O
@@ -16029,7 +15999,6 @@ spyware O
 tool O
 ” O
 ; O
-
 therefore O
 , O
 those O
@@ -17231,11 +17200,9 @@ CYBERESPIONAGE O
 Release_Time O
 : O
 2015-09 O
-
 Report_URL O
 : O
 https://blog-assets.f-secure.com/wp-content/uploads/2020/03/18122307/F-Secure_Dukes_Whitepaper.pdf O
-
 2014 O
 : O
 OnionDuke B-Malware
@@ -21221,7 +21188,6 @@ Mechanics O
 CNIIHM O
 ; O
 a.k.a. O
-
 ЦНИИХМ O
 ) O
 , O
@@ -22342,7 +22308,6 @@ of O
 weapons/military O
 equipment O
 : O
-
 The O
 Center O
 for O
@@ -22407,7 +22372,6 @@ organizations O
 , O
 including O
 : O
-
 The O
 Moscow O
 Institute O
@@ -22715,11 +22679,9 @@ Xenotime B-Organization
 Release_Time O
 : O
 unknown O
-
 Report_URL O
 : O
 https://dragos.com/resource/xenotime/ O
-
 XENOTIME B-Organization
 is O
 easily O
@@ -23885,7 +23847,6 @@ detect O
 TG-3390 B-Organization
 intrusions O
 : O
-
 Search O
 web O
 log O
@@ -24057,7 +24018,6 @@ around O
 the O
 world O
 : O
-
 large O
 manufacturing O
 companies O
@@ -24186,7 +24146,6 @@ a O
 Chinese O
 nexus O
 : O
-
 The O
 SWC O
 of O
@@ -25099,11 +25058,9 @@ Land O
 Release_Time O
 : O
 2015-05-28 O
-
 Report_URL O
 : O
 https://www.secureworks.com/blog/living-off-the-land O
-
 In O
 over O
 half O
@@ -26914,7 +26871,6 @@ Release_Time O
 Report_URL O
 : O
 https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=62e325ae-f551-4855-b9cf-28a7d52d1534&CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments O
-
 In O
 late O
 2015 O
@@ -28563,7 +28519,6 @@ application O
 File O
 hashes O
 : O
-
 05edd53508c55b9dd64129e944662c0d O
 1cf5ce3e3ea310b0f7ce72a94659ff54 O
 352eede25c74775e6102a095fb49da8c O
@@ -28579,7 +28534,6 @@ e864f32151d6afd0a3491f432c2bb7a2 O
 
 Infrastructure O
 : O
-
 usv0503.iqservs-jp.com O
 aux.robertstockdill.com O
 fli.fedora-dns-update.com O
@@ -28803,7 +28757,6 @@ These O
 organizations O
 included O
 : O
-
 One O
 of O
 India O
@@ -29694,7 +29647,6 @@ following O
 three O
 files O
 : O
-
 dllhost.exe O
 : O
 The O
@@ -29880,7 +29832,6 @@ IP O
 address O
 Registration O
 date O
-
 aux.robertstockdill.com O
 kumar.pari@yandex.com O
 Unknown O
@@ -34799,7 +34750,6 @@ the O
 following O
 regions O
 : O
-
 125: O
 UK O
 , O
@@ -36283,7 +36233,6 @@ of O
 five O
 elements O
 : O
-
 Actor O
 : O
 The O
@@ -36631,12 +36580,9 @@ Wild O
 Release_Time O
 : O
 2019-12-04 O
-
 Report_URL O
 : O
 https://pylos.co/2019/04/12/a-xenotime-to-remember-veles-in-the-wild/ O
-
-
 “ O
 When O
 I O
@@ -36668,7 +36614,6 @@ mean—neither O
 more O
 nor O
 less. O
-
 ” O
 – O
 Through O
@@ -38471,7 +38416,6 @@ multiple O
 threat O
 groups O
 : O
-
 PlugX B-Malware
 — O
 A O
@@ -38493,7 +38437,6 @@ X- O
 " O
 ( O
 e.g. O
-
 , O
 " O
 X-Session O
@@ -38870,7 +38813,6 @@ publicly O
 available O
 tools O
 : O
-
 Windows O
 Credential O
 Editor O
@@ -40596,3 +40538,4 @@ reentering O
 the O
 network O
 . O
+
