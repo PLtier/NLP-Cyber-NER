@@ -282,6 +282,10 @@ for train_pack_name, train_data in train_packs:
             store_preds_path = DATA_DIR / "predictions" / f"{name}.txt"
 
             list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
+            # Log the trained model
+            model_path = DATA_DIR / "models" / f"{name}.pt"
+            torch.save(model.state_dict(), model_path)
+            mlflow.log_artifact(str(model_path), artifact_path="models")
 
             mlflow.log_params(hyperparams)
             mlflow.log_metrics(metrics)
