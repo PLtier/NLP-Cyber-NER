@@ -94,7 +94,7 @@ def clean_aptner(path: Path) -> None:
     ):
         for line in f:
             line = line.strip()
-            if line:
+            if line != ". O":
                 tok = line.split()
                 if len(tok) == 1:
                     if tok[0] == "O":
@@ -110,7 +110,7 @@ def clean_aptner(path: Path) -> None:
                 else:
                     f_out.write(line + "\n")
             else:
-                f_out.write("\n")
+                f_out.write(". O \n")
 
 
 def unify_labels_aptner(path: Path) -> None:
