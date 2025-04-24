@@ -5,7 +5,7 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
-from nlp_cyber_ner.config import DATA_DIR, PROCESSED_DATA_DIR, load_dotenv
+from nlp_cyber_ner.config import DATA_DIR, MODELS_DIR, PROCESSED_DATA_DIR, load_dotenv
 from nlp_cyber_ner.dataset import (
     Preprocess,
     list_to_conll,
@@ -287,7 +287,7 @@ for train_pack_name, train_data in train_packs:
             list_to_conll(train_tokens, train_labels, store_trains_path)  # type: ignore
 
             # Log the trained model
-            model_path = DATA_DIR / "models" / f"{name}.pt"
+            model_path = MODELS_DIR / f"{name}.pt"
             torch.save(model.state_dict(), model_path)
             mlflow.log_artifact(str(model_path), artifact_path="models")
 
