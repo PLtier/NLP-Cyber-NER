@@ -236,8 +236,8 @@ def evaluate(
 
 
 # Training
-name = "big_model"
-print(f"Training {name}")
+big_name = "big_model"
+print(f"Training {big_name}")
 
 load_dotenv()
 mlflow.set_tracking_uri("https://dagshub.com/PLtier/NLP-Cyber-NER.mlflow")
@@ -264,7 +264,7 @@ for dev_pack_name, dev_data in dev_packs:
         train_data, len(train_data), max_len
     )
 
-    name: str = f"train-{name}-eval-{dev_pack_name}"
+    name: str = f"train-{big_name}-eval-{dev_pack_name}"
     print(f"train {name}")
     model = train(train_X, train_y, idx2word, idx2label, input_size=max_len)
 
