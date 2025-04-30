@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NER CoNLL Files Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        .file-inputs {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 1em;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        .sentenceBlock {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        /* Highlight block if prediction doesn't exactly match ground truth */
+        .sentenceBlock.mismatch {
+            background-color: #fdd;
+        }
+
+        .sentenceHeader {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>NER CoNLL Files Comparison</h1>
+    <div class="file-inputs">
+        <div>
+            <label for="file1">Ground Truth File:</label>
+            <br>
+            <input type="file" id="file1" accept="*">
+        </div>
+        <br>
+        <div>
+            <label for="file2">Prediction File:</label>
+            <br>
+            <input type="file" id="file2" accept="*">
+        </div>
+        <br>
+        <button id="compareBtn">Compare Files</button>
+    </div>
+    <div id="results"></div>
+
+    <script>
+        // Function to parse a CoNLL-like file into an array of sentences.
+        // Each sentence is an array of token objects: { token, label }
+        function parseConll(content) {
+            const sentences = [];
+            // Split content into sentences by blank lines (allowing whitespace)
+            const rawSentences = content.split(/\n\s*\n/);
+            rawSentences.forEach(sentenceText => {
+                if (sentenceText.trim() === "") return;
+                const lines = sentenceText.trim().split("\n").filter(line => line.trim() !== "");
+                const tokens = lines.map(line => {
+                    const parts = line.trim().split(/\s+/);
+                    // Assumes the first part is the token and the second is the label.
+                    return { token: parts[0], label: parts[1] || "" };
+                });
+                sentences.push(tokens);
+            });
+            return sentences;
+        }
+
+        // Display sentences one below the other.
+        // Each sentence block shows the ground truth and prediction on separate rows.
+        // The block gets a highlighting style if the pair is not completely equivalent.
+        function displayResults(gtSentences, predSentences) {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = ""; // Clear previous content
+
+            if (gtSentences.length !== predSentences.length) {
+                const warning = document.createElement("p");
+                warning.style.color = "red";
+                warning.innerText = `Warning: The number of sentences does not match (Ground Truth: ${gtSentences.length}, Predictions: ${predSentences.length}). Only the first ${Math.min(gtSentences.length, predSentences.length)} sentence(s) will be compared.`;
+                resultsDiv.appendChild(warning);
+            }
+
+            const numSentences = Math.min(gtSentences.length, predSentences.length);
+            for (let i = 0; i < numSentences; i++) {
+                const gtTokens = gtSentences[i];
+                const predTokens = predSentences[i];
+
+                // Check for complete equivalence: same length and matching label for each token.
+                let isEqual = (gtTokens.length === predTokens.length);
+                if (isEqual) {
+                    for (let j = 0; j < gtTokens.length; j++) {
+                        if (gtTokens[j].label !== predTokens[j].label) {
+                            isEqual = false;
+                            break;
+                        }
+                    }
+                }
+
+                // Create a container for this sentence comparison.
+                const sentenceDiv = document.createElement("div");
+                sentenceDiv.className = "sentenceBlock" + (isEqual ? "" : " mismatch");
+
+                // Header showing sentence number
+                const header = document.createElement("div");
+                header.className = "sentenceHeader";
+                header.innerText = `Sentence ${i + 1}:`;
+                sentenceDiv.appendChild(header);
+
+                // Create a table for the tokens, ground truth, and predictions
+                const table = document.createElement("table");
+                table.style.width = "100%";
+                table.style.borderCollapse = "collapse";
+
+                // Add table header
+                const headerRow = document.createElement("tr");
+                ["Token", "Ground Truth", "Prediction"].forEach(text => {
+                    const th = document.createElement("th");
+                    th.style.border = "1px solid #ddd";
+                    th.style.padding = "8px";
+                    th.style.textAlign = "left";
+                    th.innerText = text;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                // Add rows for each token
+                const numTokens = Math.min(gtTokens.length, predTokens.length);
+                for (let j = 0; j < numTokens; j++) {
+                    const row = document.createElement("tr");
+
+                    // Token column
+                    const tokenCell = document.createElement("td");
+                    tokenCell.style.border = "1px solid #ddd";
+                    tokenCell.style.padding = "8px";
+                    tokenCell.innerText = gtTokens[j].token;
+                    row.appendChild(tokenCell);
+
+                    // Ground Truth column
+                    const gtCell = document.createElement("td");
+                    gtCell.style.border = "1px solid #ddd";
+                    gtCell.style.padding = "8px";
+                    gtCell.innerText = gtTokens[j].label;
+                    row.appendChild(gtCell);
+
+                    // Prediction column
+                    const predCell = document.createElement("td");
+                    predCell.style.border = "1px solid #ddd";
+                    predCell.style.padding = "8px";
+                    predCell.innerText = predTokens[j].label;
+                    row.appendChild(predCell);
+
+                    table.appendChild(row);
+                }
+
+                sentenceDiv.appendChild(table);
+                resultsDiv.appendChild(sentenceDiv);
+            }
+        }
+
+        document.getElementById("compareBtn").addEventListener("click", function () {
+            const fileInput1 = document.getElementById("file1").files[0];
+            const fileInput2 = document.getElementById("file2").files[0];
+
+            if (!fileInput1 || !fileInput2) {
+                alert("Please select both files.");
+                return;
+            }
+
+            const reader1 = new FileReader();
+            const reader2 = new FileReader();
+            let content1 = "", content2 = "";
+
+            reader1.onload = function (e) {
+                content1 = e.target.result;
+                if (content2 !== "") proceed();
+            };
+            reader2.onload = function (e) {
+                content2 = e.target.result;
+                if (content1 !== "") proceed();
+            };
+
+            reader1.readAsText(fileInput1);
+            reader2.readAsText(fileInput2);
+
+            function proceed() {
+                const gtSentences = parseConll(content1);
+                const predSentences = parseConll(content2);
+                displayResults(gtSentences, predSentences);
+            }
+        });
+    </script>
+</body>
+
+</html>
