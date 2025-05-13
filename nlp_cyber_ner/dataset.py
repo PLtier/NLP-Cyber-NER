@@ -105,7 +105,7 @@ def clean_aptner(path: Path) -> None:
                         continue
                     else:
                         f_out.write(f"{tok[0]} O\n")
-                elif len(tok) == 2 and (tok[1] not in aptner_labels or "-" not in tok[1]):
+                elif len(tok) == 2 and (tok[1] not in aptner_labels):
                     f_out.write(f"{tok[0]} O\n")
                 elif len(tok) >= 3:
                     # fuzzy cleaning: just pick the first token, and label it as O
