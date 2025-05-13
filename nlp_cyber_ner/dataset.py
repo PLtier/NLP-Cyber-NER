@@ -191,7 +191,7 @@ def unify_labels_dnrti(path: Path) -> None:
                 if tok[1] != "O":
                     prefix, label = tok[1].split("-")
 
-                    if label == "HackOrg" or label == "SecTeam" or label=="Org":
+                    if label == "HackOrg" or label == "SecTeam" or label == "Org":
                         label = "Organization"
                     elif label == "Tool":
                         label = "System"
