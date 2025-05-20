@@ -57,20 +57,20 @@ C = set(tag for _, tags in aptner_test_data for tag in tags)
 assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
 print("aptner loaded")
 
-attackner_path = PROCESSED_DATA_DIR / "attackner"
-attackner_train_path = attackner_path / "train.unified"
-attackner_dev_path = attackner_path / "dev.unified"
-attackner_test_path = attackner_path / "test.unified"
-attackner_train_data = read_iob2_file(attackner_train_path, word_index=0, tag_index=1)
-attackner_dev_data = read_iob2_file(attackner_dev_path, word_index=0, tag_index=1)
-attackner_test_data = read_iob2_file(attackner_test_path, word_index=0, tag_index=1)
-A = set(tag for _, tags in attackner_train_data for tag in tags)
-B = set(tag for _, tags in attackner_dev_data for tag in tags)
-C = set(tag for _, tags in attackner_test_data for tag in tags)
+attacker_path = PROCESSED_DATA_DIR / "attacker"
+attacker_train_path = attacker_path / "train.unified"
+attacker_dev_path = attacker_path / "dev.unified"
+attacker_test_path = attacker_path / "test.unified"
+attacker_train_data = read_iob2_file(attacker_train_path, word_index=0, tag_index=1)
+attacker_dev_data = read_iob2_file(attacker_dev_path, word_index=0, tag_index=1)
+attacker_test_data = read_iob2_file(attacker_test_path, word_index=0, tag_index=1)
+A = set(tag for _, tags in attacker_train_data for tag in tags)
+B = set(tag for _, tags in attacker_dev_data for tag in tags)
+C = set(tag for _, tags in attacker_test_data for tag in tags)
 assert A == B == C == end_labels, (
     "The labels in the train_data, dev_data and test_data sets are not the same."
 )
-print("attackner loaded")
+print("attacker loaded")
 
 dnrti_path = PROCESSED_DATA_DIR / "dnrti"
 dnrti_train_path = dnrti_path / "train.unified"
@@ -236,14 +236,14 @@ def evaluate(
 train_packs = [
     ("cyner", cyner_train_data),
     ("aptner", aptner_train_data),
-    ("attackner", attackner_train_data),
+    ("attacker", attacker_train_data),
     ("dnrti", dnrti_train_data),
 ]
 
 dev_packs = [
     ("cyner", cyner_dev_data),
     ("aptner", aptner_dev_data),
-    ("attackner", attackner_dev_data),
+    ("attacker", attacker_dev_data),
     ("dnrti", dnrti_dev_data),
 ]
 

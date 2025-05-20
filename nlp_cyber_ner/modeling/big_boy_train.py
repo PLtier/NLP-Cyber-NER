@@ -41,9 +41,9 @@ B = set(tag for _, tags in cyner_dev_data for tag in tags)
 assert A == B == end_labels, "The labels in the train, dev and test sets are not the same."
 print("cyner loaded")
 
-aptner_path = PROCESSED_DATA_DIR / "APTNer"
-aptner_train_path = aptner_path / "APTNERtrain.unified"
-aptner_dev_path = aptner_path / "APTNERdev.unified"
+aptner_path = PROCESSED_DATA_DIR / "aptner"
+aptner_train_path = aptner_path / "train.unified"
+aptner_dev_path = aptner_path / "valid.unified"
 aptner_train_data = read_iob2_file(aptner_train_path)
 aptner_dev_data = read_iob2_file(aptner_dev_path)
 A = set(tag for _, tags in aptner_train_data for tag in tags)
@@ -51,17 +51,17 @@ B = set(tag for _, tags in aptner_dev_data for tag in tags)
 assert A == B == end_labels, "The labels in the train, dev and test sets are not the same."
 print("aptner loaded")
 
-attackner_path = PROCESSED_DATA_DIR / "attackner"
-attackner_train_path = attackner_path / "train.unified"
-attackner_dev_path = attackner_path / "dev.unified"
-attackner_train_data = read_iob2_file(attackner_train_path, word_index=0, tag_index=1)
-attackner_dev_data = read_iob2_file(attackner_dev_path, word_index=0, tag_index=1)
-A = set(tag for _, tags in attackner_train_data for tag in tags)
-B = set(tag for _, tags in attackner_dev_data for tag in tags)
+attacker_path = PROCESSED_DATA_DIR / "attacker"
+attacker_train_path = attacker_path / "train.unified"
+attacker_dev_path = attacker_path / "valid.unified"
+attacker_train_data = read_iob2_file(attacker_train_path, word_index=0, tag_index=1)
+attacker_dev_data = read_iob2_file(attacker_dev_path, word_index=0, tag_index=1)
+A = set(tag for _, tags in attacker_train_data for tag in tags)
+B = set(tag for _, tags in attacker_dev_data for tag in tags)
 assert A == B == end_labels, (
     "The labels in the train_data, dev_data and test_data sets are not the same."
 )
-print("attackner loaded")
+print("attacker loaded")
 
 dnrti_path = PROCESSED_DATA_DIR / "dnrti"
 dnrti_train_path = dnrti_path / "train.unified"
@@ -74,8 +74,8 @@ assert A == B == end_labels, "The labels in the train, dev and test sets are not
 print("dnrti loaded")
 
 
-train_data = cyner_train_data + aptner_train_data + attackner_train_data + dnrti_train_data
-combined_dev_data = cyner_dev_data + aptner_dev_data + attackner_dev_data + dnrti_dev_data
+train_data = cyner_train_data + aptner_train_data + attacker_train_data + dnrti_train_data
+combined_dev_data = cyner_dev_data + aptner_dev_data + attacker_dev_data + dnrti_dev_data
 
 
 BATCH_SIZE = 32
@@ -246,7 +246,7 @@ print("mlflow and load dotenv loaded")
 dev_packs = [
     ("cyner", cyner_dev_data),
     ("aptner", aptner_dev_data),
-    ("attackner", attackner_dev_data),
+    ("attacker", attacker_dev_data),
     ("dnrti", dnrti_dev_data),
     ("combined", combined_dev_data),
 ]

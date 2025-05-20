@@ -210,7 +210,7 @@ def unify_labels_dnrti(path: Path) -> None:
                 f_out.write("\n")
 
 
-def unify_labels_attackner(path: Path) -> None:
+def unify_labels_attacker(path: Path) -> None:
     """
     THREAT_ACTOR, GENERAL_IDENTITY -> Organization (respectively, B- and I-)
     INFRASTRUCTURE, GENERAL_TOOL, ATTACK_TOOL -> Infrastructure (respectively, B- and I-)
@@ -382,7 +382,7 @@ def read_aptner(path, sep=" ", word_index=0, tag_index=1):
     return data
 
 
-def read_attackner(path):
+def read_attacker(path):
     """
     read in conll file
 
