@@ -44,10 +44,10 @@ C = set(tag for _, tags in cyner_test_data for tag in tags)
 assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
 print("cyner loaded")
 
-aptner_path = PROCESSED_DATA_DIR / "APTNer"
-aptner_train_path = aptner_path / "APTNERtrain.unified"
-aptner_dev_path = aptner_path / "APTNERdev.unified"
-aptner_test_path = aptner_path / "APTNERtest.unified"
+aptner_path = PROCESSED_DATA_DIR / "aptner"
+aptner_train_path = aptner_path / "train.unified"
+aptner_dev_path = aptner_path / "valid.unified"
+aptner_test_path = aptner_path / "test.unified"
 aptner_train_data = read_iob2_file(aptner_train_path)
 aptner_dev_data = read_iob2_file(aptner_dev_path)
 aptner_test_data = read_iob2_file(aptner_test_path)
@@ -59,7 +59,7 @@ print("aptner loaded")
 
 attacker_path = PROCESSED_DATA_DIR / "attacker"
 attacker_train_path = attacker_path / "train.unified"
-attacker_dev_path = attacker_path / "dev.unified"
+attacker_dev_path = attacker_path / "valid.unified"
 attacker_test_path = attacker_path / "test.unified"
 attacker_train_data = read_iob2_file(attacker_train_path, word_index=0, tag_index=1)
 attacker_dev_data = read_iob2_file(attacker_dev_path, word_index=0, tag_index=1)
