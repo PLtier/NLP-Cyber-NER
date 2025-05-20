@@ -78,9 +78,15 @@
         </div>
         <br>
         <div>
-            <label for="file2">Prediction File:</label>
+            <label for="file2">Prediction File 1:</label>
             <br>
             <input type="file" id="file2" accept="*">
+        </div>
+        <br>
+        <div>
+            <label for="file3">Prediction File 2:</label>
+            <br>
+            <input type="file" id="file3" accept="*">
         </div>
         <br>
         <button id="compareBtn">Compare Files</button>
@@ -108,38 +114,21 @@
         }
 
         // Display sentences one below the other.
-        // Each sentence block shows the ground truth and prediction on separate rows.
+        // Each sentence block shows the ground truth and predictions on separate rows.
         // The block gets a highlighting style if the pair is not completely equivalent.
-        function displayResults(gtSentences, predSentences) {
+        function displayResults(gtSentences, predSentences1, predSentences2) {
             const resultsDiv = document.getElementById("results");
             resultsDiv.innerHTML = ""; // Clear previous content
 
-            if (gtSentences.length !== predSentences.length) {
-                const warning = document.createElement("p");
-                warning.style.color = "red";
-                warning.innerText = `Warning: The number of sentences does not match (Ground Truth: ${gtSentences.length}, Predictions: ${predSentences.length}). Only the first ${Math.min(gtSentences.length, predSentences.length)} sentence(s) will be compared.`;
-                resultsDiv.appendChild(warning);
-            }
-
-            const numSentences = Math.min(gtSentences.length, predSentences.length);
-            for (let i = 0; i < numSentences; i++) {
+            const minSentences = Math.min(gtSentences.length, predSentences1.length, predSentences2.length);
+            for (let i = 0; i < minSentences; i++) {
                 const gtTokens = gtSentences[i];
-                const predTokens = predSentences[i];
-
-                // Check for complete equivalence: same length and matching label for each token.
-                let isEqual = (gtTokens.length === predTokens.length);
-                if (isEqual) {
-                    for (let j = 0; j < gtTokens.length; j++) {
-                        if (gtTokens[j].label !== predTokens[j].label) {
-                            isEqual = false;
-                            break;
-                        }
-                    }
-                }
+                const predTokens1 = predSentences1[i];
+                const predTokens2 = predSentences2[i];
 
                 // Create a container for this sentence comparison.
                 const sentenceDiv = document.createElement("div");
-                sentenceDiv.className = "sentenceBlock" + (isEqual ? "" : " mismatch");
+                sentenceDiv.className = "sentenceBlock";
 
                 // Header showing sentence number
                 const header = document.createElement("div");
@@ -154,7 +143,7 @@
 
                 // Add table header
                 const headerRow = document.createElement("tr");
-                ["Token", "Ground Truth", "Prediction"].forEach(text => {
+                ["Token", "Ground Truth", "Prediction 1", "Prediction 2"].forEach(text => {
                     const th = document.createElement("th");
                     th.style.border = "1px solid #ddd";
                     th.style.padding = "8px";
@@ -165,7 +154,7 @@
                 table.appendChild(headerRow);
 
                 // Add rows for each token
-                const numTokens = Math.min(gtTokens.length, predTokens.length);
+                const numTokens = Math.min(gtTokens.length, predTokens1.length, predTokens2.length);
                 for (let j = 0; j < numTokens; j++) {
                     const row = document.createElement("tr");
 
@@ -183,12 +172,24 @@
                     gtCell.innerText = gtTokens[j].label;
                     row.appendChild(gtCell);
 
-                    // Prediction column
-                    const predCell = document.createElement("td");
-                    predCell.style.border = "1px solid #ddd";
-                    predCell.style.padding = "8px";
-                    predCell.innerText = predTokens[j].label;
-                    row.appendChild(predCell);
+                    // Prediction 1 column
+                    const predCell1 = document.createElement("td");
+                    predCell1.style.border = "1px solid #ddd";
+                    predCell1.style.padding = "8px";
+                    predCell1.innerText = predTokens1[j].label;
+                    row.appendChild(predCell1);
+
+                    // Prediction 2 column
+                    const predCell2 = document.createElement("td");
+                    predCell2.style.border = "1px solid #ddd";
+                    predCell2.style.padding = "8px";
+                    predCell2.innerText = predTokens2[j].label;
+                    row.appendChild(predCell2);
+
+                    // Highlight row if there is a mismatch
+                    if (gtTokens[j].label !== predTokens1[j].label || gtTokens[j].label !== predTokens2[j].label) {
+                        row.style.backgroundColor = "#fdd"; // Light red for mismatches
+                    }
 
                     table.appendChild(row);
                 }
@@ -201,32 +202,40 @@
         document.getElementById("compareBtn").addEventListener("click", function () {
             const fileInput1 = document.getElementById("file1").files[0];
             const fileInput2 = document.getElementById("file2").files[0];
+            const fileInput3 = document.getElementById("file3").files[0];
 
-            if (!fileInput1 || !fileInput2) {
-                alert("Please select both files.");
+            if (!fileInput1 || !fileInput2 || !fileInput3) {
+                alert("Please select all three files.");
                 return;
             }
 
             const reader1 = new FileReader();
             const reader2 = new FileReader();
-            let content1 = "", content2 = "";
+            const reader3 = new FileReader();
+            let content1 = "", content2 = "", content3 = "";
 
             reader1.onload = function (e) {
                 content1 = e.target.result;
-                if (content2 !== "") proceed();
+                if (content2 !== "" && content3 !== "") proceed();
             };
             reader2.onload = function (e) {
                 content2 = e.target.result;
-                if (content1 !== "") proceed();
+                if (content1 !== "" && content3 !== "") proceed();
+            };
+            reader3.onload = function (e) {
+                content3 = e.target.result;
+                if (content1 !== "" && content2 !== "") proceed();
             };
 
             reader1.readAsText(fileInput1);
             reader2.readAsText(fileInput2);
+            reader3.readAsText(fileInput3);
 
             function proceed() {
                 const gtSentences = parseConll(content1);
-                const predSentences = parseConll(content2);
-                displayResults(gtSentences, predSentences);
+                const predSentences1 = parseConll(content2);
+                const predSentences2 = parseConll(content3);
+                displayResults(gtSentences, predSentences1, predSentences2);
             }
         });
     </script>
