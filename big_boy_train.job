@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:1
 #SBATCH --job-name big_boy_cyberner
-#SBATCH --output cyberner.log
+#SBATCH --output big_boy.log
 
 echo "loading conda"
 module load Anaconda3
