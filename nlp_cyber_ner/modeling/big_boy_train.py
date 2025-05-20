@@ -131,7 +131,7 @@ def train(
     model = TaggerModel(len(idx2word), len(idx2label))
     model = model.to(device)  # run on cuda if possible
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
-    loss_function = torch.nn.CrossEntropyLoss(ignore_index=0, reduction="sum")
+    loss_function = torch.nn.CrossEntropyLoss(ignore_index=0)
 
     # creating the batches
 
