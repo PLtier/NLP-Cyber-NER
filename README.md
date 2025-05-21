@@ -1,61 +1,30 @@
-# nlp-cyber-ner
+# NER for cybersecurity
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+## Report
 
-Cybersecurity NER SOTA
+See [report](reports/report.pdf)
 
-## Project Organization
+## Replicate
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         nlp_cyber_ner and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── nlp_cyber_ner   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes nlp_cyber_ner a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+Experiments were performed using conda on Linux with Intel CPU. In order to replicate the experiments run:
+
+```bash
+# ensure you have installed conda, initialized it and sourced the bashrc.
+conda env create -n nlp-cyber-ner -f envs/prod_environment.yml
+conda activate nlp-cyber-ner
+
+python nlp_cyber_ner/modeling/cross_dataset_model.py
+python nlp_cyber_ner/modeling/combined_dataset_model.py
 ```
 
---------
+All experiments had seed set.
 
+Experiments and associated commits are in our online MLFlow server: [MLFlow Server (DAGsHub)](https://dagshub.com/PLtier/NLP-Cyber-NER/experiments).
+
+## Development
+
+Development was performed with venv, packages are in [dev_requirements.txt](envs/dev_requirements.txt).
+
+## Cite
+
+Please cite this work if you use it.
