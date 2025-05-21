@@ -30,44 +30,35 @@ end_labels = {
 }
 
 print("goes well")
+
 cyner_path = PROCESSED_DATA_DIR / "cyner"
 cyner_train_path = cyner_path / "train.unified"
 cyner_dev_path = cyner_path / "valid.unified"
-cyner_test_path = cyner_path / "test.unified"
-
 cyner_train_data = read_iob2_file(cyner_train_path)
 cyner_dev_data = read_iob2_file(cyner_dev_path)
-cyner_test_data = read_iob2_file(cyner_test_path)
 A = set(tag for _, tags in cyner_train_data for tag in tags)
 B = set(tag for _, tags in cyner_dev_data for tag in tags)
-C = set(tag for _, tags in cyner_test_data for tag in tags)
-assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
+assert A == B == end_labels, "The labels in the train, dev and test sets are not the same."
 print("cyner loaded")
 
 aptner_path = PROCESSED_DATA_DIR / "aptner"
 aptner_train_path = aptner_path / "train.unified"
 aptner_dev_path = aptner_path / "valid.unified"
-aptner_test_path = aptner_path / "test.unified"
 aptner_train_data = read_iob2_file(aptner_train_path)
 aptner_dev_data = read_iob2_file(aptner_dev_path)
-aptner_test_data = read_iob2_file(aptner_test_path)
 A = set(tag for _, tags in aptner_train_data for tag in tags)
 B = set(tag for _, tags in aptner_dev_data for tag in tags)
-C = set(tag for _, tags in aptner_test_data for tag in tags)
-assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
+assert A == B == end_labels, "The labels in the train, dev and test sets are not the same."
 print("aptner loaded")
 
 attacker_path = PROCESSED_DATA_DIR / "attacker"
 attacker_train_path = attacker_path / "train.unified"
 attacker_dev_path = attacker_path / "valid.unified"
-attacker_test_path = attacker_path / "test.unified"
 attacker_train_data = read_iob2_file(attacker_train_path, word_index=0, tag_index=1)
 attacker_dev_data = read_iob2_file(attacker_dev_path, word_index=0, tag_index=1)
-attacker_test_data = read_iob2_file(attacker_test_path, word_index=0, tag_index=1)
 A = set(tag for _, tags in attacker_train_data for tag in tags)
 B = set(tag for _, tags in attacker_dev_data for tag in tags)
-C = set(tag for _, tags in attacker_test_data for tag in tags)
-assert A == B == C == end_labels, (
+assert A == B == end_labels, (
     "The labels in the train_data, dev_data and test_data sets are not the same."
 )
 print("attacker loaded")
@@ -75,20 +66,17 @@ print("attacker loaded")
 dnrti_path = PROCESSED_DATA_DIR / "dnrti"
 dnrti_train_path = dnrti_path / "train.unified"
 dnrti_dev_path = dnrti_path / "valid.unified"
-dnrti_test_path = dnrti_path / "test.unified"
-
 dnrti_train_data = read_iob2_file(dnrti_train_path, word_index=0, tag_index=1)
 dnrti_dev_data = read_iob2_file(dnrti_dev_path, word_index=0, tag_index=1)
-dnrti_test_data = read_iob2_file(dnrti_test_path, word_index=0, tag_index=1)
 A = set(tag for _, tags in dnrti_train_data for tag in tags)
 B = set(tag for _, tags in dnrti_dev_data for tag in tags)
-C = set(tag for _, tags in dnrti_test_data for tag in tags)
-assert A == B == C == end_labels, "The labels in the train, dev and test sets are not the same."
+assert A == B == end_labels, "The labels in the train, dev and test sets are not the same."
 print("dnrti loaded")
 
-load_dotenv()
-mlflow.set_tracking_uri("https://dagshub.com/PLtier/NLP-Cyber-NER.mlflow")
-print("mlflow and load dotenv loaded")
+
+train_data = cyner_train_data + aptner_train_data + attacker_train_data + dnrti_train_data
+combined_dev_data = cyner_dev_data + aptner_dev_data + attacker_dev_data + dnrti_dev_data
+
 
 BATCH_SIZE = 32
 DIM_EMBEDDING = 100
@@ -102,7 +90,7 @@ hyperparams = {
     "LSTM_HIDDEN": LSTM_HIDDEN,
     "LEARNING_RATE": LEARNING_RATE,
     "EPOCHS": EPOCHS,
-    "CLIPPING": 5.0,
+    "CLIPPING": CLIPPING,
 }
 
 
@@ -143,16 +131,25 @@ def train(
     model = TaggerModel(len(idx2word), len(idx2label))
     model = model.to(device)  # run on cuda if possible
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
-    loss_function = torch.nn.CrossEntropyLoss(ignore_index=0)
+    loss_function = torch.nn.CrossEntropyLoss(ignore_index=0, reduction="sum")
+
+    # creating the batches
+
+    # creating the batches
 
     # creating the batches
 
     for epoch in range(EPOCHS):
         model.train()
         # reset the gradient
+        # reset the gradient
         print(f"Epoch {epoch + 1}\n-------------------------------")
         loss_sum = 0
 
+        # loop over batches
+        # types for convenience
+        batch_X: torch.Tensor
+        batch_y: torch.Tensor
         # loop over batches
         # types for convenience
         batch_X: torch.Tensor
@@ -167,11 +164,15 @@ def train(
             # Cross entropy request (predictions, classes) shape for predictions, and (classes) for batch_y
 
             # calculate loss
+            # Cross entropy request (predictions, classes) shape for predictions, and (classes) for batch_y
+
+            # calculate loss
             loss = loss_function(
                 predicted_values.view(batch_X.shape[0] * input_size, -1), batch_y.flatten()
             )  # TODO: Input
             loss_sum += loss.item()  # avg later
 
+            # update
             # update
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=CLIPPING)
@@ -179,6 +180,7 @@ def train(
 
         print(f"Average loss after epoch {epoch + 1}: {loss_sum / n_batches}")
 
+    # set to evaluation mode
     # set to evaluation mode
     model.eval()
 
@@ -233,73 +235,74 @@ def evaluate(
     return metrics
 
 
-train_packs = [
-    ("cyner", cyner_train_data),
-    ("aptner", aptner_train_data),
-    ("attacker", attacker_train_data),
-    ("dnrti", dnrti_train_data),
-]
+# Training
+big_name = "big_model"
+print(f"Training {big_name}")
+
+load_dotenv()
+mlflow.set_tracking_uri("https://dagshub.com/PLtier/NLP-Cyber-NER.mlflow")
+print("mlflow and load dotenv loaded")
 
 dev_packs = [
     ("cyner", cyner_dev_data),
     ("aptner", aptner_dev_data),
     ("attacker", attacker_dev_data),
     ("dnrti", dnrti_dev_data),
+    ("combined", combined_dev_data),
 ]
 
-for train_pack_name, train_data in train_packs:
-    for dev_pack_name, dev_data in dev_packs:
-        train_data, _ = remove_leakage(train_data, dev_data)
-        transformer = Preprocess()
+for dev_pack_name, dev_data in dev_packs:
+    train_data, _ = remove_leakage(train_data, dev_data)
+    transformer = Preprocess()
 
-        max_len = MAX_LEN
-        # can use obtained from train, but in order to make models more comparable, make them the same.
-        # max_len = max([len(x[0]) for x in train_data])
+    max_len = MAX_LEN
+    # can use obtained from train, but in order to make models more comparable, make them the same.
+    # max_len = max([len(x[0]) for x in train_data])
 
-        # input_size = max_len
-        train_X, train_y, idx2word, idx2label = transformer.build_vocab(
-            train_data, len(train_data), max_len
+    # input_size = max_len
+    train_X, train_y, idx2word, idx2label = transformer.build_vocab(
+        train_data, len(train_data), max_len
+    )
+
+    name: str = f"train-{big_name}-eval-{dev_pack_name}"
+    print(f"train {name}")
+    model = train(train_X, train_y, idx2word, idx2label, input_size=max_len)
+
+    dev_X, _ = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
+    dev_tokens, dev_labels = list(zip(*dev_data))
+
+    # train_X, train_y, dev_X, dev_y, test_X, test_y, idx2word, idx2label, max_len = train_pack
+    mlflow.set_experiment(name)
+    with mlflow.start_run(run_name=name):
+        assert isinstance(dev_labels, tuple), "Dev y is not a tuple!"
+
+        pred_labels_idx_dev = test_pass(model, dev_X, return_labels_idx=True)
+
+        labels_dev = preds_to_tags(idx2label, dev_labels, pred_labels_idx_dev)
+
+        metrics = evaluate(dev_labels, labels_dev)
+
+        store_preds_path = DATA_DIR / "predictions" / f"{name}.txt"
+        store_trains_path = DATA_DIR / "train" / f"{name}.txt"
+
+        list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
+        train_tokens, train_labels = list(zip(*train_data))
+        list_to_conll(train_tokens, train_labels, store_trains_path)  # type: ignore
+
+        # Log the trained model
+        model_path = MODELS_DIR / f"{name}.pt"
+        torch.save(model.state_dict(), model_path)
+        mlflow.log_artifact(str(model_path), artifact_path="models")
+
+        mlflow.log_params(hyperparams)
+        mlflow.log_metrics(metrics)
+        mlflow.log_params(
+            {
+                "train_size": train_X.shape[0],
+                "train_input_size": train_X.shape[1],
+                "dev_size": dev_X.shape[0],
+                "dev_input_size": max(len(x[0]) for x in dev_data),
+            }
         )
-
-        name: str = f"train-{train_pack_name}-eval-{dev_pack_name}"
-        print(f"train {name}")
-        model = train(train_X, train_y, idx2word, idx2label, input_size=max_len)
-
-        dev_X, _ = transformer.transform_prep_data(dev_data, len(dev_data), max_len)
-        dev_tokens, dev_labels = list(zip(*dev_data))
-
-        # train_X, train_y, dev_X, dev_y, test_X, test_y, idx2word, idx2label, max_len = train_pack
-        mlflow.set_experiment(name)
-        with mlflow.start_run(run_name=name):
-            assert isinstance(dev_labels, tuple), "Dev y is not a list!"
-
-            pred_labels_idx_dev = test_pass(model, dev_X, return_labels_idx=True)
-
-            labels_dev = preds_to_tags(idx2label, dev_labels, pred_labels_idx_dev)
-
-            metrics = evaluate(dev_labels, labels_dev)
-
-            store_preds_path = DATA_DIR / "predictions" / f"{name}.txt"
-            store_trains_path = DATA_DIR / "train" / f"{name}.txt"
-
-            list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
-            train_tokens, train_labels = list(zip(*train_data))
-            list_to_conll(train_tokens, train_labels, store_trains_path)  # type: ignore
-
-            # Log the trained model
-            model_path = MODELS_DIR / f"{name}.pt"
-            torch.save(model.state_dict(), model_path)
-            mlflow.log_artifact(str(model_path), artifact_path="models")
-
-            mlflow.log_params(hyperparams)
-            mlflow.log_metrics(metrics)
-            mlflow.log_params(
-                {
-                    "train_size": train_X.shape[0],
-                    "train_input_size": train_X.shape[1],
-                    "dev_size": dev_X.shape[0],
-                    "dev_input_size": max(len(x[0]) for x in dev_data),
-                }
-            )
-            mlflow.log_artifact(str(store_preds_path), artifact_path="predictions")
-            mlflow.log_artifact(str(store_trains_path), artifact_path="train")
+        mlflow.log_artifact(str(store_preds_path), artifact_path="predictions")
+        mlflow.log_artifact(str(store_trains_path), artifact_path="train")

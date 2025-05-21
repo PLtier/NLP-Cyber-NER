@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --time 01:00:00
 #SBATCH --mem=24G
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=8        # Schedule one core
 #SBATCH --gres=gpu:1
-#SBATCH --job-name big_boy_cyberner
-#SBATCH --output big_boy.log
+#SBATCH --job-name cross_datasets_model
+#SBATCH --output cross_datasets_model.log
 
 echo "loading conda"
 module load Anaconda3
@@ -18,5 +18,5 @@ echo "loading new deps"
 echo "loaded new deps"
 echo "running train"
 python nlp_cyber_ner/config.py
-python nlp_cyber_ner/modeling/big_boy_train.py
+python nlp_cyber_ner/modeling/cross_dataset_model.py
 echo "hello"
