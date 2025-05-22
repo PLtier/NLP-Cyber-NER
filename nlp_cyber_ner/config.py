@@ -17,6 +17,7 @@ EVAL_DATA_DIR = DATA_DIR / "eval"
 INTERIM_DATA_DIR = DATA_DIR / "interim"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 EXTERNAL_DATA_DIR = DATA_DIR / "external"
+TOKENPROCESSED_DATA_DIR = DATA_DIR / "tokenprocessed"
 
 MODELS_DIR = PROJ_ROOT / "models"
 
