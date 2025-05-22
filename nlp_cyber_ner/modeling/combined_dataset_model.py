@@ -1,11 +1,17 @@
 import gc
+import os
 
 import mlflow
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
-from nlp_cyber_ner.config import DATA_DIR, MODELS_DIR, PROCESSED_DATA_DIR, load_dotenv
+from nlp_cyber_ner.config import (
+    ARTIFACTS_DIR,
+    MODELS_DIR,
+    PROCESSED_DATA_DIR,
+    load_dotenv,
+)
 from nlp_cyber_ner.dataset import (
     Preprocess,
     list_to_conll,
@@ -240,7 +246,10 @@ big_name = "big_model"
 print(f"Training {big_name}")
 
 load_dotenv()
-mlflow.set_tracking_uri("https://dagshub.com/PLtier/NLP-Cyber-NER.mlflow")
+tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
+if tracking_uri is not None:
+    print(f"MLFLOW_TRACKING_URI: {tracking_uri}")
+    mlflow.set_tracking_uri(tracking_uri)
 print("mlflow and load dotenv loaded")
 
 dev_packs = [
@@ -282,8 +291,8 @@ for dev_pack_name, dev_data in dev_packs:
 
         metrics = evaluate(dev_labels, labels_dev)
 
-        store_preds_path = DATA_DIR / "predictions" / f"{name}.txt"
-        store_trains_path = DATA_DIR / "train" / f"{name}.txt"
+        store_preds_path = ARTIFACTS_DIR / "predictions" / f"{name}.txt"
+        store_trains_path = ARTIFACTS_DIR / "train" / f"{name}.txt"
 
         list_to_conll(dev_tokens, labels_dev, store_preds_path)  # type: ignore
         train_tokens, train_labels = list(zip(*train_data))

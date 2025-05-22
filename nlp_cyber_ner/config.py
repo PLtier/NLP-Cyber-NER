@@ -18,8 +18,9 @@ INTERIM_DATA_DIR = DATA_DIR / "interim"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 EXTERNAL_DATA_DIR = DATA_DIR / "external"
 TOKENPROCESSED_DATA_DIR = DATA_DIR / "tokenprocessed"
+ARTIFACTS_DIR = PROJ_ROOT / "artifacts"
 
-MODELS_DIR = PROJ_ROOT / "models"
+MODELS_DIR = ARTIFACTS_DIR / "models"
 
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"

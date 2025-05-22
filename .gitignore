@@ -1,7 +1,8 @@
 # Data
-models/
-train/
-predictions/
+artifacts/models/*.pt
+artifacts/train/*.txt
+artifacts/predictions/*.txt
+mlruns/
 
 # Mac OS-specific storage files
 .DS_Store
