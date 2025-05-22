@@ -44,6 +44,11 @@ mlflow ui
 
 This will start a web server where you can explore experiment runs, metrics, and artifacts.
 
+### Looking up predictions
+
+Cross-dataset models and Combined-dataset model output predictions into `artifacts/predictions` folder.
+These can be for example compared to ground truth using our lookup tools `lookup.html` and `lookup2.html`.
+
 ## Development
 
 Development was performed with venv, packages are in [dev_requirements.txt](envs/dev_requirements.txt).
