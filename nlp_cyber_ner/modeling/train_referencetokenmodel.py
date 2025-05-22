@@ -5,14 +5,14 @@ import gc
 import json
 import mlflow
 import torch
-import random 
+import random
 import numpy as np
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 from compute_fn_ratios import false_negative_ratio, MAPPED_LABELS
+import os
 
-
-from nlp_cyber_ner.config import DATA_DIR, PROCESSED_DATA_DIR, TOKENPROCESSED_DATA_DIR, load_dotenv
+from nlp_cyber_ner.config import PROCESSED_DATA_DIR, TOKENPROCESSED_DATA_DIR, load_dotenv
 from nlp_cyber_ner.dataset import (
     Preprocess,
     preds_to_tags,
@@ -22,7 +22,7 @@ from nlp_cyber_ner.dataset import (
 from nlp_cyber_ner.span_f1 import span_f1
 
 
-#Hyperparameters
+# Hyperparameters
 BATCH_SIZE = 32
 DIM_EMBEDDING = 100
 LSTM_HIDDEN = 100
@@ -30,15 +30,15 @@ DROPOUT1 = 0.5
 DROPOUT2 = 0.5
 LEARNING_RATE = 0.001
 EPOCHS = 15
-CLIPPING = 5.0 # - didn't seem like it was needed from testing, but used in the original model (train.py) so reusing here
+CLIPPING = 5.0  # - didn't seem like it was needed from testing, but used in the original model (train.py) so reusing here
 
 
-#Enable Deduplication:
+# Enable Deduplication:
 DEDUPLICATION = True
 
 
-#Setting up datasets:
-    #CYNER: (not changes for tokenmodel so loaded just from processed directory)
+# Setting up datasets:
+# CYNER: (not changes for tokenmodel so loaded just from processed directory)
 cyner_path = PROCESSED_DATA_DIR / "cyner"
 cyner_train_path = cyner_path / "train.unified"
 cyner_dev_path = cyner_path / "valid.unified"
@@ -47,25 +47,25 @@ cyner_train_data = read_iob2_file(cyner_train_path)
 cyner_dev_data = read_iob2_file(cyner_dev_path)
 cyner_test_data = read_iob2_file(cyner_test_path)
 
-    #ATTACKNER:
+# ATTACKNER:
 attackner_path = TOKENPROCESSED_DATA_DIR / "attacker"
-attackner_train_path  = attackner_path / "train.tokenready"
-attackner_dev_path= attackner_path / "dev.tokenready"
-attackner_test_path= attackner_path / "test.tokenready"
+attackner_train_path = attackner_path / "train.tokenready"
+attackner_dev_path = attackner_path / "dev.tokenready"
+attackner_test_path = attackner_path / "test.tokenready"
 attackner_train_data = read_iob2_file(attackner_train_path, word_index=0, tag_index=1)
 attackner_dev_data = read_iob2_file(attackner_dev_path, word_index=0, tag_index=1)
 attackner_test_data = read_iob2_file(attackner_test_path, word_index=0, tag_index=1)
 
-    #APTNER:
+# APTNER:
 aptner_path = TOKENPROCESSED_DATA_DIR / "APTNer"
-aptner_train_path= aptner_path / "train.tokenready"
-aptner_dev_path= aptner_path / "valid.tokenready"
-aptner_test_path= aptner_path / "test.tokenready"
+aptner_train_path = aptner_path / "train.tokenready"
+aptner_dev_path = aptner_path / "valid.tokenready"
+aptner_test_path = aptner_path / "test.tokenready"
 aptner_train_data = read_iob2_file(aptner_train_path)
 aptner_dev_data = read_iob2_file(aptner_dev_path)
 aptner_test_data = read_iob2_file(aptner_test_path)
 
-    #DNRTI:
+# DNRTI:
 dnrti_path = TOKENPROCESSED_DATA_DIR / "DNRTI"
 dnrti_train_path = dnrti_path / "train.tokenready"
 dnrti_dev_path = dnrti_path / "valid.tokenready"
@@ -74,7 +74,7 @@ dnrti_train_data = read_iob2_file(dnrti_train_path, word_index=0, tag_index=1)
 dnrti_dev_data = read_iob2_file(dnrti_dev_path, word_index=0, tag_index=1)
 dnrti_test_data = read_iob2_file(dnrti_test_path, word_index=0, tag_index=1)
 
-#names of the current datasets
+# names of the current datasets
 DATASETS = ["dnrti", "aptner", "attackner", "cyner"]
 
 
@@ -102,7 +102,11 @@ torch.manual_seed(0)
 np.random.seed(0)
 random.seed(0)
 
-mlflow.set_tracking_uri("https://dagshub.com/PLtier/NLP-Cyber-NER.mlflow")
+load_dotenv()
+tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
+if tracking_uri is not None:
+    mlflow.set_tracking_uri(tracking_uri)
+
 
 def train(
     train_X: torch.Tensor,
@@ -161,8 +165,6 @@ def train(
     torch.cuda.empty_cache()
 
     return model
-
-
 
 
 def test_pass(
@@ -226,7 +228,6 @@ dev_packs = [
 
 
 for i in range(len(train_packs)):
-    
     train_data, dev_data = train_packs[i][1], dev_packs[i][1]
 
     train_data, _ = remove_leakage(train_data, dev_data)
@@ -259,7 +260,7 @@ for i in range(len(train_packs)):
             "DROPOUT2": DROPOUT2,
             "LEARNING_RATE": LEARNING_RATE,
             "EPOCHS": EPOCHS,
-            "CLIPPING": CLIPPING, #We don't need clipping, but using same hyperparams as original model.
+            "CLIPPING": CLIPPING,  # We don't need clipping, but using same hyperparams as original model.
         }
 
         pred_labels_idx_dev = test_pass(model, dev_X, return_labels_idx=True)
@@ -279,14 +280,13 @@ for i in range(len(train_packs)):
             }
         )
 
-        dataset_name  = dev_packs[i][0]         
+        dataset_name = dev_packs[i][0]
         mapped_set = MAPPED_LABELS[dataset_name]
-        fn_ratio  = false_negative_ratio(dev_labels, labels_dev, mapped_set)
+        fn_ratio = false_negative_ratio(dev_labels, labels_dev, mapped_set)
         mlflow.log_metric("fn_ratio_mapped", fn_ratio)
 
-        mlflow.log_param("TAG_SET_SIZE", len(idx2label)-1)
+        mlflow.log_param("TAG_SET_SIZE", len(idx2label) - 1)
         tag_set = idx2label[1:]
         with open("ner_tags.json", "w") as f:
             json.dump(tag_set, f)
-        mlflow.log_artifact("ner_tags.json") #ignore <pad>
-        
+        mlflow.log_artifact("ner_tags.json")  # ignore <pad>
