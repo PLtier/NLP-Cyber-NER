@@ -210,50 +210,80 @@ def unify_labels_dnrti(path: Path) -> None:
                 f_out.write("\n")
 
 
-def unify_labels_attacker(path: Path) -> None:
+def clean_attacker(path: Path) -> None:
     """
-    THREAT_ACTOR, GENERAL_IDENTITY -> Organization (respectively, B- and I-)
-    INFRASTRUCTURE, GENERAL_TOOL, ATTACK_TOOL -> Infrastructure (respectively, B- and I-)
-    VULNERABILITY -> Vulnerability (respectively, B- and I-)
-    MALWARE -> Malware (respectively, B- and I-)
-    Outputs a conll format!
+    Reads the raw attacker JSONL and writes cleaned data in conll format.
+    Whitespace-only tokens are dropped (the only cleaning attacker needs).
+    The function saves cleaned data to the interim folder.
     """
+    # normalise the split naming to train/valid/test (raw uses "dev")
+    stem = "valid" if path.stem == "dev" else path.stem
     with (
         jsonlines.open(path) as reader,
-        open(path.with_suffix(".unified"), "w", encoding="utf-8") as f_out,
+        open(
+            INTERIM_DATA_DIR / "attacker" / f"{stem}.cleaned",
+            "w",
+            encoding="utf-8",
+        ) as f_out,
     ):
         for obj in reader:
             tags = obj["tags"]
             tokens = obj["tokens"]
-            n = len(tokens)
-            for i in range(n):
-                current_tag = tags[i]
-                token = tokens[i]
+            for token, tag in zip(tokens, tags):
                 if token == " ":
-                    # TODO: this is kind of cleaning part, if there is time, I would put it in a separate function
                     continue
-                if current_tag != "O":
-                    prefix, label = current_tag.split("-")
-
-                    if label == "THREAT_ACTOR" or label == "GENERAL_IDENTITY":
-                        label = "Organization"
-                    elif (
-                        label == "INFRASTRUCTURE"
-                        or label == "GENERAL_TOOL"
-                        or label == "ATTACK_TOOL"
-                    ):
-                        label = "System"
-                    elif label == "VULNERABILITY":
-                        label = "Vulnerability"
-                    elif label == "MALWARE":
-                        label = "Malware"
-                    else:
-                        label = "O"
-                        f_out.write(f"{token} O\n")
-                        continue
-                    current_tag = f"{prefix}-{label}"
-                f_out.write(f"{token} {current_tag}\n")
+                f_out.write(f"{token} {tag}\n")
             f_out.write("\n")
+
+
+def unify_tag_attacker(tag: str) -> str:
+    """
+    Map a single raw AttackER tag to the unified label space (prefix unchanged).
+    THREAT_ACTOR, GENERAL_IDENTITY -> Organization
+    INFRASTRUCTURE, GENERAL_TOOL, ATTACK_TOOL -> System
+    VULNERABILITY -> Vulnerability
+    MALWARE -> Malware
+    everything else -> O
+    """
+    if tag == "O" or "-" not in tag:
+        return "O"
+    prefix, label = tag.split("-", 1)
+
+    if label == "THREAT_ACTOR" or label == "GENERAL_IDENTITY":
+        label = "Organization"
+    elif label == "INFRASTRUCTURE" or label == "GENERAL_TOOL" or label == "ATTACK_TOOL":
+        label = "System"
+    elif label == "VULNERABILITY":
+        label = "Vulnerability"
+    elif label == "MALWARE":
+        label = "Malware"
+    else:
+        return "O"
+
+    return f"{prefix}-{label}"
+
+
+def unify_labels_attacker(path: Path) -> None:
+    """
+    Rewrite a cleaned AttackER conll file into the unified label space.
+    Per-tag mapping logic lives in unify_tag_attacker.
+    """
+    with (
+        open(path, "r", encoding="utf-8") as f,
+        open(
+            PROCESSED_DATA_DIR / "attacker" / path.with_suffix(".unified").name,
+            "w",
+            encoding="utf-8",
+        ) as f_out,
+    ):
+        for line in f:
+            line = line.strip()
+            if line:
+                tok = line.split()
+                assert len(tok) == 2
+                f_out.write(f"{tok[0]} {unify_tag_attacker(tok[1])}\n")
+            else:
+                f_out.write("\n")
 
 
 def clean_dnrti(path: Path) -> None:
