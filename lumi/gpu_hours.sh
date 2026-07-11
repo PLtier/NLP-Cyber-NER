@@ -9,23 +9,6 @@ set -euo pipefail
 JOBID="${1:?usage: gpu_hours.sh <ARRAY_JOBID> [RETRAINED_DIR]}"
 RETRAINED_DIR="${2:-/scratch/project_465002928/$(whoami)/retrained}"
 
-echo "== billed GCD-hours (sacct, job $JOBID) =="
-# Count only the array-task main lines (JobID has no '.') that carry a gres/gpu allocation,
-# so per-step sub-lines (.batch/.extern) are not double-counted.
-sacct -j "$JOBID" \
-      --format=JobID,Elapsed,ElapsedRaw,AllocTRES%60,State \
-      --parsable2 --noheader \
-| awk -F'|' '
-    $1 !~ /\./ && $4 ~ /gres\/gpu=/ {
-        match($4, /gres\/gpu=([0-9]+)/, a); g = a[1] + 0;
-        total += ($3 + 0) * g; n++;
-    }
-    END {
-        printf "  tasks counted = %d\n", n;
-        printf "  total GCD-seconds = %d\n", total;
-        printf "  total GCD-hours   = %.2f\n", total / 3600;
-    }'
-
 echo "== pure train_runtime sum (train_metrics.json in $RETRAINED_DIR) =="
 python3 - "$RETRAINED_DIR" <<'PY'
 import glob, json, os, sys
