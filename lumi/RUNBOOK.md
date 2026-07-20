@@ -86,6 +86,27 @@ rsync -av lumi:repos/NLP-Cyber-NER/artifacts/cross_retrained/ \
 MLflow logging to DagsHub works from the compute nodes (they have outbound network) — set
 `MLFLOW_TRACKING_URI` (and DagsHub creds) in your `.env`/environment and the sweep logs metrics live.
 
+## Multi-head model (shared RoBERTa encoder, one head per dataset)
+Separate single-job experiment (not part of the 20-encoder array). Fine-tunes **one shared
+RoBERTa-base encoder** with **one token-classification head per dataset over that dataset's ORIGINAL
+label set** — the transformer counterpart of the four BiLSTM `train_tokenmodel_*` scripts. Per-epoch
+dataset sampling is **with replacement, proportional to each dataset's batch count** (reproduces the
+BiLSTM scheme, so larger datasets' heads get more updates), and batches are homogeneous (one head per
+forward pass). Same recipe (batch 2, lr 2e-5, 10 epochs, seed 42, bf16) and the same union-leakage
+removal as the array jobs. Eval is per-dataset span-F1 on each **original-label** dev set.
+```bash
+sbatch lumi/train_multihead.sh           # ~single GCD; writes to $RETRAINED_DIR/multihead-roberta
+tail -f lumi/logs/multihead_*.log
+```
+Writes `$RETRAINED_DIR/multihead-roberta/`: `model.pt` (encoder + heads), `label_maps.json` (per-dataset
+original label lists), `dev_metrics.json` (per-dataset span-F1), and `train_metrics.json` (timing).
+Per-dataset predictions + metrics are logged to MLflow as runs `train-multihead-roberta-eval-<ds>`
+(needs `MLFLOW_TRACKING_URI` + creds in `.env`; prediction CoNLLs land in `models/predictions/`).
+GPU-hours:
+```bash
+bash lumi/gpu_hours_multihead.sh         # reads train_metrics.json; sacct reads zero GCD-hours on LUMI
+```
+
 ## Notes
 - One GCD per fine-tune (models are 110–184M params); no torchrun/RCCL needed.
 - `--array=0-19` maps row-major over `ARCHES × DATASETS` (see `train_hf_ner.resolve_index`).
